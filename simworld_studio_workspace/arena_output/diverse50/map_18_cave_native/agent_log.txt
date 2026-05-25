@@ -1,0 +1,13 @@
+## Final Report
+
+**map_18_cave_native** — Native subtle edit of fantasy cave template.
+
+**Edits**: Deleted 29 SM_Rock and SM_HexagonRock actors across multiple cave Z-levels to clear a navigable path from PlayerStart southwest through the cave interior. Spawned 1 BP_Trash_can ("CaveBarrel_Terminus") at (-2600, -1900) as an old barrel at the path terminus. No foreign assets added. **Total ops: 30** (29 deletes + 1 spawn).
+
+**Results**:
+- REACHABLE_INITIAL: 20/20
+- REACHABLE_FINAL: 20/20
+- SAVE_OK: True
+- Saved to: `/Game/DiverseMaps50/map_18_cave_native`
+- Screenshot: `map_18_cave_native_overview.png`
+- No errors.

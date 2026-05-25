@@ -1,0 +1,2078 @@
+{
+  "status": "success",
+  "result": {
+    "actors": [
+      {
+        "name": "WorldSettings_1",
+        "class": "WorldSettings",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Brush_1",
+        "class": "Brush",
+        "location": [
+          -90,
+          110,
+          20
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "PlayerStart",
+        "class": "PlayerStart",
+        "location": [
+          0,
+          0,
+          112.00068664550781
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_0",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_1",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_2",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DefaultPhysicsVolume_0",
+        "class": "DefaultPhysicsVolume",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "GameplayDebuggerPlayerManager_0",
+        "class": "GameplayDebuggerPlayerManager",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SmartObjectSubsystemRenderingActor_0",
+        "class": "SmartObjectSubsystemRenderingActor",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "AbstractNavData-Default",
+        "class": "AbstractNavData",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SkyAtmosphere_1",
+        "class": "SkyAtmosphere",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DirectionalLight_1",
+        "class": "DirectionalLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          -45.00000000000001,
+          29.999999999999996,
+          2.248991783197472e-15
+        ],
+        "scale": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      {
+        "name": "SkyLight_1",
+        "class": "SkyLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "ExponentialHeightFog_1",
+        "class": "ExponentialHeightFog",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StaticMeshActor_1",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          -10
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          200,
+          200,
+          1
+        ]
+      },
+      {
+        "name": "Road_H1",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_H2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_H3",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_V1",
+        "class": "StaticMeshActor",
+        "location": [
+          -4500,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_V2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_V3",
+        "class": "StaticMeshActor",
+        "location": [
+          4500,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NW_1",
+        "class": "BP_Building_01_C",
+        "location": [
+          -6500,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NW_2",
+        "class": "BP_Building_03_C",
+        "location": [
+          -6500,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          45.00000000000001,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NW_3",
+        "class": "BP_Building_02_C",
+        "location": [
+          -5000,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NW_4",
+        "class": "BP_Building_05_C",
+        "location": [
+          -5000,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NW_5",
+        "class": "BP_Building_04_C",
+        "location": [
+          -7500,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NE_1",
+        "class": "BP_Building_02_C",
+        "location": [
+          5000,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NE_2",
+        "class": "BP_Building_06_C",
+        "location": [
+          5000,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NE_3",
+        "class": "BP_Building_01_C",
+        "location": [
+          6500,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NE_4",
+        "class": "BP_Building_04_C",
+        "location": [
+          6500,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NE_5",
+        "class": "BP_Building_03_C",
+        "location": [
+          7500,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SW_1",
+        "class": "BP_Building_05_C",
+        "location": [
+          -6500,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SW_2",
+        "class": "BP_Building_01_C",
+        "location": [
+          -6500,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SW_3",
+        "class": "BP_Building_03_C",
+        "location": [
+          -5000,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SW_4",
+        "class": "BP_Building_06_C",
+        "location": [
+          -5000,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SW_5",
+        "class": "BP_Building_02_C",
+        "location": [
+          -7500,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SE_1",
+        "class": "BP_Building_04_C",
+        "location": [
+          5000,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SE_2",
+        "class": "BP_Building_01_C",
+        "location": [
+          5000,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SE_3",
+        "class": "BP_Building_05_C",
+        "location": [
+          6500,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SE_4",
+        "class": "BP_Building_06_C",
+        "location": [
+          6500,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SE_5",
+        "class": "BP_Building_02_C",
+        "location": [
+          7500,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_1",
+        "class": "BP_Building_03_C",
+        "location": [
+          -2500,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_2",
+        "class": "BP_Building_04_C",
+        "location": [
+          -2500,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_3",
+        "class": "BP_Building_01_C",
+        "location": [
+          2500,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_4",
+        "class": "BP_Building_06_C",
+        "location": [
+          2500,
+          -5000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_5",
+        "class": "BP_Building_02_C",
+        "location": [
+          -2500,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_6",
+        "class": "BP_Building_05_C",
+        "location": [
+          -2500,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_7",
+        "class": "BP_Building_04_C",
+        "location": [
+          2500,
+          5000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Inner_8",
+        "class": "BP_Building_03_C",
+        "location": [
+          2500,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_1",
+        "class": "BP_Building_02_C",
+        "location": [
+          -6500,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_2",
+        "class": "BP_Building_06_C",
+        "location": [
+          -5000,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_3",
+        "class": "BP_Building_01_C",
+        "location": [
+          5000,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_4",
+        "class": "BP_Building_03_C",
+        "location": [
+          6500,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_5",
+        "class": "BP_Building_05_C",
+        "location": [
+          -6500,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_6",
+        "class": "BP_Building_04_C",
+        "location": [
+          -5000,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_7",
+        "class": "BP_Building_06_C",
+        "location": [
+          5000,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_Mid_8",
+        "class": "BP_Building_01_C",
+        "location": [
+          6500,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_1",
+        "class": "BP_Tree1_C",
+        "location": [
+          -7000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_2",
+        "class": "BP_Tree3_C",
+        "location": [
+          -5000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_3",
+        "class": "BP_Tree2_C",
+        "location": [
+          -3000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_4",
+        "class": "BP_Tree4_C",
+        "location": [
+          -1000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_5",
+        "class": "BP_Tree1_C",
+        "location": [
+          1000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_6",
+        "class": "BP_Tree5_C",
+        "location": [
+          3000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_7",
+        "class": "BP_Tree2_C",
+        "location": [
+          5000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H1_8",
+        "class": "BP_Tree6_C",
+        "location": [
+          7000,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_1",
+        "class": "BP_Tree3_C",
+        "location": [
+          -7000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_2",
+        "class": "BP_Tree1_C",
+        "location": [
+          -5000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_3",
+        "class": "BP_Tree4_C",
+        "location": [
+          -3000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_4",
+        "class": "BP_Tree2_C",
+        "location": [
+          -1000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_5",
+        "class": "BP_Tree5_C",
+        "location": [
+          1000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_6",
+        "class": "BP_Tree6_C",
+        "location": [
+          3000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_7",
+        "class": "BP_Tree1_C",
+        "location": [
+          5000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_H3_8",
+        "class": "BP_Tree3_C",
+        "location": [
+          7000,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V1_1",
+        "class": "BP_Tree2_C",
+        "location": [
+          -4000,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V1_2",
+        "class": "BP_Tree4_C",
+        "location": [
+          -4000,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V1_3",
+        "class": "BP_Tree6_C",
+        "location": [
+          -4000,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V1_4",
+        "class": "BP_Tree1_C",
+        "location": [
+          -4000,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V3_1",
+        "class": "BP_Tree5_C",
+        "location": [
+          4000,
+          -6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V3_2",
+        "class": "BP_Tree3_C",
+        "location": [
+          4000,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V3_3",
+        "class": "BP_Tree1_C",
+        "location": [
+          4000,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_V3_4",
+        "class": "BP_Tree4_C",
+        "location": [
+          4000,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_Center_1",
+        "class": "BP_Tree2_C",
+        "location": [
+          500,
+          -500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_Center_2",
+        "class": "BP_Tree5_C",
+        "location": [
+          -500,
+          500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_1",
+        "class": "BP_Scooter_01_C",
+        "location": [
+          -3000,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_2",
+        "class": "BP_Scooter_02_C",
+        "location": [
+          2000,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_3",
+        "class": "BP_Scooter_03_C",
+        "location": [
+          -4500,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_4",
+        "class": "BP_Scooter_04_C",
+        "location": [
+          4500,
+          -1000,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cart_0",
+        "class": "BP_Cart_C",
+        "location": [
+          1000,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cart_3",
+        "class": "BP_Cart2_C",
+        "location": [
+          -6000,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_1",
+        "class": "BP_Hydrant_C",
+        "location": [
+          -4200,
+          -4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_2",
+        "class": "BP_Hydrant_C",
+        "location": [
+          4200,
+          4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Trash_0",
+        "class": "BP_Trash_bin_a_C",
+        "location": [
+          -4200,
+          500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Trash_5",
+        "class": "BP_Trash_bin_a_C",
+        "location": [
+          0,
+          4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "RoadCone_1",
+        "class": "BP_RoadCone_C",
+        "location": [
+          -1500,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "RoadCone_2",
+        "class": "BP_RoadCone_C",
+        "location": [
+          1500,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "RoadBlocker_1",
+        "class": "BP_RoadBlocker_C",
+        "location": [
+          0,
+          1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Sidewalk_H1",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Sidewalk_H2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Sidewalk_H3",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "Sidewalk_H4",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          2,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_1",
+        "class": "StaticMeshActor",
+        "location": [
+          -4500,
+          -4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_3",
+        "class": "StaticMeshActor",
+        "location": [
+          4500,
+          -4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_4",
+        "class": "StaticMeshActor",
+        "location": [
+          -4500,
+          4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_5",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StreetLight_6",
+        "class": "StaticMeshActor",
+        "location": [
+          4500,
+          4300,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Roadlines_H1",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -4000,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Roadlines_H2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Roadlines_H3",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          4000,
+          1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          15,
+          3,
+          1
+        ]
+      }
+    ]
+  }
+}

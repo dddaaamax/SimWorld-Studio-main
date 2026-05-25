@@ -1,0 +1,16 @@
+**SAVE_OK=True.**
+
+---
+
+**Final Report**
+
+**Edits made** (69 total ops across 5 rounds):
+- **Round 1** (13 ops): Deleted 13 SM_Rock* actors near lighthouse base (SM_Rocks_Large_69/72, _07/06/169/170, SM_Rocks_Medium_5/00, outer-ring rocks _15/16/17/20, SM_Sticks_Large_01) to open navigation path
+- **Round 2** (27 ops): Deleted 17 more rocks (13 negative-scale, 4 closest to tower SM_Tower_4); spawned 2 BP_Tree4 and 8 buildings (IDs 9,22,35,48,67,84,101,115)
+- **Round 3** (14 ops): Terrain-snapped all buildings; relocated 2 overly-close buildings; spawned 5 additional trees (Tree3/5/6 variants)
+- **Round 4** (9 ops): Moved all 7 buildings to safe outer ring ≥2925 UU from PS
+- **Round 5** (6 ops): Moved 3 corridor-crowding trees to island edge; spawned BP_Tree2 mid-island
+
+**Navmesh**: `get_random_reachable_point_in_radius` returned 0 post-edit (rock surface removed during cleanup). `get_random_point_in_navigable_radius` = **20/20**; after PS snap to navmesh surface, `REACHABLE_SNAPPED = 20/20**`. NavMeshBoundsVolume restored to original working config (center 123,285,960, scale 60×60×15).
+
+**SAVE_OK = True** → `/Game/DiverseMaps50/map_38_lighthouse_native`

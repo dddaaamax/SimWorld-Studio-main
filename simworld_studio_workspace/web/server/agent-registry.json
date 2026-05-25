@@ -1,0 +1,81 @@
+{
+  "agentTypes": {
+    "humanoid": {
+      "blueprintPath": "/Game/TrafficSystem/Pedestrian/Base_User_Agent.Base_User_Agent_C",
+      "description": "Robot/humanoid agent with full animation and interaction set",
+      "spawnZ": 110,
+      "stopCmd": "StopAgent",
+      "rotateCmd": "TurnAround",
+      "namePatterns": ["humanoid", "user_agent", "robot"],
+      "actions": {
+        "move_forward": { "cmd": "MoveForward", "description": "Start walking forward" },
+        "stop": { "cmd": "StopAgent", "description": "Stop all movement" },
+        "step_forward": { "cmd": "StepForward", "params": ["duration", "direction"], "defaults": [2, 0], "description": "Walk forward for N seconds (direction: 0=fwd, 1=back)" },
+        "set_speed": { "cmd": "SetMaxSpeed", "params": ["speed"], "description": "Set movement speed (100=slow, 200=normal, 400=run)" },
+        "sit_down": { "cmd": "SitDown", "description": "Sit down" },
+        "stand_up": { "cmd": "StandUp", "description": "Stand up" },
+        "pick_up": { "cmd": "PickUp", "params": ["target"], "description": "Pick up an object by name" },
+        "drop_off": { "cmd": "DropOff", "description": "Drop held object" },
+        "enter_vehicle": { "cmd": "EnterVehicle", "params": ["target"], "description": "Enter a vehicle by name" },
+        "exit_vehicle": { "cmd": "ExitVehicle", "params": ["target"], "description": "Exit a vehicle by name" },
+        "get_on_scooter": { "cmd": "GetOnScooter", "description": "Mount a nearby scooter" },
+        "get_off_scooter": { "cmd": "GetOffScooter", "description": "Dismount scooter" },
+        "wave": { "cmd": "Wave2Dog", "description": "Wave gesture" },
+        "discuss": { "cmd": "Discussion", "params": ["type"], "defaults": [0], "description": "Start discussing animation (type: 0 or 1)" },
+        "argue": { "cmd": "Arguing", "params": ["type"], "defaults": [0], "description": "Arguing animation" },
+        "listen": { "cmd": "Listening", "description": "Listening pose" },
+        "direct": { "cmd": "Directing", "description": "Directing/pointing gesture" },
+        "stop_action": { "cmd": "StopAction", "description": "Interrupt current animation" }
+      }
+    },
+    "pedestrian": {
+      "blueprintPath": "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C",
+      "description": "Human pedestrian NPC",
+      "spawnZ": 110,
+      "stopCmd": "StopPedestrian",
+      "rotateCmd": "Rotate_Angle",
+      "namePatterns": ["pedestrian", "Base_Pedestrian"],
+      "actions": {
+        "move_forward": { "cmd": "MoveForward", "description": "Start walking forward" },
+        "stop": { "cmd": "StopPedestrian", "description": "Stop movement" },
+        "set_speed": { "cmd": "SetMaxSpeed", "params": ["speed"], "description": "Set speed" }
+      }
+    },
+    "dog": {
+      "blueprintPath": "/Game/Robot/Dog.Dog_C",
+      "description": "Quadruped robot with specialized movement",
+      "spawnZ": 50,
+      "stopCmd": "StopAgent",
+      "rotateCmd": "Rotate_Angle",
+      "namePatterns": ["dog", "robot", "quadruped"],
+      "actions": {
+        "move": { "cmd": "Move_Speed", "params": ["speed", "duration", "direction"], "defaults": [50, 1, 0], "description": "Move at speed for duration" },
+        "look_up": { "cmd": "lookup", "description": "Look upward" },
+        "look_down": { "cmd": "lookdown", "description": "Look downward" }
+      }
+    },
+    "scooter": {
+      "blueprintPath": "/Game/ScooterAssets/Blueprints/BP_Scooter_Pawn.BP_Scooter_Pawn_C",
+      "description": "Electric scooter vehicle",
+      "spawnZ": 0,
+      "stopCmd": "StopAgent",
+      "rotateCmd": "TurnAround",
+      "namePatterns": ["scooter"],
+      "actions": {
+        "set_state": { "cmd": "SetState", "params": ["throttle", "brake", "steering"], "defaults": [0, 0, 0], "description": "Set throttle/brake/steering" }
+      }
+    }
+  },
+  "classifyPatterns": [
+    { "regex": "^BP_Scooter_", "type": "scooter", "isAgent": true },
+    { "regex": "^BP_Cart", "type": "vehicle", "isAgent": true },
+    { "regex": "^BP_Character_", "type": "humanoid", "isAgent": true },
+    { "regex": "^BP_Robot_", "type": "dog", "isAgent": true },
+    { "regex": "^BP_Agent_", "type": "humanoid", "isAgent": true },
+    { "regex": "^BP_NPC_", "type": "humanoid", "isAgent": true },
+    { "regex": "^BP_Pedestrian_", "type": "pedestrian", "isAgent": true },
+    { "regex": "Base_User_Agent", "type": "humanoid", "isAgent": true },
+    { "regex": "Base_Pedestrian", "type": "pedestrian", "isAgent": true },
+    { "regex": "Dog", "type": "dog", "isAgent": true }
+  ]
+}

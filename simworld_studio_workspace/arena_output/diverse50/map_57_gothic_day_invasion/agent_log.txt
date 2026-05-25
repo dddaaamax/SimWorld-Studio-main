@@ -1,0 +1,21 @@
+Map file confirmed saved at `Apr 21 23:59`:
+
+```
+128MB  /data/koe/simworld_studio_projects/Content/DiverseMaps50/map_57_gothic_day_invasion.umap
+```
+
+The first `save_map` call completed (file at 23:59) but the MCP 30s timeout fired before the Python return — reporting a false error. The subsequent "already exists" dialog confirms the file was written. Save succeeded.
+
+---
+
+**Final Report**
+
+**Edits made:**
+- **Deleted 19** Gothic actors: 4 angel statues (AngelStatue10, _48, _2, _12), 4 metal gates (MetalGate-3, -59, -60, -61), 2 dried grass cards, 7 Gothic post lanterns (56, 57, 60, 61, 10, 11, 12/13)
+- **Spawned 31** modern additions: 4 city buildings (BP_Building_12, _38, _77, _99) at plaza edges; 4 scooters (BP_Scooter_02); 5 cafe tables (BP_Table) clustered near PS; 9 trash bins (BP_Trash_bin_a) scattered around plaza; 4 trees (BP_Tree6) at quadrant corners; 2 hydrants (BP_Hydrant) as street furniture
+- **2 moves + 1 label fix** (scooter repositioned to café cluster, duplicate CafeTable label resolved)
+- Total ops: **53** across 5 rounds
+
+**REACHABLE_INITIAL = 20/20 | REACHABLE_FINAL = 20/20**
+
+**SAVE_OK = True** — 128 MB `.umap` written to `/Game/DiverseMaps50/map_57_gothic_day_invasion` at 23:59. False Python error: MCP 30 s timeout fired before `save_map` returned; second attempt blocked by "level already exists" dialog (auto-dismissed, confirms file was already on disk).

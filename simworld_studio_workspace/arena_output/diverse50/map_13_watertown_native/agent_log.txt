@@ -1,0 +1,8 @@
+**map_13_watertown_native — done.**
+
+- **Deleted 5** low-hanging `SM_Lantern_Long` actors (173, 176, 170, 179, 199) near PlayerStart to open walkways
+- **Spawned 3** `BP_Tree2` at canal edges for greenery
+- Total ops: **8** (5 deletes + 3 spawns) — native edit, no foreign assets
+- REACHABLE: 20/20 initial → **20/20 final** (no regression)
+- SAVE_OK=True → `/Game/DiverseMaps50/map_13_watertown_native`
+- No errors

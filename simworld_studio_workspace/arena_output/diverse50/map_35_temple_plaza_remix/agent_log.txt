@@ -1,0 +1,9 @@
+---
+
+**Final Report**
+
+**Edits:** Deleted 15 excess BigChest/BrazierCube actors (R1); purged 43 Weapon_\*/WeaponStand_\* actors + duplicate DirectionalLight (R2). Spawned: 3 BP_Table (field workstations, varied rotations, spread across plaza), 8 BP_Trash_can (excavation barrels — BP_Barrel_C not found in asset registry), 4 BP_RoadCone (dig markers), 3 BP_Tree4 (NE inner edge ~1300,1700; SW ~-1400,300; far-north ~32,3134). Six verifier-driven rounds repositioned trees inside wall bounds, balanced barrels NE/NW, spread tables, and cleared entrance-zone clutter (6 more ChestSmall deletions). Total ops: ~97.
+
+**REACHABLE_FINAL:** 20/20
+**SAVE_OK:** True
+**Errors:** None (deprecation warning on EditorLevelLibrary only)

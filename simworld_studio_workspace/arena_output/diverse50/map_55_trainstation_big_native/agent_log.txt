@@ -1,0 +1,8 @@
+---
+
+**Final report:**
+
+- **Edits**: Deleted 29 SM_Bench actors (in 4 rounds) to dramatically open the Victorian platform. Spawned 7 `BP_Trash_bin_a` distributed along platform edges and gate concourse, and 4 `BP_Table` (WaitTables) inside station bounds — at Y=-2200, Y=800, Y=600. Also placed 5 `BP_Hydrant` as period standpipes and 1 `BP_Trash_bin_a` at the southern gate zone. Total ops across 5 rounds: ~53.
+- **REACHABLE_INITIAL**: 20/20 | **REACHABLE_FINAL**: 20/20
+- **SAVE_OK**: True → `/Game/DiverseMaps50/map_55_trainstation_big_native`
+- **Errors**: One DeprecationWarning on `EditorLevelLibrary.get_editor_world` (non-fatal). Two hydrants spawned at X=-800 may be outside station walls (verifier noted, non-blocking).

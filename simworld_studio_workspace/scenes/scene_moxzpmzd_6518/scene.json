@@ -1,0 +1,13 @@
+{
+  "id": "scene_moxzpmzd_6518",
+  "name": "Test",
+  "description": "",
+  "prompt": "test",
+  "skills": [],
+  "sessionId": null,
+  "ownerId": "ci",
+  "createdAt": "2026-05-09T06:55:52.729Z",
+  "updatedAt": "2026-05-09T06:55:52.729Z",
+  "actors": [],
+  "cameraPosition": null
+}

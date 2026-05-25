@@ -1,0 +1,33 @@
+arena:
+  simworld_path: null  # auto-detect or set explicitly
+  output_dir: "arena_output"
+  screenshots_dir: "arena_output/screenshots"
+
+  # Mode: "mcp" (use MCP tools to interact with UE) or "code" (generate Python script)
+  mode: "mcp"
+
+  # MCP server connection (SimWorld MCP server)
+  mcp_port: 9002
+  mcp_output_dir: "/tmp/simworld_arena"
+
+  # UnrealCV connection (for code mode)
+  unrealcv_port: 9000
+  unrealcv_ip: "127.0.0.1"
+  resolution: [1920, 1080]
+
+  # Generation defaults
+  default_map_bounds: [-3000, -3000, 3000, 3000]
+  generation_timeout: 300
+  max_screenshots: 8
+
+  # City generation defaults
+  citygen:
+    segment_count_limit: 15
+    segment_length: 200
+    element_generation: true
+    route_generation: false
+
+agent:
+  default: "claude-code"
+  timeout: 300
+  profiles_dir: "arena/config/agent_profiles"

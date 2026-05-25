@@ -1,0 +1,13 @@
+{
+  "id": "scene_moxzovvz_qkdw",
+  "name": "CI Test Scene",
+  "description": "",
+  "prompt": "ci test",
+  "skills": [],
+  "sessionId": null,
+  "ownerId": "ci-tester",
+  "createdAt": "2026-05-09T06:55:17.616Z",
+  "updatedAt": "2026-05-09T06:55:17.616Z",
+  "actors": [],
+  "cameraPosition": null
+}

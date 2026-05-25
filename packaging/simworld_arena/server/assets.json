@@ -1,0 +1,73 @@
+{
+  "buildings": {
+    "description": "SimWorld buildings (BP_Building_01 to _06 only). Use spawn_blueprint_actor with _C suffix.",
+    "path_prefix": "/Game/CityDatabase/blueprints/BP_Building_",
+    "ids": [1,2,3,4,5,6],
+    "example": "/Game/CityDatabase/blueprints/BP_Building_01.BP_Building_01_C",
+    "notes": "Small residential: 01-03, Medium: 04-06. ONLY these 6 buildings are available in this package."
+  },
+  "trees": {
+    "description": "6 tree varieties. Use spawn_blueprint_actor.",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Tree1.BP_Tree1_C",
+      "/Game/CityDatabase/blueprints/BP_Tree2.BP_Tree2_C",
+      "/Game/CityDatabase/blueprints/BP_Tree3.BP_Tree3_C",
+      "/Game/CityDatabase/blueprints/BP_Tree4.BP_Tree4_C",
+      "/Game/CityDatabase/blueprints/BP_Tree5.BP_Tree5_C",
+      "/Game/CityDatabase/blueprints/BP_Tree6.BP_Tree6_C"
+    ]
+  },
+  "vehicles": {
+    "description": "Scooters and carts",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Scooter_01.BP_Scooter_01_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_02.BP_Scooter_02_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_03.BP_Scooter_03_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_04.BP_Scooter_04_C",
+      "/Game/CityDatabase/blueprints/BP_Cart.BP_Cart_C",
+      "/Game/CityDatabase/blueprints/BP_Cart2.BP_Cart2_C"
+    ]
+  },
+  "street_furniture": {
+    "description": "Urban props — benches, hydrants, trash, etc. ONLY these items are available.",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Table.BP_Table_C",
+      "/Game/CityDatabase/blueprints/BP_Table2.BP_Table2_C",
+      "/Game/CityDatabase/blueprints/BP_Table3.BP_Table3_C",
+      "/Game/CityDatabase/blueprints/BP_Hydrant.BP_Hydrant_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_bin_a.BP_Trash_bin_a_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_bin_b.BP_Trash_bin_b_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_can.BP_Trash_can_C",
+      "/Game/CityDatabase/blueprints/BP_RoadBlocker.BP_RoadBlocker_C",
+      "/Game/CityDatabase/blueprints/BP_RoadCone.BP_RoadCone_C",
+      "/Game/CityDatabase/blueprints/BP_Couch.BP_Couch_C"
+    ],
+    "unavailable_notes": "BP_Box, BP_Box2, BP_Box3, BP_Can, BP_Can2, BP_Rabbish, BP_Soda1, BP_Soda2 are NOT available in this package."
+  },
+  "roads": {
+    "description": "Road segments",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Road1.BP_Road1_C"
+    ],
+    "static_meshes": [
+      "/Game/CityDatabase/meshes/SM_Road.SM_Road",
+      "/Game/CityDatabase/meshes/SM_Road_Side.SM_Road_Side",
+      "/Game/CityDatabase/meshes/SM_Road_Side_2.SM_Road_Side_2"
+    ]
+  },
+  "static_meshes": {
+    "description": "Additional static meshes (use spawn_actor, not spawn_blueprint_actor)",
+    "items": [
+      "/Game/CityDatabase/meshes/SM_TrafficLight1.SM_TrafficLight1",
+      "/Game/CityDatabase/meshes/SM_hydrant_main.SM_hydrant_main",
+      "/Game/CityDatabase/meshes/SM_road_cone.SM_road_cone",
+      "/Game/CityDatabase/meshes/SM_road_blocker_b.SM_road_blocker_b",
+      "/Game/CityDatabase/meshes/SM_chair_b.SM_chair_b",
+      "/Game/CityDatabase/meshes/SM_rubbish_a.SM_rubbish_a",
+      "/Game/CityDatabase/meshes/SM_Chestnut_05_G.SM_Chestnut_05_G",
+      "/Game/CityDatabase/meshes/SM_Chestnut_11_G.SM_Chestnut_11_G",
+      "/Engine/BasicShapes/Cube.Cube",
+      "/Engine/BasicShapes/Plane.Plane"
+    ]
+  }
+}

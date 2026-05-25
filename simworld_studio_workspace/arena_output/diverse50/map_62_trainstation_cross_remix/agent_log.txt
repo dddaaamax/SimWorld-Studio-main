@@ -1,0 +1,18 @@
+---
+
+**Final Report**
+
+**Edits made:**
+- Round 1 (17 ops): Deleted 15 `SM_Bench` (5–19) + 2 `SM_Sign` actors to open platforms
+- Round 2 (15 ops): Spawned 4 exterior buildings (BP_Building_29/55/82/119), 5 BP_Tree3, 3 BP_Tree5 at south track end, 3 BP_Scooter on concourse
+- Round 3 (7 ops): Spread scooters across concourse, moved Tree3 pair to platform edges, repositioned BP_Building_55 to back perimeter
+- Round 4 (4 ops): Moved 3 Tree3 to platform-edge X, shifted Scooter_1 north
+- Round 5 (7 ops): Added 2 BP_Tree5 at north terminus (Y=7000), south perimeter BP_Building_44, moved scooter to Y=3200, evened Tree3 Y-spacing to ~1325 UU intervals
+
+Total ops: **50**
+
+**Results:**
+- `REACHABLE_INITIAL=20/20`, `REACHABLE_FINAL=20/20` — navmesh intact
+- `SAVE_OK=True` → `/Game/DiverseMaps50/map_62_trainstation_cross_remix`
+- Screenshot: `map_62_trainstation_cross_remix_overview.png`
+- No errors (deprecation warning on `EditorLevelLibrary.get_editor_world` is harmless)

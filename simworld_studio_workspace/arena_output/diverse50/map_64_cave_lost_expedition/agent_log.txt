@@ -1,0 +1,9 @@
+---
+
+**Final report:**
+
+- **Deletions (63 total):** removed 11 extreme-depth/floating actors (Round 1), then 52 more — all ambient dust particles, all SM_Bridge floating bridges, and all SM_Rock/SM_Pillar actors at Z < −5000. No floor actors touched.
+- **Spawns (26 expedition props):** 4 BP_Trash_can (barrels), 3 BP_Box, 2 BP_Box2, 2 BP_Table, 3 BP_Couch, 2 BP_Hydrant — plus 10 additional crates/barrels for density — clustered into 3 zones: **NE supply depot**, **SW rest area**, **NW work area**, all within 800 UU of PlayerStart.
+- **REACHABLE_INITIAL:** 20/20 | **REACHABLE_FINAL:** 20/20 — navmesh unaffected by edits.
+- **SAVE_OK:** True → `/Game/DiverseMaps50/map_64_cave_lost_expedition`
+- **Errors:** one `DeprecationWarning` on `EditorLevelLibrary.get_editor_world` (non-fatal).

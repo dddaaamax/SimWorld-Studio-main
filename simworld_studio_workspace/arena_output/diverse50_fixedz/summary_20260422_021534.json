@@ -1,0 +1,587 @@
+[
+  {
+    "name": "map_08_cave_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_04_courtyard_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_05_middleeast_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_02_village_day",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_01_wintertown_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_07_castleriver_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_03_watertown_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_06_hwaseong_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_09b_wintertown_demo02",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": "NO_PLAYERSTART_SKIP"
+  },
+  {
+    "name": "map_10_B1_urban_grid",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_13_watertown_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "831",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_11_wintertown_demo01_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_12_village_day_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "136",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_15_middleeast_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "40",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_16_hwaseong_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1236",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_18_cave_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_17_castleriver_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_20_trainstation_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "36",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_19_wintertown_demo02_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "19",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_21_hwaseong_remix2",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_22_containeryard_demo_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "36",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_23_containeryard_demo_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "19",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_24_containeryard_day_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "7",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_26_courtyard_overcast_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "25",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_27_courtyard_overcast_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "5",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_25_containeryard_day_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "30",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_28_village_night_native",
+    "ok": false,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "35",
+    "reachable_final": "0/20",
+    "reason": "NO_SAVE_OK"
+  },
+  {
+    "name": "map_29_village_night_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "166",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_14_courtyard_sunny_native",
+    "ok": false,
+    "agents_deleted": "0",
+    "moved_to_bg": "?",
+    "fixed_z": "?",
+    "reachable_final": "?",
+    "reason": "EXCEPTION:[mcp] execute_python_script failed: timed out"
+  },
+  {
+    "name": "map_30_gothic_day_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_34_temple_plaza_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_31_gothic_day_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "225",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_32_gothic_night_native",
+    "ok": false,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "83",
+    "reachable_final": "20/20",
+    "reason": "NO_SAVE_OK"
+  },
+  {
+    "name": "map_35_temple_plaza_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "19",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_33_gothic_night_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "108",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_36_dungeon_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "51",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_37_dungeon_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "16",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_38_lighthouse_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_39_lighthouse_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_40_B2_open_plaza",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "44",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_43_B5_residential_courtyard",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "14",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_42_B4_industrial_yard",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "35",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_45_B7_park_with_paths",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "36",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_46_B8_dense_urban",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "48",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_47_wintertown_demo01_minimal",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "708",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_49_courtyard_sunny_packed",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "5",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_48_hwaseong_cleared",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1212",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_50_B9_sparse_wilderness",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "16",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_51_village_night_big_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "40",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_52_village_night_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "3",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_53_courtyard_sanny_big_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "5",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_56_containeryard_settlement",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "32",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_55_trainstation_big_native",
+    "ok": true,
+    "agents_deleted": "3",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_58_dungeon_library",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_60_B11_forest_camp",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_59_B10_market_plaza",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_57_gothic_day_invasion",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "249",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_61_containeryard_day_big_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_63_village_summer_market",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "37",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_64_cave_lost_expedition",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "27",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_62_trainstation_cross_remix",
+    "ok": true,
+    "agents_deleted": "3",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_67_B12_construction_site",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "59",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_68_B13_suburban_park",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "34",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_66_middleeast_bazaar",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "31",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_65_hwaseong_ceremonial",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "1216",
+    "reachable_final": "20/20",
+    "reason": ""
+  }
+]

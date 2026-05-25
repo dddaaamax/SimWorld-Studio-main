@@ -1,0 +1,16 @@
+## Final Report
+
+**map_14_courtyard_sunny_native** — Sunny courtyard, native edit.
+
+**Edits (35 total ops):**
+- Deleted 15 clutter actors (5 AC units, 2 electrical wires, 1 electrical box, 1 gas pipe, 1 box, 5 graffiti decals)
+- Deleted 10 leak stain decals for cleaner walls
+- Deleted 6 more graffiti decals
+- Spawned 2 BP_Tree4 at courtyard edges
+- Spawned 2 BP_Hydrant near walkways
+
+**Results:**
+- REACHABLE_INITIAL=20/20
+- REACHABLE_FINAL=20/20 (after PS relocation to navmesh at Z=422)
+- SAVE_OK=True
+- No errors.

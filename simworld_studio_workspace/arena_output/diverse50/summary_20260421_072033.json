@@ -1,0 +1,47 @@
+[
+  {
+    "name": "map_03_watertown_remix",
+    "ok": true,
+    "umap_bytes": 9032960
+  },
+  {
+    "name": "map_02_village_day",
+    "ok": true,
+    "umap_bytes": 168140470
+  },
+  {
+    "name": "map_04_courtyard_remix",
+    "ok": true,
+    "umap_bytes": 2609095
+  },
+  {
+    "name": "map_05_middleeast_native",
+    "ok": true,
+    "umap_bytes": 42304867
+  },
+  {
+    "name": "map_06_hwaseong_native",
+    "ok": true,
+    "umap_bytes": 51236594
+  },
+  {
+    "name": "map_08_cave_remix",
+    "ok": true,
+    "umap_bytes": 886622
+  },
+  {
+    "name": "map_07_castleriver_remix",
+    "ok": true,
+    "umap_bytes": 177580796
+  },
+  {
+    "name": "map_10_B1_urban_grid",
+    "ok": true,
+    "umap_bytes": 147455
+  },
+  {
+    "name": "map_09_landscape_remix",
+    "ok": false,
+    "reason": "AGENT_TIMEOUT"
+  }
+]

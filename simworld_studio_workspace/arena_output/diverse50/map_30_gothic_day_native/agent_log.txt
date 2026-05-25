@@ -1,0 +1,13 @@
+**Final Report**
+
+**Edits made:**
+- Deleted 108+ clutter actors: all ChestSmall/ChestSmallTop pairs, BigChest pairs, Barell/BarellTop, WeaponStand, Weapon_*, ForumBench, Brazier, BrazierCube, DirectionalLight_1 (competing light), and ghost StaticMeshActors
+- Spawned 3 BP_Tree6 at plaza interior edges (1300,2170), (-1900,2170), (832,3334) — all grounded at Z=0
+- Spawned 3 SM_SpruceTree actors at interior perimeter positions, Z=0
+- Moved all trees inside the siege-wall perimeter
+
+**Navmesh:** REACHABLE_INITIAL=20/20 → REACHABLE_FINAL=20/20 (no degradation)
+
+**SAVE_OK:** True — saved to `/Game/DiverseMaps50/map_30_gothic_day_native`
+
+Gothic cathedral-plaza is open and walkable: decorative circles, columns, stairways, and battlements remain; tree line added at plaza edges; all chest/weapon/barrel clutter removed.

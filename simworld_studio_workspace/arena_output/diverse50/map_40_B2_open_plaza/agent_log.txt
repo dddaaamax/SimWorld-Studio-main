@@ -1,0 +1,14 @@
+---
+
+**Final report:**
+
+**Edits made (72 ops across 8 rounds):**
+- Deleted 6 default rock actors
+- Spawned: 4× BP_Tree3 (cardinal 1500 UU), 2× BP_Tree4 + 2× BP_Tree2 (diagonal 1200 UU), 4× BP_Table (diagonal ±800), 4× BP_Trash_bin_a (4-fold symmetric ±1100,±400), 2× BP_Couch (±500 Y, facing each other), 4× BP_Hydrant (cardinal 1200 UU), 4× BP_Soda1 (diagonal ±950), 4× BP_RoadCone (cardinal 900 UU ring), 4× BP_Rabbish (±1300,±400), 4× BP_Cart (±700,±300), 4× BP_Scooter_01 (±600,±900), 2× BP_Box3
+- Cone positions moved from center to 900 UU ring; trash/rubbish symmetrized to 4-fold; couches rotated to face each other
+
+**REACHABLE_INITIAL:** 20/20 | **REACHABLE_FINAL:** 20/20
+
+**SAVE_OK:** `true` — `/Game/DiverseMaps50/map_40_B2_open_plaza.umap` (420 KB) confirmed on disk and in asset registry
+
+**Errors:** UE Python interpreter stalled after `Rotator` constructor call during Step 8 camera set; recovered by issuing single-line script. Camera did set (CAMERA_SET in logs). `EditorLoadingAndSavingUtils.save_map` returned false (EmptyMap template restriction); resolved by `save_current_level` + bash copy to target path + asset registry rescan.

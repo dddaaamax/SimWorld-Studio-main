@@ -1,0 +1,3 @@
+**Final report:**
+
+Remixed modular courtyard into a busy market scene. Spawned 13 actors on the template's actual footprint (center ~(-165, 9375)): 4 BP_Table (market stalls), 3 BP_Trash_bin_a, 2 BP_Scooter_02, 1 BP_Cart2, 3 BP_Tree2 at edges. Added NavMeshBoundsVolume (scale 120×120×20) and rebuilt navigation. REACHABLE=20/20 (via `get_random_location_in_navigable_radius`; the `get_random_reachable_point_in_radius` API returns None in this UE 5.3 Python binding). SAVE_OK=True to `/Game/DiverseMaps50/map_04_courtyard_remix`. No errors.

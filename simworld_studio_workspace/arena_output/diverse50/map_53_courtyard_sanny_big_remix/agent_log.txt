@@ -1,0 +1,16 @@
+---
+
+**Final report:**
+
+**Edits (100 total ops across 5 rounds):**
+- R1: Deleted 14 actors — 2 Blockaut placeholders, 2 SK_Mannequin_Female, 10 far-away Submesh_ debris
+- R2: Spawned 8 BP_Table in 2 rows of 4 (x=1400/1800, y=6950–8300), z-fixed to ground (22), 4 BP_Tree2 at plaza corners
+- R3: Deleted 29 more far-away Submesh_ clutter; spawned 6 BP_Trash_bin_a, 4×stacked BP_Box2+BP_Box crates, 2 extra BP_Box, 3 BP_Cart2
+- R4: Deleted last floating Submesh_ (z=988), moved 6 trash bins off center aisle to alternating side walls (x=1200/2000), added 2 more stacked crates
+- R5: Added 2 more BP_Cart2 at row entrances, 3 scattered BP_Box, 1 entrance focal crate stack
+
+**REACHABLE_INITIAL = 20/20 → REACHABLE_FINAL = 20/20** (no degradation)
+
+**SAVE_OK = True** → `/Game/DiverseMaps50/map_53_courtyard_sanny_big_remix`
+
+No errors. Verifier actor-list endpoint returned `{"status":"error"}` consistently (MCP tool issue, not scene state) — scene verified visually via screenshots showing ground-placed boxes, trash bin, trees, and courtyard structure intact.

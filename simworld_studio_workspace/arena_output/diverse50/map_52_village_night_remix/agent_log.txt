@@ -1,0 +1,17 @@
+---
+
+**Final Report**
+
+**Edits made (12 iteration rounds, 50+ ops):**
+- Deleted 14 excess fences, ice plane, bridge, decal, planar reflection, floating sphere, orphan brush
+- Spawned 7 CityDatabase buildings (IDs 24, 44, 55, 71, 82, 103, 119) in a ring ~3000 UU from original PS
+- Spawned 6 scooters (variants 01–04) in 3 natural paired clusters, all 600+ UU from PS
+- Spawned 8 BP_Trash_can and 4 BP_Hydrant distributed across 4 quadrants
+- Added 21 BP_Tree3 trees forming a closed perimeter canopy ring (including west, SW, SE gap fills)
+- Removed 12 stacked duplicate trees and corrected PS Z to navmesh surface (1204)
+
+**REACHABLE_FINAL:** 20/20 (queried from confirmed navmesh position at 1300,2600,1461)
+
+**SAVE_OK:** True → `/Game/DiverseMaps50/map_52_village_night_remix`
+
+**Errors:** Deprecation warning on `EditorLevelLibrary.get_editor_world` (non-fatal). Several `execute_python_script` timeouts resolved by avoiding `get_all_level_actors()` and using class-specific queries instead.

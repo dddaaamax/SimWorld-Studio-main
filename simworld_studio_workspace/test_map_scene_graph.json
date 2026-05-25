@@ -1,0 +1,530 @@
+[
+  {
+    "name": "StaticMeshActor_1",
+    "class": "StaticMeshActor",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "StaticMeshActor_0",
+    "class": "StaticMeshActor",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Floor_C_3",
+    "class": "Floor",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "PlayerState_0",
+    "class": "PlayerState",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Expr1_2_C_1",
+    "class": "Expr1",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "AbstractNavData-Default",
+    "class": "Actor",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_1",
+    "class": "House",
+    "center": {
+      "x": -6000.0,
+      "y": -6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_7",
+    "class": "House",
+    "center": {
+      "x": 2000.0,
+      "y": -6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_4",
+    "class": "House",
+    "center": {
+      "x": -6000.0,
+      "y": 6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_10",
+    "class": "House",
+    "center": {
+      "x": 6000.0,
+      "y": -2000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_2",
+    "class": "House",
+    "center": {
+      "x": -6000.0,
+      "y": -2000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_8",
+    "class": "House",
+    "center": {
+      "x": 2000.0,
+      "y": 6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_11",
+    "class": "House",
+    "center": {
+      "x": 6000.0,
+      "y": 2000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_5",
+    "class": "House",
+    "center": {
+      "x": -2000.0,
+      "y": -6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_3",
+    "class": "House",
+    "center": {
+      "x": -6000.0,
+      "y": 2000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_9",
+    "class": "House",
+    "center": {
+      "x": 6000.0,
+      "y": -6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_6",
+    "class": "House",
+    "center": {
+      "x": -2000.0,
+      "y": 6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "House_12",
+    "class": "House",
+    "center": {
+      "x": 6000.0,
+      "y": 6000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_1",
+    "class": "Tree",
+    "center": {
+      "x": -4000.0,
+      "y": -4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_7",
+    "class": "Tree",
+    "center": {
+      "x": 4000.0,
+      "y": -4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_13",
+    "class": "Tree",
+    "center": {
+      "x": 7000.0,
+      "y": -4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_19",
+    "class": "Tree",
+    "center": {
+      "x": 3000.0,
+      "y": 7000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_25",
+    "class": "Tree",
+    "center": {
+      "x": 5000.0,
+      "y": 3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_6",
+    "class": "Tree",
+    "center": {
+      "x": 0.0,
+      "y": 4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_12",
+    "class": "Tree",
+    "center": {
+      "x": -7000.0,
+      "y": 4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_18",
+    "class": "Tree",
+    "center": {
+      "x": -1000.0,
+      "y": 7000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_24",
+    "class": "Tree",
+    "center": {
+      "x": 1000.0,
+      "y": 3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_2",
+    "class": "Tree",
+    "center": {
+      "x": -4000.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_8",
+    "class": "Tree",
+    "center": {
+      "x": 4000.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_14",
+    "class": "Tree",
+    "center": {
+      "x": 7000.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_20",
+    "class": "Tree",
+    "center": {
+      "x": -3000.0,
+      "y": -3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_4",
+    "class": "Tree",
+    "center": {
+      "x": 0.0,
+      "y": -4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_10",
+    "class": "Tree",
+    "center": {
+      "x": -7000.0,
+      "y": -4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_16",
+    "class": "Tree",
+    "center": {
+      "x": -1000.0,
+      "y": -7000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_22",
+    "class": "Tree",
+    "center": {
+      "x": 5000.0,
+      "y": -3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_3",
+    "class": "Tree",
+    "center": {
+      "x": -4000.0,
+      "y": 4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_9",
+    "class": "Tree",
+    "center": {
+      "x": 4000.0,
+      "y": 4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_15",
+    "class": "Tree",
+    "center": {
+      "x": 7000.0,
+      "y": 4000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_21",
+    "class": "Tree",
+    "center": {
+      "x": 1000.0,
+      "y": -3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_5",
+    "class": "Tree",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_11",
+    "class": "Tree",
+    "center": {
+      "x": -7000.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_17",
+    "class": "Tree",
+    "center": {
+      "x": 3000.0,
+      "y": -7000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "Tree_23",
+    "class": "Tree",
+    "center": {
+      "x": -3000.0,
+      "y": 3000.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  },
+  {
+    "name": "DefaultPhysicsVolume_0",
+    "class": "DefaultPhysicsVolume",
+    "center": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "size": {
+      "width": 200,
+      "height": 200
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "map_28_village_night_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_07_castleriver_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_17_castleriver_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "3",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_61_containeryard_day_big_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "37",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_55_trainstation_big_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "70",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_32_gothic_night_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_62_trainstation_cross_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "68",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_14_courtyard_sunny_native",
+    "ok": false,
+    "agents_deleted": "0",
+    "moved_to_bg": "?",
+    "fixed_z": "?",
+    "reachable_final": "?",
+    "reason": "EXCEPTION:[mcp] execute_python_script failed: timed out"
+  }
+]

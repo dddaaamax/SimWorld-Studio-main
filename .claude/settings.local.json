@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Agent(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "Read(//data/koe/simworld_studio_projects/Plugins/unrealcv/Source/UnrealCV/Private/**)",
+      "Read(//tmp/**)",
+      "Read(//data/koe/simworld_studio_projects/Saved/Logs/**)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(grep --line-buffered -E \"Traceback|BATCH RESULTS|^={5,}|--- Wave|GhostAgent_[0-9]+ episode=|batch summary written|navmesh build\")",
+      "Bash(python -c ' *)",
+      "Monitor(*)",
+      "TodoWrite(*)",
+      "Skill(*)",
+      "Bash(cd \"c:\\\\Users\\\\28262\\\\Desktop\\\\PlayGorund\\\\SimWorld-Studio-Dev\" && mv static_scene_eval_code/static_scene_eval/static_scene_eval/.git_bak static_scene_eval_code/static_scene_eval/static_scene_eval/.git && echo \"restored .git\")"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(rm -fr:*)",
+      "Bash(rm -rf /*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git push --force-with-lease:*)",
+      "Bash(git clean -fd:*)",
+      "Bash(git clean -fdx:*)",
+      "Bash(mkfs:*)",
+      "Bash(dd if=:*)",
+      "Bash(shutdown:*)",
+      "Bash(reboot:*)"
+    ],
+    "defaultMode": "bypassPermissions",
+    "additionalDirectories": [
+      "c:\\Users\\28262\\Desktop\\PlayGorund\\SimWorld-Studio-Dev\\static_scene_eval_code\\static_scene_eval\\static_scene_eval"
+    ]
+  },
+  "mcpServers": {
+    "simworld": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "C:/Users/28262/Desktop/PlayGorund/SimWorld-Studio-Dev/simworld_studio_workspace/web/server/mcp-server.js"
+      ],
+      "env": {
+        "UNREAL_HOST": "127.0.0.1",
+        "UNREAL_PORT": "55558"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+## Final Report
+
+**Edits (36 total ops):**
+- **Round 1 (18 del):** Removed 11 SM_Container12m shipping containers, 1 SM_ContainerSupport, and 6 M_ContainerDecal decals within 1500u of PlayerStart to open the platform area.
+- **Round 2 (11 spawn):** 3 BP_Trash_bin_a (required period bins), 3 trees (BP_Tree1/2/4), 2 BP_Hydrant, 1 BP_Table, 2 BP_Trash_bin_b.
+- **Round 3 (7 spawn):** 2 BP_Table2, 2 BP_Trash_can, 3 BP_RoadCone for industrial/Victorian feel.
+
+**REACHABLE_INITIAL=20/20, REACHABLE_FINAL=20/20.**
+**SAVE_OK=True** to `/Game/DiverseMaps50/map_20_trainstation_native`.
+
+Note: MCP server had stale port config (55558); UE was on 55560. Bypassed via direct TCP for all commands.

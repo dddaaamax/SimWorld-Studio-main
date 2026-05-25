@@ -1,0 +1,1578 @@
+{
+  "aligned|far|MOVE_FORWARD|neutral": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 1782,
+    "total_delta_cm": 1132.569312690302,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "slight_right|far|TURN_RIGHT|neutral": {
+    "situation_key": "slight_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 676,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, far] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was slight_right)."
+  },
+  "aligned|far|TURN_LEFT|neutral": {
+    "situation_key": "aligned|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 839,
+    "total_delta_cm": -15.278110171984736,
+    "lesson": "[aligned, far] TURN_LEFT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|far|MOVE_FORWARD|progress": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 1598,
+    "total_delta_cm": 563133.7143424606,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 progress +199cm (good). Moving forward when aligned is efficient."
+  },
+  "slight_left|far|TURN_LEFT|neutral": {
+    "situation_key": "slight_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 682,
+    "total_delta_cm": 0.284591446495142,
+    "lesson": "[slight_left, far] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was slight_left)."
+  },
+  "aligned|far|TURN_RIGHT|neutral": {
+    "situation_key": "aligned|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 730,
+    "total_delta_cm": -0.5324010017720866,
+    "lesson": "[aligned, far] TURN_RIGHT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|far|oscillation|failure_pattern": {
+    "situation_key": "aligned|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 203,
+    "total_delta_cm": -29.395363283063034,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_right|far|TURN_LEFT|neutral": {
+    "situation_key": "far_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 1157,
+    "total_delta_cm": -0.4993806723759917,
+    "lesson": "[far_right, far] TURN_LEFT \u2192 no change. Turned away from goal (bearing was far_right). Turn the other way."
+  },
+  "slight_right|far|TURN_LEFT|neutral": {
+    "situation_key": "slight_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 585,
+    "total_delta_cm": 0.12649270597557916,
+    "lesson": "[slight_right, far] TURN_LEFT \u2192 no change. Turned away from goal (bearing was slight_right). Turn the other way."
+  },
+  "far_left|far|TURN_LEFT|neutral": {
+    "situation_key": "far_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 764,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, far] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was far_left)."
+  },
+  "slight_left|far|TURN_RIGHT|neutral": {
+    "situation_key": "slight_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 656,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_left, far] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was slight_left). Turn the other way."
+  },
+  "far_right|far|TURN_RIGHT|neutral": {
+    "situation_key": "far_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 450,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_right, far] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was far_right)."
+  },
+  "far_right|far|oscillation|failure_pattern": {
+    "situation_key": "far_right|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 167,
+    "total_delta_cm": -15.279107258397971,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_right|far|TURN_LEFT|neutral": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 1288,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, far] TURN_LEFT \u2192 no change. Turned away from goal (bearing was behind_right). Turn the other way."
+  },
+  "behind_right|far|stuck|failure_pattern": {
+    "situation_key": "behind_right|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 288,
+    "total_delta_cm": -208.75745094347917,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|far|oscillation|failure_pattern": {
+    "situation_key": "behind_right|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 542,
+    "total_delta_cm": -170.47424938360814,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_left|far|TURN_RIGHT|neutral": {
+    "situation_key": "behind_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 1246,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, far] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was behind_left). Turn the other way."
+  },
+  "far_left|far|TURN_RIGHT|neutral": {
+    "situation_key": "far_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 1627,
+    "total_delta_cm": 0.407977949220367,
+    "lesson": "[far_left, far] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was far_left). Turn the other way."
+  },
+  "aligned|medium|MOVE_FORWARD|progress": {
+    "situation_key": "aligned|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 262,
+    "total_delta_cm": 79975.67954548507,
+    "lesson": "[aligned, medium] MOVE_FORWARD \u2192 progress +196cm (good). Moving forward when aligned is efficient."
+  },
+  "slight_left|medium|MOVE_FORWARD|progress": {
+    "situation_key": "slight_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 234,
+    "total_delta_cm": 60652.87395863416,
+    "lesson": "[slight_left, medium] MOVE_FORWARD \u2192 progress +186cm (good). Forward progress despite slight_left bearing \u2014 path may curve toward goal."
+  },
+  "slight_left|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 256,
+    "total_delta_cm": 204.5389209872552,
+    "lesson": "[slight_left, medium] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "aligned|medium|TURN_RIGHT|neutral": {
+    "situation_key": "aligned|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 315,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, medium] TURN_RIGHT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "aligned|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 401,
+    "total_delta_cm": 187.6642732149994,
+    "lesson": "[aligned, medium] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "slight_right|medium|TURN_RIGHT|neutral": {
+    "situation_key": "slight_right|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 197,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, medium] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was slight_right)."
+  },
+  "aligned|medium|TURN_LEFT|neutral": {
+    "situation_key": "aligned|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 263,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, medium] TURN_LEFT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "slight_left|medium|TURN_LEFT|neutral": {
+    "situation_key": "slight_left|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 280,
+    "total_delta_cm": 0.14110241303865223,
+    "lesson": "[slight_left, medium] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was slight_left)."
+  },
+  "far_left|medium|TURN_LEFT|neutral": {
+    "situation_key": "far_left|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 142,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, medium] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was far_left)."
+  },
+  "far_left|medium|TURN_RIGHT|neutral": {
+    "situation_key": "far_left|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 250,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, medium] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was far_left). Turn the other way."
+  },
+  "far_left|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "far_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 203,
+    "total_delta_cm": 8.41824815483676,
+    "lesson": "[far_left, medium] MOVE_FORWARD \u2192 no change. Forward with far_left bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_left|medium|TURN_LEFT|neutral": {
+    "situation_key": "behind_left|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 161,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, medium] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was behind_left)."
+  },
+  "behind_left|medium|MOVE_FORWARD|regress": {
+    "situation_key": "behind_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 168,
+    "total_delta_cm": -28170.406959118558,
+    "lesson": "[behind_left, medium] MOVE_FORWARD \u2192 regress -50cm (bad). Wrong: moving forward when bearing is behind_left increases distance. Turn first."
+  },
+  "behind_left|medium|oscillation|failure_pattern": {
+    "situation_key": "behind_left|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 95,
+    "total_delta_cm": -9.296058118364499,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_left|medium|backtrack|failure_pattern": {
+    "situation_key": "behind_left|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 39,
+    "total_delta_cm": -58685.41897116901,
+    "lesson": "Wrong direction: moved forward but distance increased by 50cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "slight_right|far|MOVE_FORWARD|progress": {
+    "situation_key": "slight_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 953,
+    "total_delta_cm": 244856.48078042077,
+    "lesson": "[slight_right, far] MOVE_FORWARD \u2192 progress +179cm (good). Forward progress despite slight_right bearing \u2014 path may curve toward goal."
+  },
+  "slight_right|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 167,
+    "total_delta_cm": 225.18083639452675,
+    "lesson": "[slight_right, medium] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "aligned|medium|oscillation|failure_pattern": {
+    "situation_key": "aligned|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 76,
+    "total_delta_cm": 27.143387177408044,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "slight_right|medium|MOVE_FORWARD|progress": {
+    "situation_key": "slight_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 179,
+    "total_delta_cm": 48471.245428163376,
+    "lesson": "[slight_right, medium] MOVE_FORWARD \u2192 progress +188cm (good). Forward progress despite slight_right bearing \u2014 path may curve toward goal."
+  },
+  "aligned|close|MOVE_FORWARD|progress": {
+    "situation_key": "aligned|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 48,
+    "total_delta_cm": 13160.147526055798,
+    "lesson": "[aligned, close] MOVE_FORWARD \u2192 progress +200cm (good). Moving forward when aligned is efficient."
+  },
+  "slight_left|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "slight_left|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 12,
+    "total_delta_cm": 3230.6894707936153,
+    "lesson": "[slight_left, very_close] MOVE_FORWARD \u2192 progress +191cm (good). Forward progress despite slight_left bearing \u2014 path may curve toward goal."
+  },
+  "slight_right|medium|oscillation|failure_pattern": {
+    "situation_key": "slight_right|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 38,
+    "total_delta_cm": -44.55611536968922,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "slight_right|far|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 761,
+    "total_delta_cm": 359.8982498444277,
+    "lesson": "[slight_right, far] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "behind_right|far|TURN_RIGHT|neutral": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 782,
+    "total_delta_cm": 0.01610028597769997,
+    "lesson": "[behind_right, far] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was behind_right)."
+  },
+  "slight_right|far|oscillation|failure_pattern": {
+    "situation_key": "slight_right|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 58,
+    "total_delta_cm": -54.61240159261524,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "slight_left|far|MOVE_FORWARD|progress": {
+    "situation_key": "slight_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 985,
+    "total_delta_cm": 292116.23759942513,
+    "lesson": "[slight_left, far] MOVE_FORWARD \u2192 progress +196cm (good). Forward progress despite slight_left bearing \u2014 path may curve toward goal."
+  },
+  "aligned|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "aligned|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 12,
+    "total_delta_cm": 3698.3518184958843,
+    "lesson": "[aligned, very_close] MOVE_FORWARD \u2192 progress +198cm (good). Moving forward when aligned is efficient."
+  },
+  "far_left|far|MOVE_FORWARD|progress": {
+    "situation_key": "far_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 1807,
+    "total_delta_cm": 243528.59116657317,
+    "lesson": "[far_left, far] MOVE_FORWARD \u2192 progress +148cm (good). Forward progress despite far_left bearing \u2014 path may curve toward goal."
+  },
+  "far_right|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "far_right|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 13,
+    "total_delta_cm": 3085.9559049049417,
+    "lesson": "[far_right, very_close] MOVE_FORWARD \u2192 progress +183cm (good). Forward progress despite far_right bearing \u2014 path may curve toward goal."
+  },
+  "far_left|far|oscillation|failure_pattern": {
+    "situation_key": "far_left|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 260,
+    "total_delta_cm": 9.763365904679404,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "slight_left|medium|TURN_RIGHT|neutral": {
+    "situation_key": "slight_left|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 138,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_left, medium] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was slight_left). Turn the other way."
+  },
+  "slight_left|medium|oscillation|failure_pattern": {
+    "situation_key": "slight_left|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 58,
+    "total_delta_cm": 0.04594993220030119,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_right|medium|TURN_LEFT|neutral": {
+    "situation_key": "far_right|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 240,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_right, medium] TURN_LEFT \u2192 no change. Turned away from goal (bearing was far_right). Turn the other way."
+  },
+  "slight_right|medium|TURN_LEFT|neutral": {
+    "situation_key": "slight_right|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 99,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, medium] TURN_LEFT \u2192 no change. Turned away from goal (bearing was slight_right). Turn the other way."
+  },
+  "slight_left|close|MOVE_FORWARD|progress": {
+    "situation_key": "slight_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 42,
+    "total_delta_cm": 10329.891490277021,
+    "lesson": "[slight_left, close] MOVE_FORWARD \u2192 progress +142cm (good). Forward progress despite slight_left bearing \u2014 path may curve toward goal."
+  },
+  "slight_left|close|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 78,
+    "total_delta_cm": 46.07219573065339,
+    "lesson": "[slight_left, close] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "aligned|close|TURN_RIGHT|neutral": {
+    "situation_key": "aligned|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 53,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, close] TURN_RIGHT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "slight_right|close|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 29,
+    "total_delta_cm": 148.99477656357675,
+    "lesson": "[slight_right, close] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "aligned|close|TURN_LEFT|neutral": {
+    "situation_key": "aligned|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 67,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, close] TURN_LEFT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|close|MOVE_FORWARD|neutral": {
+    "situation_key": "aligned|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 99,
+    "total_delta_cm": 4.0647548207024045,
+    "lesson": "[aligned, close] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "slight_right|close|TURN_RIGHT|neutral": {
+    "situation_key": "slight_right|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 49,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, close] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was slight_right)."
+  },
+  "far_right|close|TURN_RIGHT|neutral": {
+    "situation_key": "far_right|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 9,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_right, close] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was far_right)."
+  },
+  "slight_right|close|TURN_LEFT|neutral": {
+    "situation_key": "slight_right|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 22,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, close] TURN_LEFT \u2192 no change. Turned away from goal (bearing was slight_right). Turn the other way."
+  },
+  "slight_left|close|TURN_LEFT|neutral": {
+    "situation_key": "slight_left|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 33,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_left, close] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was slight_left)."
+  },
+  "far_right|close|stuck|failure_pattern": {
+    "situation_key": "far_right|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 6,
+    "total_delta_cm": 0.06426590909524066,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_right|close|oscillation|failure_pattern": {
+    "situation_key": "far_right|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 4,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "slight_right|close|MOVE_FORWARD|progress": {
+    "situation_key": "slight_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 34,
+    "total_delta_cm": 9636.659639877056,
+    "lesson": "[slight_right, close] MOVE_FORWARD \u2192 progress +194cm (good). Forward progress despite slight_right bearing \u2014 path may curve toward goal."
+  },
+  "behind_right|medium|TURN_LEFT|neutral": {
+    "situation_key": "behind_right|medium",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 469,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, medium] TURN_LEFT \u2192 no change. Turned away from goal (bearing was behind_right). Turn the other way."
+  },
+  "far_right|close|MOVE_FORWARD|progress": {
+    "situation_key": "far_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 40,
+    "total_delta_cm": 7709.7051449278915,
+    "lesson": "[far_right, close] MOVE_FORWARD \u2192 progress +64cm (good). Forward progress despite far_right bearing \u2014 path may curve toward goal."
+  },
+  "far_right|close|TURN_LEFT|neutral": {
+    "situation_key": "far_right|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 31,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_right, close] TURN_LEFT \u2192 no change. Turned away from goal (bearing was far_right). Turn the other way."
+  },
+  "behind_right|close|TURN_RIGHT|neutral": {
+    "situation_key": "behind_right|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 16,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, close] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was behind_right)."
+  },
+  "behind_right|close|TURN_LEFT|neutral": {
+    "situation_key": "behind_right|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 36,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, close] TURN_LEFT \u2192 no change. Turned away from goal (bearing was behind_right). Turn the other way."
+  },
+  "behind_right|close|MOVE_FORWARD|regress": {
+    "situation_key": "behind_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 13,
+    "total_delta_cm": -1399.382267387861,
+    "lesson": "[behind_right, close] MOVE_FORWARD \u2192 regress -105cm (bad). Wrong: moving forward when bearing is behind_right increases distance. Turn first."
+  },
+  "behind_right|close|oscillation|failure_pattern": {
+    "situation_key": "behind_right|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 2,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_right|close|backtrack|failure_pattern": {
+    "situation_key": "behind_right|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 13,
+    "total_delta_cm": -4106.565601080874,
+    "lesson": "Wrong direction: moved forward but distance increased by 105cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "far_left|medium|MOVE_FORWARD|progress": {
+    "situation_key": "far_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 217,
+    "total_delta_cm": 36485.70511049986,
+    "lesson": "[far_left, medium] MOVE_FORWARD \u2192 progress +136cm (good). Forward progress despite far_left bearing \u2014 path may curve toward goal."
+  },
+  "far_right|medium|MOVE_FORWARD|progress": {
+    "situation_key": "far_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 211,
+    "total_delta_cm": 38992.54794089685,
+    "lesson": "[far_right, medium] MOVE_FORWARD \u2192 progress +142cm (good). Forward progress despite far_right bearing \u2014 path may curve toward goal."
+  },
+  "behind_left|far|TURN_RIGHT|regress": {
+    "situation_key": "behind_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 184,
+    "total_delta_cm": -721229.9091105401,
+    "lesson": "[behind_left, far] TURN_RIGHT \u2192 regress -18340cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "slight_left|far|MOVE_FORWARD|neutral": {
+    "situation_key": "slight_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 742,
+    "total_delta_cm": 504.31349191031404,
+    "lesson": "[slight_left, far] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "far_right|medium|stuck|failure_pattern": {
+    "situation_key": "far_right|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 18,
+    "total_delta_cm": 35.05428605097461,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_right|medium|oscillation|failure_pattern": {
+    "situation_key": "far_right|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 36,
+    "total_delta_cm": 0.09730389334413303,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_right|far|MOVE_FORWARD|progress": {
+    "situation_key": "far_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 1532,
+    "total_delta_cm": 216630.11612630734,
+    "lesson": "[far_right, far] MOVE_FORWARD \u2192 progress +140cm (good). Forward progress despite far_right bearing \u2014 path may curve toward goal."
+  },
+  "slight_left|far|stuck|failure_pattern": {
+    "situation_key": "slight_left|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 129,
+    "total_delta_cm": 130.43756498131143,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_left|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "far_left|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 5,
+    "total_delta_cm": 1171.4294021683045,
+    "lesson": "[far_left, very_close] MOVE_FORWARD \u2192 progress +154cm (good). Forward progress despite far_left bearing \u2014 path may curve toward goal."
+  },
+  "behind_left|medium|TURN_RIGHT|neutral": {
+    "situation_key": "behind_left|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 302,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, medium] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was behind_left). Turn the other way."
+  },
+  "far_left|close|MOVE_FORWARD|progress": {
+    "situation_key": "far_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 52,
+    "total_delta_cm": 11891.827019910019,
+    "lesson": "[far_left, close] MOVE_FORWARD \u2192 progress +125cm (good). Forward progress despite far_left bearing \u2014 path may curve toward goal."
+  },
+  "far_left|far|MOVE_FORWARD|regress": {
+    "situation_key": "far_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 91,
+    "total_delta_cm": -26355.003306720642,
+    "lesson": "[far_left, far] MOVE_FORWARD \u2192 regress -54cm (bad). Wrong: moving forward when bearing is far_left increases distance. Turn first."
+  },
+  "behind_left|far|TURN_LEFT|neutral": {
+    "situation_key": "behind_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 1352,
+    "total_delta_cm": -26.903611787773116,
+    "lesson": "[behind_left, far] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was behind_left)."
+  },
+  "far_left|far|backtrack|failure_pattern": {
+    "situation_key": "far_left|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 250,
+    "total_delta_cm": -693270.536104835,
+    "lesson": "Wrong direction: moved forward but distance increased by 54cm. Bearing was far_left. Turn toward goal before moving forward."
+  },
+  "behind_left|far|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 923,
+    "total_delta_cm": -874.9312628379178,
+    "lesson": "[behind_left, far] MOVE_FORWARD \u2192 no change. Forward with behind_left bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_left|far|stuck|failure_pattern": {
+    "situation_key": "behind_left|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 173,
+    "total_delta_cm": 241.64784257955353,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_right|far|MOVE_FORWARD|neutral": {
+    "situation_key": "far_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 823,
+    "total_delta_cm": 2662.708555744465,
+    "lesson": "[far_right, far] MOVE_FORWARD \u2192 no change. Forward with far_right bearing yielded no progress. Turn toward goal first."
+  },
+  "far_left|far|MOVE_FORWARD|neutral": {
+    "situation_key": "far_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 1243,
+    "total_delta_cm": 3386.0069082302543,
+    "lesson": "[far_left, far] MOVE_FORWARD \u2192 no change. Forward with far_left bearing yielded no progress. Turn toward goal first."
+  },
+  "far_left|far|stuck|failure_pattern": {
+    "situation_key": "far_left|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 181,
+    "total_delta_cm": 189.93468198347023,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_left|far|MOVE_FORWARD|regress": {
+    "situation_key": "behind_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 2000,
+    "total_delta_cm": -1898565.6314837916,
+    "lesson": "[behind_left, far] MOVE_FORWARD \u2192 regress -26373cm (bad). Wrong: moving forward when bearing is behind_left increases distance. Turn first."
+  },
+  "far_left|close|TURN_RIGHT|neutral": {
+    "situation_key": "far_left|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 25,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, close] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was far_left). Turn the other way."
+  },
+  "far_right|medium|MOVE_FORWARD|regress": {
+    "situation_key": "far_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 18,
+    "total_delta_cm": -1590.9890568541934,
+    "lesson": "[far_right, medium] MOVE_FORWARD \u2192 regress -47cm (bad). Wrong: moving forward when bearing is far_right increases distance. Turn first."
+  },
+  "behind_right|medium|TURN_RIGHT|neutral": {
+    "situation_key": "behind_right|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 204,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, medium] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was behind_right)."
+  },
+  "far_right|medium|backtrack|failure_pattern": {
+    "situation_key": "far_right|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 7,
+    "total_delta_cm": -3625.075312635096,
+    "lesson": "Wrong direction: moved forward but distance increased by 47cm. Bearing was far_right. Turn toward goal before moving forward."
+  },
+  "far_right|far|stuck|failure_pattern": {
+    "situation_key": "far_right|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 148,
+    "total_delta_cm": -146.56484467059522,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|far|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 1223,
+    "total_delta_cm": -1284.2747097756192,
+    "lesson": "[behind_right, far] MOVE_FORWARD \u2192 no change. Forward with behind_right bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_left|far|backtrack|failure_pattern": {
+    "situation_key": "behind_left|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 471,
+    "total_delta_cm": -1211325.1946228535,
+    "lesson": "Wrong direction: moved forward but distance increased by 31cm. Bearing was far_left. Turn toward goal before moving forward."
+  },
+  "slight_left|medium|stuck|failure_pattern": {
+    "situation_key": "slight_left|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 52,
+    "total_delta_cm": -23.09474035511687,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|far|MOVE_FORWARD|regress": {
+    "situation_key": "behind_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 1903,
+    "total_delta_cm": -2020917.0927107565,
+    "lesson": "[behind_right, far] MOVE_FORWARD \u2192 regress -32175cm (bad). Wrong: moving forward when bearing is behind_right increases distance. Turn first."
+  },
+  "behind_right|far|backtrack|failure_pattern": {
+    "situation_key": "behind_right|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 582,
+    "total_delta_cm": -1706295.6909037826,
+    "lesson": "Wrong direction: moved forward but distance increased by 32175cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "far_right|medium|TURN_RIGHT|neutral": {
+    "situation_key": "far_right|medium",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 41,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_right, medium] TURN_RIGHT \u2192 no change. Good: turning toward goal (bearing was far_right)."
+  },
+  "aligned|medium|backtrack|failure_pattern": {
+    "situation_key": "aligned|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 44,
+    "total_delta_cm": -11460.087021279493,
+    "lesson": "Wrong direction: moved forward but distance increased by 124cm. Bearing was far_right. Turn toward goal before moving forward."
+  },
+  "far_right|far|MOVE_FORWARD|regress": {
+    "situation_key": "far_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 78,
+    "total_delta_cm": -44340.100928894186,
+    "lesson": "[far_right, far] MOVE_FORWARD \u2192 regress -43cm (bad). Wrong: moving forward when bearing is far_right increases distance. Turn first."
+  },
+  "aligned|far|stuck|failure_pattern": {
+    "situation_key": "aligned|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 197,
+    "total_delta_cm": -37.550983099305085,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_left|close|MOVE_FORWARD|neutral": {
+    "situation_key": "far_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 14,
+    "total_delta_cm": -116.4512325250245,
+    "lesson": "[far_left, close] MOVE_FORWARD \u2192 no change. Forward with far_left bearing yielded no progress. Turn toward goal first."
+  },
+  "slight_left|close|TURN_RIGHT|neutral": {
+    "situation_key": "slight_left|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 19,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_left, close] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was slight_left). Turn the other way."
+  },
+  "slight_left|close|stuck|failure_pattern": {
+    "situation_key": "slight_left|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 5,
+    "total_delta_cm": 0.006669019311743796,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_left|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 92,
+    "total_delta_cm": -19.49624245985234,
+    "lesson": "[behind_left, medium] MOVE_FORWARD \u2192 no change. Forward with behind_left bearing yielded no progress. Turn toward goal first."
+  },
+  "slight_left|medium|backtrack|failure_pattern": {
+    "situation_key": "slight_left|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 48,
+    "total_delta_cm": -10954.565868791973,
+    "lesson": "Wrong direction: moved forward but distance increased by 562cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "slight_left|far|backtrack|failure_pattern": {
+    "situation_key": "slight_left|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 54,
+    "total_delta_cm": -34691.02415871314,
+    "lesson": "Wrong direction: moved forward but distance increased by 957cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "behind_right|close|MOVE_FORWARD|progress": {
+    "situation_key": "behind_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 13,
+    "total_delta_cm": 1653.0664781058779,
+    "lesson": "[behind_right, close] MOVE_FORWARD \u2192 progress +31cm (good). Forward progress despite behind_right bearing \u2014 path may curve toward goal."
+  },
+  "far_right|very_close|MOVE_FORWARD|neutral": {
+    "situation_key": "far_right|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 1,
+    "total_delta_cm": 29.91978972771625,
+    "lesson": "[far_right, very_close] MOVE_FORWARD \u2192 no change. Forward with far_right bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_left|close|MOVE_FORWARD|regress": {
+    "situation_key": "behind_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 22,
+    "total_delta_cm": -2397.5856600706966,
+    "lesson": "[behind_left, close] MOVE_FORWARD \u2192 regress -83cm (bad). Wrong: moving forward when bearing is behind_left increases distance. Turn first."
+  },
+  "far_left|close|backtrack|failure_pattern": {
+    "situation_key": "far_left|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 14,
+    "total_delta_cm": -4737.384166263101,
+    "lesson": "Wrong direction: moved forward but distance increased by 288cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "behind_left|far|MOVE_FORWARD|progress": {
+    "situation_key": "behind_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 153,
+    "total_delta_cm": 23463.34622679856,
+    "lesson": "[behind_left, far] MOVE_FORWARD \u2192 progress +83cm (good). Forward progress despite behind_left bearing \u2014 path may curve toward goal."
+  },
+  "behind_left|far|oscillation|failure_pattern": {
+    "situation_key": "behind_left|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 658,
+    "total_delta_cm": -575.6176538335612,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_right|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 96,
+    "total_delta_cm": 106.74575445763116,
+    "lesson": "[behind_right, medium] MOVE_FORWARD \u2192 no change. Forward with behind_right bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_right|medium|MOVE_FORWARD|regress": {
+    "situation_key": "behind_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 144,
+    "total_delta_cm": -23580.871618844052,
+    "lesson": "[behind_right, medium] MOVE_FORWARD \u2192 regress -182cm (bad). Wrong: moving forward when bearing is behind_right increases distance. Turn first."
+  },
+  "behind_right|medium|MOVE_FORWARD|progress": {
+    "situation_key": "behind_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 60,
+    "total_delta_cm": 4773.977150654235,
+    "lesson": "[behind_right, medium] MOVE_FORWARD \u2192 progress +42cm (good). Forward progress despite behind_right bearing \u2014 path may curve toward goal."
+  },
+  "far_right|medium|MOVE_FORWARD|neutral": {
+    "situation_key": "far_right|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 180,
+    "total_delta_cm": 159.12432652630355,
+    "lesson": "[far_right, medium] MOVE_FORWARD \u2192 no change. Forward with far_right bearing yielded no progress. Turn toward goal first."
+  },
+  "behind_right|medium|backtrack|failure_pattern": {
+    "situation_key": "behind_right|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 40,
+    "total_delta_cm": -26319.973825345693,
+    "lesson": "Wrong direction: moved forward but distance increased by 369cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "behind_right|medium|stuck|failure_pattern": {
+    "situation_key": "behind_right|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 65,
+    "total_delta_cm": -11.709386234284352,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|close|stuck|failure_pattern": {
+    "situation_key": "behind_right|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 8,
+    "total_delta_cm": -37.17750484639515,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|far|TURN_LEFT|regress": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 302,
+    "total_delta_cm": -1304963.390141993,
+    "lesson": "[behind_right, far] TURN_LEFT \u2192 regress -4539cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "far_right|far|TURN_LEFT|regress": {
+    "situation_key": "far_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 79,
+    "total_delta_cm": -342942.5892800156,
+    "lesson": "[far_right, far] TURN_LEFT \u2192 regress -4948cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "slight_right|far|TURN_LEFT|regress": {
+    "situation_key": "slight_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 29,
+    "total_delta_cm": -130051.68040170426,
+    "lesson": "[slight_right, far] TURN_LEFT \u2192 regress -5404cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "aligned|far|TURN_LEFT|regress": {
+    "situation_key": "aligned|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 26,
+    "total_delta_cm": -117879.11488372905,
+    "lesson": "[aligned, far] TURN_LEFT \u2192 regress -5817cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "aligned|far|MOVE_FORWARD|regress": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 12,
+    "total_delta_cm": -36871.68779282595,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 regress -4996cm (bad). Forward motion increased distance \u2014 possible obstacle or wrong heading."
+  },
+  "behind_left|medium|MOVE_FORWARD|progress": {
+    "situation_key": "behind_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 60,
+    "total_delta_cm": 7044.6156827555105,
+    "lesson": "[behind_left, medium] MOVE_FORWARD \u2192 progress +40cm (good). Forward progress despite behind_left bearing \u2014 path may curve toward goal."
+  },
+  "far_left|far|TURN_RIGHT|regress": {
+    "situation_key": "far_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 20,
+    "total_delta_cm": -68233.30810704452,
+    "lesson": "[far_left, far] TURN_RIGHT \u2192 regress -6177cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "behind_left|far|TURN_LEFT|regress": {
+    "situation_key": "behind_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 90,
+    "total_delta_cm": -309184.43682974443,
+    "lesson": "[behind_left, far] TURN_LEFT \u2192 regress -6405cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "far_right|far|backtrack|failure_pattern": {
+    "situation_key": "far_right|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 93,
+    "total_delta_cm": -153974.3577951441,
+    "lesson": "Wrong direction: moved forward but distance increased by 11691cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "slight_right|far|stuck|failure_pattern": {
+    "situation_key": "slight_right|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 66,
+    "total_delta_cm": 76.61315196840542,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "slight_right|far|backtrack|failure_pattern": {
+    "situation_key": "slight_right|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 51,
+    "total_delta_cm": -36145.203590242716,
+    "lesson": "Wrong direction: moved forward but distance increased by 373cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "behind_left|close|TURN_LEFT|neutral": {
+    "situation_key": "behind_left|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 20,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, close] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was behind_left)."
+  },
+  "slight_left|close|backtrack|failure_pattern": {
+    "situation_key": "slight_left|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 11,
+    "total_delta_cm": -6867.673155553097,
+    "lesson": "Wrong direction: moved forward but distance increased by 118cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "behind_right|far|TURN_RIGHT|regress": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 78,
+    "total_delta_cm": -286675.17872362456,
+    "lesson": "[behind_right, far] TURN_RIGHT \u2192 regress -5023cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "behind_left|close|MOVE_FORWARD|progress": {
+    "situation_key": "behind_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 19,
+    "total_delta_cm": 1709.684274909754,
+    "lesson": "[behind_left, close] MOVE_FORWARD \u2192 progress +46cm (good). Forward progress despite behind_left bearing \u2014 path may curve toward goal."
+  },
+  "behind_left|medium|stuck|failure_pattern": {
+    "situation_key": "behind_left|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 19,
+    "total_delta_cm": 18.010192689502446,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_left|medium|backtrack|failure_pattern": {
+    "situation_key": "far_left|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 42,
+    "total_delta_cm": -12127.771973380444,
+    "lesson": "Wrong direction: moved forward but distance increased by 120cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "far_left|medium|oscillation|failure_pattern": {
+    "situation_key": "far_left|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 60,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_right|medium|oscillation|failure_pattern": {
+    "situation_key": "behind_right|medium",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 76,
+    "total_delta_cm": -44.66252346351712,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "aligned|far|backtrack|failure_pattern": {
+    "situation_key": "aligned|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 61,
+    "total_delta_cm": -109101.68844682576,
+    "lesson": "Wrong direction: moved forward but distance increased by 1884cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "aligned|close|STOP|neutral": {
+    "situation_key": "aligned|close",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, close] STOP \u2192 no change. Premature STOP \u2014 still close from goal."
+  },
+  "slight_left|far|oscillation|failure_pattern": {
+    "situation_key": "slight_left|far",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 114,
+    "total_delta_cm": 0.1042035424502501,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_right|close|MOVE_FORWARD|neutral": {
+    "situation_key": "far_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 9,
+    "total_delta_cm": 30.827370510694294,
+    "lesson": "[far_right, close] MOVE_FORWARD \u2192 no change. Forward with far_right bearing yielded no progress. Turn toward goal first."
+  },
+  "slight_left|far|TURN_LEFT|regress": {
+    "situation_key": "slight_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 15,
+    "total_delta_cm": -61061.820114988084,
+    "lesson": "[slight_left, far] TURN_LEFT \u2192 regress -4540cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "slight_right|medium|stuck|failure_pattern": {
+    "situation_key": "slight_right|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 10,
+    "total_delta_cm": 0.15793654675303515,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "far_left|close|MOVE_FORWARD|regress": {
+    "situation_key": "far_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 7,
+    "total_delta_cm": -740.131041223641,
+    "lesson": "[far_left, close] MOVE_FORWARD \u2192 regress -132cm (bad). Wrong: moving forward when bearing is far_left increases distance. Turn first."
+  },
+  "behind_left|close|backtrack|failure_pattern": {
+    "situation_key": "behind_left|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 12,
+    "total_delta_cm": -3659.835343024234,
+    "lesson": "Wrong direction: moved forward but distance increased by 132cm. Bearing was far_left. Turn toward goal before moving forward."
+  },
+  "behind_left|close|stuck|failure_pattern": {
+    "situation_key": "behind_left|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_left|close|oscillation|failure_pattern": {
+    "situation_key": "behind_left|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_left|medium|stuck|failure_pattern": {
+    "situation_key": "far_left|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 27,
+    "total_delta_cm": 29.211219498918922,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "aligned|medium|STOP|neutral": {
+    "situation_key": "aligned|medium",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 3,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, medium] STOP \u2192 no change. Premature STOP \u2014 still medium from goal."
+  },
+  "behind_right|far|MOVE_FORWARD|progress": {
+    "situation_key": "behind_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 98,
+    "total_delta_cm": 15591.489297237113,
+    "lesson": "[behind_right, far] MOVE_FORWARD \u2192 progress +189cm (good). Forward progress despite behind_right bearing \u2014 path may curve toward goal."
+  },
+  "behind_right|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "behind_right|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 15,
+    "total_delta_cm": 2347.3215100682714,
+    "lesson": "[behind_right, very_close] MOVE_FORWARD \u2192 progress +40cm (good). Forward progress despite behind_right bearing \u2014 path may curve toward goal."
+  },
+  "far_left|close|TURN_LEFT|neutral": {
+    "situation_key": "far_left|close",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 7,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, close] TURN_LEFT \u2192 no change. Good: turning toward goal (bearing was far_left)."
+  },
+  "behind_left|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "behind_left|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 26,
+    "total_delta_cm": 4724.388045280333,
+    "lesson": "[behind_left, very_close] MOVE_FORWARD \u2192 progress +102cm (good). Forward progress despite behind_left bearing \u2014 path may curve toward goal."
+  },
+  "slight_left|far|TURN_RIGHT|regress": {
+    "situation_key": "slight_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 4,
+    "total_delta_cm": -28817.595527712427,
+    "lesson": "[slight_left, far] TURN_RIGHT \u2192 regress -3994cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "slight_left|far|MOVE_FORWARD|regress": {
+    "situation_key": "slight_left|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 10,
+    "total_delta_cm": -23110.415204492703,
+    "lesson": "[slight_left, far] MOVE_FORWARD \u2192 regress -2530cm (bad). Forward motion increased distance \u2014 possible obstacle or wrong heading."
+  },
+  "aligned|far|STOP|neutral": {
+    "situation_key": "aligned|far",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 3,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, far] STOP \u2192 no change. Premature STOP \u2014 still far from goal."
+  },
+  "aligned|medium|stuck|failure_pattern": {
+    "situation_key": "aligned|medium",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 47,
+    "total_delta_cm": 22.719671478011037,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "aligned|close|oscillation|failure_pattern": {
+    "situation_key": "aligned|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 22,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_left|close|TURN_RIGHT|neutral": {
+    "situation_key": "behind_left|close",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 23,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, close] TURN_RIGHT \u2192 no change. Turned away from goal (bearing was behind_left). Turn the other way."
+  },
+  "aligned|close|stuck|failure_pattern": {
+    "situation_key": "aligned|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 14,
+    "total_delta_cm": 40.92317841940513,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_right|close|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 24,
+    "total_delta_cm": -58.28735962072017,
+    "lesson": "[behind_right, close] MOVE_FORWARD \u2192 no change. Forward with behind_right bearing yielded no progress. Turn toward goal first."
+  },
+  "aligned|close|backtrack|failure_pattern": {
+    "situation_key": "aligned|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 30,
+    "total_delta_cm": -17893.353872680946,
+    "lesson": "Wrong direction: moved forward but distance increased by 30cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "far_left|far|TURN_RIGHT|progress": {
+    "situation_key": "far_left|far",
+    "action": "TURN_RIGHT",
+    "outcome": "progress",
+    "count": 2,
+    "total_delta_cm": 925.4945079236859,
+    "lesson": "[far_left, far] TURN_RIGHT \u2192 progress +739cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "far_left|far|TURN_LEFT|regress": {
+    "situation_key": "far_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "regress",
+    "count": 13,
+    "total_delta_cm": -49730.393995524646,
+    "lesson": "[far_left, far] TURN_LEFT \u2192 regress -3772cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "slight_left|far|TURN_LEFT|progress": {
+    "situation_key": "slight_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "progress",
+    "count": 1,
+    "total_delta_cm": 60.09837623731619,
+    "lesson": "[slight_left, far] TURN_LEFT \u2192 progress +60cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "far_right|close|MOVE_FORWARD|regress": {
+    "situation_key": "far_right|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 5,
+    "total_delta_cm": -352.1535826618509,
+    "lesson": "[far_right, close] MOVE_FORWARD \u2192 regress -49cm (bad). Wrong: moving forward when bearing is far_right increases distance. Turn first."
+  },
+  "slight_left|close|oscillation|failure_pattern": {
+    "situation_key": "slight_left|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "far_left|medium|MOVE_FORWARD|regress": {
+    "situation_key": "far_left|medium",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 17,
+    "total_delta_cm": -1513.3112047028994,
+    "lesson": "[far_left, medium] MOVE_FORWARD \u2192 regress -160cm (bad). Wrong: moving forward when bearing is far_left increases distance. Turn first."
+  },
+  "far_left|close|stuck|failure_pattern": {
+    "situation_key": "far_left|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 3,
+    "total_delta_cm": 27.613858504015866,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "slight_right|very_close|MOVE_FORWARD|progress": {
+    "situation_key": "slight_right|very_close",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 11,
+    "total_delta_cm": 3602.180741942664,
+    "lesson": "[slight_right, very_close] MOVE_FORWARD \u2192 progress +195cm (good). Forward progress despite slight_right bearing \u2014 path may curve toward goal."
+  },
+  "aligned|far|TURN_RIGHT|regress": {
+    "situation_key": "aligned|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 5,
+    "total_delta_cm": -4073.1749847072815,
+    "lesson": "[aligned, far] TURN_RIGHT \u2192 regress -54cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "far_right|close|backtrack|failure_pattern": {
+    "situation_key": "far_right|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": -757.2952489419075,
+    "lesson": "Wrong direction: moved forward but distance increased by 757cm. Bearing was behind_right. Turn toward goal before moving forward."
+  },
+  "far_left|close|oscillation|failure_pattern": {
+    "situation_key": "far_left|close",
+    "action": "oscillation",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "Oscillation detected: alternating turns without progress. Commit to one turn direction until bearing is within \u00b130\u00b0, then move forward."
+  },
+  "behind_left|close|MOVE_FORWARD|neutral": {
+    "situation_key": "behind_left|close",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 6,
+    "total_delta_cm": 91.57596120140835,
+    "lesson": "[behind_left, close] MOVE_FORWARD \u2192 no change. Forward with behind_left bearing yielded no progress. Turn toward goal first."
+  },
+  "far_right|far|TURN_LEFT|progress": {
+    "situation_key": "far_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "progress",
+    "count": 2,
+    "total_delta_cm": 534.128859023449,
+    "lesson": "[far_right, far] TURN_LEFT \u2192 progress +447cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "behind_right|far|TURN_RIGHT|progress": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "progress",
+    "count": 1,
+    "total_delta_cm": 1782.6061297044507,
+    "lesson": "[behind_right, far] TURN_RIGHT \u2192 progress +1783cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "far_left|medium|STOP|neutral": {
+    "situation_key": "far_left|medium",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 2,
+    "total_delta_cm": 0.0,
+    "lesson": "[far_left, medium] STOP \u2192 no change. Premature STOP \u2014 still medium from goal."
+  },
+  "slight_right|close|backtrack|failure_pattern": {
+    "situation_key": "slight_right|close",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 6,
+    "total_delta_cm": -1426.0775480779355,
+    "lesson": "Wrong direction: moved forward but distance increased by 246cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "slight_right|medium|backtrack|failure_pattern": {
+    "situation_key": "slight_right|medium",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 15,
+    "total_delta_cm": -6205.452703830536,
+    "lesson": "Wrong direction: moved forward but distance increased by 131cm. Bearing was behind_left. Turn toward goal before moving forward."
+  },
+  "slight_right|close|stuck|failure_pattern": {
+    "situation_key": "slight_right|close",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 4,
+    "total_delta_cm": 0.0,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "behind_left|far|STOP|neutral": {
+    "situation_key": "behind_left|far",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_left, far] STOP \u2192 no change. Premature STOP \u2014 still far from goal."
+  },
+  "slight_right|far|MOVE_FORWARD|regress": {
+    "situation_key": "slight_right|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 1,
+    "total_delta_cm": -4470.755891100307,
+    "lesson": "[slight_right, far] MOVE_FORWARD \u2192 regress -4471cm (bad). Forward motion increased distance \u2014 possible obstacle or wrong heading."
+  },
+  "behind_right|far|TURN_LEFT|progress": {
+    "situation_key": "behind_right|far",
+    "action": "TURN_LEFT",
+    "outcome": "progress",
+    "count": 1,
+    "total_delta_cm": 105.50343596827679,
+    "lesson": "[behind_right, far] TURN_LEFT \u2192 progress +106cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "behind_right|close|STOP|regress": {
+    "situation_key": "behind_right|close",
+    "action": "STOP",
+    "outcome": "regress",
+    "count": 1,
+    "total_delta_cm": -67.35197465883519,
+    "lesson": "[behind_right, close] STOP \u2192 regress -67cm (bad). Premature STOP \u2014 still close from goal."
+  },
+  "slight_right|far|STOP|neutral": {
+    "situation_key": "slight_right|far",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 2,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_right, far] STOP \u2192 no change. Premature STOP \u2014 still far from goal."
+  },
+  "behind_left|far|TURN_LEFT|progress": {
+    "situation_key": "behind_left|far",
+    "action": "TURN_LEFT",
+    "outcome": "progress",
+    "count": 1,
+    "total_delta_cm": 46.15283399821055,
+    "lesson": "[behind_left, far] TURN_LEFT \u2192 progress +46cm (good). Turn resulted in distance reduction \u2014 good realignment."
+  },
+  "slight_left|far|STOP|neutral": {
+    "situation_key": "slight_left|far",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "[slight_left, far] STOP \u2192 no change. Premature STOP \u2014 still far from goal."
+  },
+  "far_right|far|TURN_RIGHT|regress": {
+    "situation_key": "far_right|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 2,
+    "total_delta_cm": -10116.212207683522,
+    "lesson": "[far_right, far] TURN_RIGHT \u2192 regress -4023cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "behind_right|close|STOP|neutral": {
+    "situation_key": "behind_right|close",
+    "action": "STOP",
+    "outcome": "neutral",
+    "count": 1,
+    "total_delta_cm": 0.0,
+    "lesson": "[behind_right, close] STOP \u2192 no change. Premature STOP \u2014 still close from goal."
+  }
+}

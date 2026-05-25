@@ -1,0 +1,278 @@
+You are generating a training-scene .umap for a navigation agent. UE Editor is booted with a specific template ALREADY LOADED via CLI; do NOT call unreal.EditorLoadingAndSavingUtils.load_map (it crashes UE 5.3).
+
+## Available tools (MCP)
+spawn_blueprint_actor, spawn_actor, delete_actor, get_actors_in_level, find_actors_by_name, set_actor_transform, take_screenshot, execute_python_script, list_assets, setup_environment. Full catalog via `list_assets` — 22 map templates + 125 buildings + 17 allow-AI pack roots.
+
+## Hard rules
+1. Do NOT call load_map — template is already loaded on boot.
+2. Do NOT spawn BP_Road1 or SM_Road* (roads look poor).
+3. Do NOT touch anything under /Game/80_no_ai_maps/.
+4. Save output ONLY to: /Game/DiverseMaps50/map_48_hwaseong_cleared
+5. **NEVER use BP_Building IDs 1, 2, 3, 4, 5, or 6** (BP_Building_01 through BP_Building_06) — these are overused and boring. Only pick IDs 7 through 127 (skip 57 and 120 which don't exist). Vary IDs across spawns.
+6. **NEVER delete actors whose name matches `Floor*`, `Ground*`, `Plane*`, `Landscape*`, `Terrain*`, `SM_Floor*`, `SM_Ground*`, `SM_Pavement*`, `SM_Sidewalk*`** — these are the walkable surface. Deleting them kills the navmesh (REACHABLE drops to 0). To "open up" the scene, delete obstacles (benches, crates, fences, planters) — NOT the floor.
+
+## Cross-pack retrieval (optional, for remix variants)
+To pull assets from an allow-AI pack that isn't in spawn_blueprint_actor's shortlist:
+```python
+import unreal
+paths = unreal.EditorAssetLibrary.list_assets("/Game/Village/", recursive=True, include_folder=False)
+# Then spawn via spawn_actor(name=..., static_mesh=full_path, location=...) for SMs,
+# or spawn_blueprint_actor(blueprint_id=full_path, ...) for BPs.
+```
+
+## Ground-Z snapping (CRITICAL — avoid floating objects)
+Do NOT hardcode z=0 or z=200 for spawns. Use these strategies in order:
+
+1. **Easiest (recommended)**: use `ps_loc.z` (PlayerStart's Z, from Step 0) for ALL spawns. Works well.
+2. **Projected to navmesh** (use AFTER nav is built): `unreal.NavigationSystemV1.project_point_to_navigation(world, unreal.Vector(x,y,ps_loc.z))` returns the navmesh point at (x,y). Use its `.z`.
+
+⚠️ **DO NOT USE `unreal.SystemLibrary.line_trace_single`** — it crashes the UE 5.3 Python interpreter and kills all subsequent execute_python_script calls. Stick with strategies 1 and 2.
+
+## Recommended step ordering
+Because navmesh gives you accurate Z, do them FIRST, edit AFTER, REBUILD again, save:
+  Step 0: Find/create PlayerStart
+  Step 1: Spawn NavMeshBoundsVolume at PS
+  Step 2: RebuildNavigation (initial — so you can project spawn points to ground)
+  Step 3: Wait ~20 s
+  Step 4: Validate REACHABLE ≥ 10/20 (else move volume & retry once)
+  **Now run your task edits** — spawn using ground_z/project_point_to_navigation, delete as needed
+  Step 5: RebuildNavigation AGAIN (CRITICAL — the first navmesh doesn't know about your new obstacles; re-building here ensures the saved navmesh reflects actual walkability)
+  Step 6: Wait ~20 s
+  Step 7: Validate REACHABLE still ≥ 5/20 (if 0, your edits over-blocked the area)
+  Step 8: Move camera above PS for overview shot
+  Step 9: Overview screenshot
+  Step 10: Save
+
+## Overview screenshot camera
+Before taking the final overview screenshot, position the editor camera **above PlayerStart, looking down at ~45° angle** so the user can see ground-level edits:
+```python
+import unreal
+ues = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem)
+world = ues.get_editor_world()
+ps_actors = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+ps = ps_actors[0].get_actor_location()
+cam_loc = unreal.Vector(x=ps.x - 2500, y=ps.y, z=ps.z + 2500)  # offset 25 m back, 25 m up
+# CRITICAL: Use NAMED args for Rotator — positional order in UE 5.3 Python is (roll, pitch, yaw)
+# NOT (pitch, yaw, roll), so positional produces rolled cameras.
+cam_rot = unreal.Rotator(pitch=-40, yaw=0, roll=0)  # pitch down ~40° looking at PS, zero roll
+ues.set_level_viewport_camera_info(cam_loc, cam_rot)
+print("CAMERA_SET")
+```
+
+## Edit scale & iteration (HARDCODED PIPELINE — no agent discretion)
+The iteration loop is **not optional, not negotiable, and not agent-decided**. You MUST perform **EXACTLY 5 iteration rounds** (or more). Fewer rounds = PROTOCOL VIOLATION and the map will be rejected.
+
+Each of the 5 iteration rounds MUST consist of:
+  (a) A batched edit sub-round: 5–10 ops (spawn/delete/move) via ONE execute_python_script call.
+  (b) A verifier call: `verify_scene(original_request="<one-sentence brief>", focus_areas="edit count, collisions, placement visibility")`.
+  (c) Act on verifier output:
+       - PASS: your round is complete. Move to next round with more ops.
+       - NEEDS_IMPROVEMENT / FAIL: in the NEXT round's (a), specifically address each entry in `Suggestions` (e.g. "too many duplicates" → delete 3 duplicates; "objects overlap" → move 2 via set_actor_transform; "sparse area X" → spawn 2 props at X).
+
+After all 5 rounds finish, proceed to post-edit navmesh rebuild + save. Do NOT save before round 5 even if verifier passes early — keep iterating to polish.
+
+Other hard rules still apply:
+- Minimum **25 total operations** across all rounds (ideally 30–60).
+- **NO collisions**: use `is_clear(x, y, z, min_dist)` before spawn. Trees 400, buildings 800, props 200–250.
+- Don't rationalize verifier feedback as "false positive". Execute the requested changes.
+- Time budget ~22 min. Each round ~3-4 min (ops 1 min + verify 60s). 5 rounds ~18 min. Fits.
+
+## Collision avoidance helper (copy into any execute_python_script that spawns)
+```python
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+eas = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+
+def is_clear(x, y, z, min_dist=250):
+    # True if no existing level actor is within min_dist XY of (x, y)
+    for a in eas.get_all_level_actors():
+        try:
+            l = a.get_actor_location()
+            if abs(l.x) > 1e7: continue
+            dx, dy = l.x - x, l.y - y
+            if dx*dx + dy*dy < min_dist*min_dist:
+                return False
+        except Exception: pass
+    return True
+
+def ground_z(x, y, default_z):
+    try:
+        pt = unreal.NavigationSystemV1.project_point_to_navigation(
+            world, unreal.Vector(x, y, default_z))
+        if pt and hasattr(pt,'x') and (pt.x or pt.y or pt.z):
+            return pt.z
+    except Exception: pass
+    return default_z
+
+# Example: spawn 10 trees with collision avoidance + ground-Z snap
+ps = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+ps_z = ps[0].get_actor_location().z if ps else 0
+placed = 0
+import random; random.seed(42)
+for attempt in range(100):
+    if placed >= 10: break
+    x = random.uniform(-3000, 3000)
+    y = random.uniform(-3000, 3000)
+    if not is_clear(x, y, 0, min_dist=400): continue
+    z = ground_z(x, y, ps_z)
+    bp = unreal.load_object(None, "/Game/CityDatabase/blueprints/BP_Tree3.BP_Tree3_C")
+    a = eas.spawn_actor_from_class(bp, unreal.Vector(x, y, z))
+    if a:
+        a.set_actor_label(f"Tree_{placed}")
+        placed += 1
+print(f"placed_trees={placed}")
+```
+Tune `min_dist` based on object size (trees: 400, buildings: 800, props: 200).
+
+## Your task for THIS map
+Korean palace — CLEARED variant. Focus on deleting crowds/props: find 6-10 SM_Person*, SM_Barrier*, SM_Banner*, or SM_Fence* actors and delete them to fully open palace grounds. Spawn 0 new props. Clean empty historical-site feel.
+
+## Mandatory finishing steps — RUN IN ORDER AT THE END
+
+**Step 0 — Find or create PlayerStart near scene actor centroid**
+Some templates place actors far from world origin (e.g., courtyard at x=2000, y=6800). If PS is at (0,0,0) while actors are elsewhere, the NavMeshBoundsVolume won't cover the playable area and REACHABLE will be 0/20.
+```
+import unreal
+eas = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+ues = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem)
+world = ues.get_editor_world()
+
+# Compute actor centroid first (ignore world-origin artifacts)
+all_actors = eas.get_all_level_actors()
+xs, ys, zs = [], [], []
+for a in all_actors:
+    try:
+        l = a.get_actor_location()
+        if abs(l.x)>1e7 or (l.x==0 and l.y==0 and l.z==0): continue
+        xs.append(l.x); ys.append(l.y); zs.append(l.z)
+    except Exception: pass
+cx = sum(xs)/len(xs) if xs else 0.0
+cy = sum(ys)/len(ys) if ys else 0.0
+# Z: use median of near-ground Z values (filter out flying actors)
+zs_sorted = sorted(zs)
+cz = zs_sorted[len(zs_sorted)//4] if zs_sorted else 0.0   # lower-quartile Z ≈ ground
+print(f"ACTOR_CENTROID=({cx:.0f},{cy:.0f},{cz:.0f})  n_actors={len(xs)}")
+
+# Locate or place PlayerStart
+ps_actors = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+if ps_actors:
+    ps_loc = ps_actors[0].get_actor_location()
+    # Guard: if PS is at origin but centroid is far, PS is misplaced — move it.
+    if abs(ps_loc.x)<10 and abs(ps_loc.y)<10 and (abs(cx)>500 or abs(cy)>500):
+        ps_actors[0].set_actor_location(unreal.Vector(cx, cy, cz + 100), False, False)
+        ps_loc = unreal.Vector(cx, cy, cz + 100)
+        print(f"PS_RELOCATED to centroid ({ps_loc.x:.0f},{ps_loc.y:.0f},{ps_loc.z:.0f})")
+    else:
+        print(f"PS_EXISTING at ({ps_loc.x:.0f},{ps_loc.y:.0f},{ps_loc.z:.0f})")
+else:
+    ps = eas.spawn_actor_from_class(unreal.PlayerStart, unreal.Vector(cx, cy, cz + 100))
+    ps_loc = ps.get_actor_location()
+    print(f"PS_CREATED at ({ps_loc.x:.0f},{ps_loc.y:.0f},{ps_loc.z:.0f})")
+```
+
+**Step 1 — Add NavMeshBoundsVolume centered on PlayerStart**
+Execute via execute_python_script (adjust center to ps_loc from Step 0):
+```
+import unreal
+eas = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+ues = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem)
+world = ues.get_editor_world()
+ps_actors = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+center = ps_actors[0].get_actor_location() if ps_actors else unreal.Vector(0, 0, 0)
+vol = eas.spawn_actor_from_class(unreal.NavMeshBoundsVolume, center)
+vol.set_actor_scale3d(unreal.Vector(100, 100, 15))
+print(f"NAV_VOLUME_OK at ({center.x:.0f},{center.y:.0f},{center.z:.0f})")
+```
+
+**Step 2 — Trigger nav build**
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+unreal.SystemLibrary.execute_console_command(world, "RebuildNavigation")
+print("REBUILD_TRIGGERED")
+```
+
+**Step 3 — Wait ~20 seconds** for initial nav build.
+
+**Step 4 — Validate navmesh (initial)**
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+ps = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+center = ps[0].get_actor_location() if ps else unreal.Vector(0, 0, 0)
+hits = 0
+for i in range(20):
+    try:
+        pt = unreal.NavigationSystemV1.get_random_reachable_point_in_radius(world, center, 15000)
+        if pt and hasattr(pt,'x') and not (pt.x==0 and pt.y==0 and pt.z==0):
+            hits += 1
+    except Exception:
+        pass
+print(f"REACHABLE_INITIAL={hits}/20")
+```
+If REACHABLE_INITIAL = 0/20, move the volume to a spot closer to ground-level actors and retry Steps 2-4 once.
+
+**NOW DO 5 MANDATORY ITERATION ROUNDS — hardcoded, do not skip, do not save early**:
+
+- **Round 1**: Bulk delete 10–15 unwanted actors (NEVER Floor/Ground/Landscape); then call `verify_scene(...)`; note suggestions.
+- **Round 2**: Address Round-1 verifier suggestions + spawn 10–15 primary additions (buildings, trees, main props); call `verify_scene(...)`.
+- **Round 3**: Address Round-2 verifier suggestions + spawn 5–10 more props for density; call `verify_scene(...)`.
+- **Round 4**: Address Round-3 verifier suggestions; do 3–5 ops (move overlaps, delete duplicates, fill sparse areas); call `verify_scene(...)`.
+- **Round 5**: Address Round-4 verifier suggestions; final polish 3–5 ops; call `verify_scene(...)`.
+
+Report per-round op count + verifier status. Only AFTER round 5 completes do you proceed to post-edit navmesh rebuild (Step 5) and save (Step 10).
+
+**Step 5 — Rebuild navmesh AFTER edits** (critical — otherwise saved navmesh ignores new obstacles)
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+unreal.SystemLibrary.execute_console_command(world, "RebuildNavigation")
+print("REBUILD_POST_EDIT_TRIGGERED")
+```
+
+**Step 6 — Wait ~20 seconds** for post-edit navmesh build.
+
+**Step 7 — Validate navmesh (post-edit)**
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+ps = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+center = ps[0].get_actor_location() if ps else unreal.Vector(0, 0, 0)
+hits = 0
+for i in range(20):
+    try:
+        pt = unreal.NavigationSystemV1.get_random_reachable_point_in_radius(world, center, 15000)
+        if pt and hasattr(pt,'x') and not (pt.x==0 and pt.y==0 and pt.z==0):
+            hits += 1
+    except Exception: pass
+print(f"REACHABLE_FINAL={hits}/20")
+```
+If REACHABLE_FINAL is much lower than INITIAL, your edits over-blocked — consider deleting some of your added obstacles.
+
+**Step 8 — Move editor camera above PlayerStart**
+```
+import unreal
+ues = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem)
+world = ues.get_editor_world()
+ps_actors = unreal.GameplayStatics.get_all_actors_of_class(world, unreal.PlayerStart)
+ps = ps_actors[0].get_actor_location()
+ues.set_level_viewport_camera_info(
+    unreal.Vector(ps.x - 2500, ps.y, ps.z + 2500),
+    unreal.Rotator(pitch=-40, yaw=0, roll=0)  # MUST use named args (positional order differs in UE Python)
+)
+print("CAMERA_SET")
+```
+
+**Step 9 — Overview screenshot**
+Call MCP tool `take_screenshot` with `filename="map_48_hwaseong_cleared_overview.png"`.
+
+**Step 10 — Save the level**
+```
+import unreal
+world = unreal.EditorLevelLibrary.get_editor_world()
+ok = unreal.EditorLoadingAndSavingUtils.save_map(world, "/Game/DiverseMaps50/map_48_hwaseong_cleared")
+print(f"SAVE_OK={ok}")
+```
+
+## Final report (≤120 words)
+State concisely: what edits you made, REACHABLE result, SAVE_OK result, any errors verbatim.

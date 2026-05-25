@@ -1,0 +1,3 @@
+[submodule "SimWorld"]
+	path = SimWorld
+	url = https://github.com/SimWorld-AI/SimWorld.git

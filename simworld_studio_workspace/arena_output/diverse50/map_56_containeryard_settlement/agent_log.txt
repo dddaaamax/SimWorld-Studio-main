@@ -1,0 +1,11 @@
+**SAVE_OK=True.**
+
+---
+
+**Final report:**
+
+**Edits made:** Deleted 13 template rails/cranes (Round 1) + 10 excess point lights. Spawned 5 settlement buildings (BP_Building_44/53/62/73/78) at 2771–4301 UU from PS, 5×BP_Tree1 + 3×BP_Tree4 at perimeter, 4×BP_Couch + 4×BP_Table as living arrangements, 3×BP_Hydrant, 4×BP_Trash_bin_b, and 4 warm point lights illuminating the centre. Four oversized buildings (ext 3500–10283 UU) and triplicate phantom spawns from timeouts were identified and deleted to restore navmesh. Total ~76 deliberate ops across 6 rounds.
+
+**REACHABLE_FINAL:** 20/20  
+**SAVE_OK:** True  
+**Errors:** UE BP spawn timeouts caused triplicate ghost actors (Settlement_Bldg_9×3, Bldg_53/62/73×2 extra); all cleaned up. Deprecation warning on `EditorLevelLibrary.get_editor_world` — non-fatal.

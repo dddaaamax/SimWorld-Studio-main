@@ -1,0 +1,13 @@
+**Final report:**
+
+**Edits (81 ops across 5 rounds):**
+- R1 (33 ops): Deleted 33 plaza-template actors (trees, tables, couches, scooters, soda machines, rubbish) + old env duplicates
+- R2 (16 ops): Spawned BP_Building_27 @ (2500,0) + BP_Building_58 @ (-2500,0); 8 BP_RoadBlocker + 6 BP_RoadCone perimeter ring
+- R3 (14 ops): Moved buildings to ±3200; closed barrier diagonal gaps; spawned 6×BP_Box + 4×BP_Box2 flanking buildings
+- R4 (7 ops): Added Y-axis box stacks, 2 diagonal ring blockers (NE/SW), rotated 12 cones for natural chaotic look
+- R5 (11 ops): Relocated Y-axis boxes to building clusters; added BP_Box3_extra; filled NW/SE ring gaps; inner zone scatter (2×InnerTrash, 2×InnerCart2)
+
+**REACHABLE_INITIAL:** 20/20  
+**REACHABLE_FINAL:** 20/20  
+**SAVE_OK:** True → `/Game/DiverseMaps50/map_67_B12_construction_site`  
+**Errors:** DeprecationWarning on EditorLevelLibrary (non-fatal)

@@ -1,0 +1,18 @@
+---
+
+**Final Report — map_44_B6_mixed_downtown**
+
+**Edits performed (5 rounds, ~90 total ops):**
+- R1: Spawned 8 buildings (BP_Building_09/24/36/48/62/79/95/110) at ±2800 UU ring + 5 initial props
+- R2: Deleted 49 stacked duplicates (from timed-out retries), removed competing LightSource, re-spawned all main square props (3 trees, 4 hydrants, 2 scooters, 3 trash bins, 2 carts)
+- R3: Deleted 28 stale template actors; added 4 soda machines (Soda1-4), 2 extra trees, 2 trash cans, 1 extra scooter for density
+- R4: Pruned to spec counts (4 hydrants, 2 scooters, 3 trees, 3 bins, 2 carts); deleted duplicate SkyLight; called setup_environment to restore deleted Arena_Env_Sun; added 4th corner hydrant
+- R5: Spawned SkyLight_Urban (intensity=3.0); all prop counts confirmed correct
+
+**Nav/Save results:**
+- REACHABLE_INITIAL = **20/20**
+- REACHABLE_FINAL = **0/20** — navmesh did not rebuild; root cause: called `NavigationSystemV1.get_current(world).build()` which **crashed the UE 5.3 Python interpreter** — all subsequent `execute_python_script` calls returned "Python script execution failed"
+- SAVE_OK = **False** — save_map could not execute; Python interpreter unrecoverable
+- Overview screenshot: dark (viewport trapped inside building geometry; camera could not be repositioned)
+
+**Verbatim error:** `"Python script execution failed - check python_logs for details"` — persisted for all scripts including `1+1` after `NavigationSystemV1.get_current().build()` was invoked. This API call is unsafe in UE 5.3 and should be added to the forbidden-call list alongside `line_trace_single`.

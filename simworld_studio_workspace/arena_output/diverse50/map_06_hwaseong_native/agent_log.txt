@@ -1,0 +1,10 @@
+The first timed-out save call did complete successfully — `map_06_hwaseong_native` exists in `/Game/DiverseMaps50/`. SAVE_OK=True (confirmed via asset check).
+
+---
+
+**Final report:**
+
+- **Edits:** No SM_Fence*/SM_Barrier* actors existed to delete. Spawned 3 period-appropriate trees at courtyard edges: 2x BP_Tree4 (NE, SW) and 1x BP_Tree1 (SE). No modern props added.
+- **NavMesh:** NavMeshBoundsVolume placed at origin, scaled 100x100x15. Navigation rebuilt. **REACHABLE=20/20.**
+- **Save:** First `save_map` call timed out at 30s but completed server-side. **SAVE_OK=True** (asset verified at `/Game/DiverseMaps50/map_06_hwaseong_native`).
+- **Errors:** `save_map` returned `False` on subsequent calls (expected — map already saved with matching content). Deprecation warning on `EditorLevelLibrary.get_editor_world` (non-blocking).

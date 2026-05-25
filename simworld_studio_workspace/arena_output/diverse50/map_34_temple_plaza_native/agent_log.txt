@@ -1,0 +1,14 @@
+---
+
+**Final Report**
+
+| Item | Result |
+|------|--------|
+| Deletions | 13+12+10+19+41+45+2+2 = **144 actors** (braziers, benches, barrels, weapon-stands, chests, weapons, glass buildings) |
+| Spawns | 3× BP_Tree2 (plaza edges) + 5× BP_Tree1/BP_Tree3 (perimeter) + 3× far-edge trees = **11 trees** |
+| REACHABLE_INITIAL | 20/20 |
+| REACHABLE_FINAL | **20/20** |
+| SAVE_OK | **True** → `/Game/DiverseMaps50/map_34_temple_plaza_native` |
+| Errors | None (DeprecationWarning on EditorLevelLibrary.get_editor_world — cosmetic only) |
+
+Ceremonial center fully cleared; 3 BP_Tree2 framing the plaza edges; 8 additional trees ringing the perimeter; period-authentic temple atmosphere confirmed by verifier PASS.

@@ -1,0 +1,16 @@
+# Core
+gymnasium>=0.29
+numpy>=1.21
+pillow>=9.0
+pyyaml>=6.0
+unrealcv>=4.0
+
+# task_gen — install editable from sibling repo
+# pip install -e ../task_gen       # adjust path to your local task_gen clone
+
+# LLM SDKs
+anthropic>=0.40   # Claude (native — preserves thinking blocks)
+openai>=1.50      # OpenAI + any OpenAI-compatible endpoint (GPT, Gemini, Qwen)
+
+# Optional: pretty stdout
+rich>=13.0

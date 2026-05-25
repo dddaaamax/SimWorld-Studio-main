@@ -1,0 +1,19 @@
+{
+  "name": "simworld-studio-server",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "start":   "node index.js",
+    "dev":     "node --watch index.js",
+    "test":    "node tests/test-runner.js",
+    "test:unit":        "node tests/test-runner.js unit",
+    "test:integration": "node tests/test-runner.js integration",
+    "test:pipeline":    "node tests/test-runner.js pipeline",
+    "test:multi":       "node tests/test-runner.js multi"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "cors":   "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

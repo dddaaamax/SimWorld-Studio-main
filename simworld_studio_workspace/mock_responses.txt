@@ -1,0 +1,8 @@
+=== MESSAGE 1 (EXAMPLE) ===
+USER_INPUT: [Example] Create an island scene with ocean, a lighthouse, and a few trees.
+THINKING: [Example] Place the base ocean plane, add an island mesh, position the lighthouse, then add props (trees) and ensure they sit on the terrain.
+TOOL_START: mcp__simworld__spawn_actor
+TOOL_INPUT: {"name":"<ACTOR_NAME>","static_mesh":"<ASSET_PATH>","location":["<x>","<y>","<z>"],"rotation":["<rx>","<ry>","<rz>"],"scale":["<sx>","<sy>","<sz>"]}
+TOOL_RESULT: {"status":"success","result":{"name":"<ACTOR_NAME>","location":["<x>","<y>","<z>"]}}
+TEXT: [Example] Scene assembled; use verification to adjust any floating props.
+=== END MESSAGE 1 ===

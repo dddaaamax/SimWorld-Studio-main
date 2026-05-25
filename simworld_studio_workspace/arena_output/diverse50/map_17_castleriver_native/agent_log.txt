@@ -1,0 +1,15 @@
+SAVE_CURRENT_LEVEL=True, SAVE_ALL_DIRTY=True.
+
+## Final Report
+
+**Edits:** Deleted 13 cannons, 8 tombs, 7 round stones, 4 stones, 2 fabrics to open castle courtyards and walkways. Spawned 3 BP_Tree2 along the river edge (RiverTree_0/1/2). Template had no SM_Barrel/Crate/Fence/Haybale actors — adapted to equivalent medieval clutter. Period integrity maintained (no foreign assets). **Total: 37 operations** (34 deletes + 3 spawns).
+
+- REACHABLE_INITIAL=20/20
+- REACHABLE_FINAL=20/20 (no regression)
+- SAVE_OK=True (save_current_level + save_all_dirty)
+- No errors.
+: REACHABLE_INITIAL=20/20, REACHABLE_FINAL=20/20. No walkability regression.
+
+**SAVE_OK=True** to `/Game/DiverseMaps50/map_17_castleriver_native`.
+
+No errors. Deprecation warning on `EditorLevelLibrary.get_editor_world()` (non-blocking).

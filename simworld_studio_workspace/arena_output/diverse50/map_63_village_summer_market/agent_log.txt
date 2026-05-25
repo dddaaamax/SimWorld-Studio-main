@@ -1,0 +1,13 @@
+---
+
+**Final report (map_63_village_summer_market):**
+
+**Edits (7 rounds, ~70 ops total):**
+- Deleted 15 SM_FenceHigh actors + 6 obstacle props (axe, stump, power pole, canister, chair, ladder) to open central square
+- Spawned market: 6 BP_Table (2×3 grid), 4 BP_Couch (N/S flanks), 5 BP_Trash_bin_a, 3 BP_Hydrant, 2 BP_Cart + 2 BP_Cart2 (4 corners), 5 BP_Tree6 perimeter (N/NW/NE/SW/E)
+- Corrected all actor rotations via named Rotator args (UE 5.3 positional order bug fixed)
+- Relocated water-edge couches and carts inland; rebalanced tree ring across quadrants
+
+**REACHABLE_INITIAL:** 20/20  
+**REACHABLE_FINAL:** 20/20  
+**SAVE_OK:** true

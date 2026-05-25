@@ -1,0 +1,12 @@
+{
+  "latest": "0.2.0",
+  "min_supported": "0.1.0",
+  "changelog": "Added crowds (MetaHumans), human avatars, characters, robot dog, traffic system, and agent blueprints",
+  "release_date": "2026-03-12",
+  "simworld_binary": {
+    "url": "https://huggingface.co/datasets/SimWorld-AI/SimWorld-Studio/resolve/main/SimWorld-Studio-Minimal.tar.gz",
+    "size_compressed": "15 GB",
+    "size_extracted": "21 GB",
+    "sha256": "806e869ad1c65b298f05a39854b28e4188bb50817f539744451849e054990e2f"
+  }
+}

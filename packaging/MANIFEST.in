@@ -1,0 +1,3 @@
+recursive-include simworld_arena/server *.js *.json *.html *.css *.svg *.png *.ico *.woff *.woff2 *.ttf *.map
+recursive-include simworld_arena/skills *.md
+recursive-include simworld_arena/config *.yaml

@@ -1,0 +1,14 @@
+---
+
+**Final Report**
+
+**Edits made:**
+- Deleted ~300+ dungeon clutter actors across 5 rounds: all skulls, skeletons, torture devices, chains/shackles, bars, locks, medieval weapons, food/tavern items (SM_Bread, SM_Bowl, SM_Plate, etc.), and generic Cube obstacles
+- Spawned **4 BP_Table** reading tables in two chambers: Chamber 1 at X≈−100 (Y=50, −250), Chamber 2 at X≈−530 (Y=50, −250) — 430 UU gap between chambers
+- Spawned **3 BP_Couch** flanking the table pairs
+- Placed **2 BP_Tree1** (dried potted plants): entrance corner (30, 150) and deep far corner (−600, −250)
+- Spawned **4 BP_Box2** book crates adjacent to each table group
+
+**REACHABLE_FINAL = 20/20** (unchanged from initial — furniture did not block navmesh)
+
+**SAVE_OK = True** → `/Game/DiverseMaps50/map_37_dungeon_remix`

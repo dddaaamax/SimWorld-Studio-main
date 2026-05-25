@@ -1,0 +1,6 @@
+**Final report:**
+
+- **Edits**: Cleared 46 pre-existing Plaza actors; spawned 24 trees in two staggered rings (r≈3500 & r≈3700, BP_Tree1–6 mix, scales 1.1–1.4); placed 3 tables, 2 couches, 3 fire barrels (BP_Trash_can), 2 carts, 8 crates (BP_Box/Box2/Box3) in central clearing; fixed all prop Z to ground (z=0); removed duplicate DirectionalLight and SkyLight; two BP_Building_09/11 cabin attempts were abandoned — all building types blocked navmesh entirely (large collision boxes touching ground plane).
+- **REACHABLE_FINAL**: 20/20
+- **SAVE_OK**: True
+- **Errors**: `project_point_to_navigation` missing `nav_data` arg caused all early spawns to float at z=112 — corrected by bulk z-fix to ground; building collision was irrecoverably navmesh-blocking regardless of ID or position.

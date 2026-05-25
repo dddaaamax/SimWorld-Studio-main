@@ -1,0 +1,8 @@
+## Final Report
+
+**Map 12 — Slavic Village Day Remix (urban density)**
+
+- **Edits**: 42 deletes (26 rural clutter/fences/log house parts + 16 duplicate actors), 19 spawns (4 CityDatabase buildings BP_Building_08/_15/_32/_61 at outskirts scaled 0.2, 3 scooters in center, 2 hydrants, 3 trash bins, 5 street trees, 1 cart, 1 table), 4 transform fixes (buildings moved further out + rescaled). **Total ops: 65.**
+- **REACHABLE**: 20/20 initial, **20/20 final** — no nav degradation.
+- **SAVE_OK**: True — saved to `/Game/DiverseMaps50/map_12_village_day_remix`.
+- **Errors**: None. Verify_scene flagged triple-spawned duplicates and oversized buildings — both corrected in Round 4.

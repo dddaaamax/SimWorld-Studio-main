@@ -1,0 +1,729 @@
+{
+  "status": "success",
+  "result": {
+    "actors": [
+      {
+        "name": "WorldSettings_1",
+        "class": "WorldSettings",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Brush_1",
+        "class": "Brush",
+        "location": [
+          -90,
+          110,
+          20
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "LightSource",
+        "class": "DirectionalLight",
+        "location": [
+          100,
+          -200,
+          570
+        ],
+        "rotation": [
+          -31.34152221679689,
+          36.41256332397461,
+          -51.27301025390625
+        ],
+        "scale": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      {
+        "name": "PlayerStart",
+        "class": "PlayerStart",
+        "location": [
+          0,
+          0,
+          112.00068664550781
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "AtmosphericFog_1",
+        "class": "AtmosphericFog",
+        "location": [
+          0,
+          0,
+          -100000
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SkySphere",
+        "class": "BP_Sky_Sphere_C",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SkyLight_1",
+        "class": "SkyLight",
+        "location": [
+          20.77435302734375,
+          -30.995269775390625,
+          504.74822998046875
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_0",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_1",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_2",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DefaultPhysicsVolume_0",
+        "class": "DefaultPhysicsVolume",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "GameplayDebuggerPlayerManager_0",
+        "class": "GameplayDebuggerPlayerManager",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SmartObjectSubsystemRenderingActor_0",
+        "class": "SmartObjectSubsystemRenderingActor",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "AbstractNavData-Default",
+        "class": "AbstractNavData",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SkyAtmosphere_0",
+        "class": "SkyAtmosphere",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DirectionalLight_0",
+        "class": "DirectionalLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          -45.00000000000001,
+          29.999999999999996,
+          2.248991783197472e-15
+        ],
+        "scale": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      {
+        "name": "SkyLight_0",
+        "class": "SkyLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "ExponentialHeightFog_0",
+        "class": "ExponentialHeightFog",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StaticMeshActor_0",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          -10
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          200,
+          200,
+          1
+        ]
+      },
+      {
+        "name": "House_1",
+        "class": "BP_Building_01_C",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "House_2",
+        "class": "BP_Building_02_C",
+        "location": [
+          4000,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "House_3",
+        "class": "BP_Building_03_C",
+        "location": [
+          8000,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "House_4",
+        "class": "BP_Building_04_C",
+        "location": [
+          0,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "House_5",
+        "class": "BP_Building_05_C",
+        "location": [
+          4000,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "House_6",
+        "class": "BP_Building_06_C",
+        "location": [
+          8000,
+          6000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_1",
+        "class": "BP_Tree1_C",
+        "location": [
+          -1000,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_2",
+        "class": "BP_Tree3_C",
+        "location": [
+          1000,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_3",
+        "class": "BP_Tree2_C",
+        "location": [
+          2500,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_4",
+        "class": "BP_Tree5_C",
+        "location": [
+          4000,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_5",
+        "class": "BP_Tree4_C",
+        "location": [
+          5500,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_6",
+        "class": "BP_Tree6_C",
+        "location": [
+          7000,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_7",
+        "class": "BP_Tree1_C",
+        "location": [
+          8500,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_8",
+        "class": "BP_Tree3_C",
+        "location": [
+          9500,
+          3000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_1",
+        "class": "BP_Hydrant_C",
+        "location": [
+          3000,
+          2500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "TrashBin_1",
+        "class": "BP_Trash_bin_a_C",
+        "location": [
+          4500,
+          2400,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "TrashBin_2",
+        "class": "BP_Trash_bin_b_C",
+        "location": [
+          5500,
+          3600,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Table_1",
+        "class": "BP_Table_C",
+        "location": [
+          4000,
+          3800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Couch_1",
+        "class": "BP_Couch_C",
+        "location": [
+          4000,
+          4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

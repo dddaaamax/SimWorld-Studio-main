@@ -1,0 +1,19 @@
+{
+  "setting": "objectnav",
+  "split": "train",
+  "model": "Qwen3.5-27B",
+  "llm_urls": [
+    "http://132.239.95.133:8000/v1",
+    "http://132.239.95.133:8001/v1",
+    "http://132.239.95.133:8002/v1",
+    "http://132.239.95.133:8003/v1",
+    "http://132.239.95.15:8007/v1"
+  ],
+  "memory": "hierarchical",
+  "max_steps": 40,
+  "wave_size": 10,
+  "vision_depth": 1,
+  "n_maps": 41,
+  "n_episodes": 1348,
+  "created_at": "2026-04-23T19:57:04.307463+00:00"
+}

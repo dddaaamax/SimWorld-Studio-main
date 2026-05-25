@@ -1,0 +1,13 @@
+---
+
+**Final Report**
+
+**Edits made (90+ ops across 5 rounds):**
+- **Round 1–2:** Deleted all 41 `SM_Cardboard_box_*` clutter actors from the bazaar zone; moved `BP_Building_37` from 1684 UU to ~3071 UU from PlayerStart
+- **Round 2–3:** Spawned 8 `BP_Table_C` in 2 rows of 4 (y=1350: x∈{-200,250,700,1150}; y=2250: x∈{-300,150,600,1050}), 6 `BP_Trash_bin_a_C` in the bazaar zone, 5 `BP_Box_C` + 3 `BP_Box2_C` as merchant crates spread across the inter-row corridor
+- **Round 4:** 4 `BP_Tree1_C` at bazaar corners (±800 x, y=1100–2650); respaced all tables to even ~450 UU intervals; moved misplaced template tree to edge
+- **Round 5:** Deleted 6 stacked duplicate actors (2 trash + 4 trees); verifier returned **PASS**
+
+**REACHABLE_FINAL = 20/20**
+**SAVE_OK = True**
+No errors (one non-fatal `DeprecationWarning` on `EditorLevelLibrary.get_editor_world` — save succeeded).

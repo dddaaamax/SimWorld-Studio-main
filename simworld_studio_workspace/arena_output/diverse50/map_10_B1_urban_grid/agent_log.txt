@@ -1,0 +1,3 @@
+**Final report:**
+
+Built `map_10_B1_urban_grid` from scratch on empty template. Setup: afternoon lighting, 200-scale ground. Spawned 6 buildings in 2-row grid (BP_Building_03/18/42 at X=2000; BP_Building_55/27/71 at X=-2000), 4 trees (BP_Tree3, BP_Tree5) between rows, 3 BP_Hydrant and 2 BP_Trash_bin_a as street detail. NavMeshBoundsVolume placed at origin, scaled 100x100x10. **REACHABLE=20/20**. **SAVE_OK=True** to `/Game/DiverseMaps50/map_10_B1_urban_grid`. No errors (one benign deprecation warning on `EditorLevelLibrary.get_editor_world`).

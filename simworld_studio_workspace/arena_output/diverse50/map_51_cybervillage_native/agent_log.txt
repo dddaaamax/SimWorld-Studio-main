@@ -1,0 +1,18 @@
+SAVE_OK=True.
+
+---
+
+## Final Report
+
+**Map**: `map_51_cybervillage_native` — CYBER slavic village (dark cyberpunk/neon)
+
+**Edits performed (~90 total ops across 10 rounds)**:
+- **Built village from scratch**: 10 buildings (barns, garages, kiosks, outhouse) at 3x scale along main street, 5 streetlights, water tower, water pump, 2 benches, car
+- **Street clutter**: 23 fences (left + right sides), 8 pallets, 5 trashbags, 4 tires, 3 firewood stacks, 2 canisters, 2 signs
+- **Cyber edits**: Deleted 13 fences/pallets to open main street, spawned 8 BP_Tree4/Tree6 at village edges, 4 BP_Trash_bin_b for grimy detail
+- **Lighting**: Night atmosphere via setup_environment, 15 neon point lights (cyan/magenta/purple/hot pink/electric blue) at 200k intensity along both sides of street
+- **Fixes**: Fixed building rotations (yaw-only), zeroed tilted props, moved 16 mid-street props to sidewalk edges
+
+**REACHABLE_FINAL**: 20/20
+**SAVE_OK**: True
+**Errors**: MCP `execute_python_script` reported false failures throughout (scripts executed successfully via file-output workaround). UE warning about multiple directional lights (cosmetic only).

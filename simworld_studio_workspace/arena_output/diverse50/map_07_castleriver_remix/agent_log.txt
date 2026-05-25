@@ -1,0 +1,12 @@
+ASSET_EXISTS=True, SAVE_OK=True. The first save (that timed out) actually completed successfully.
+
+---
+
+**Final report**
+
+Edits: Spawned 4 trees (2x BP_Tree2, 2x BP_Tree6) around castle perimeter and 3 supply props (2x SM_Dungeon_chest, 1x SM_Wooden_Beam from `/Game/Dungeon/` cross-pack) near the bridge approach for a besieged-castle feel. WinterTown had no barrel/crate meshes (modern pack); used Dungeon medieval props instead. NavMeshBoundsVolume placed at castle centroid (-43678, 15104, -22451) with scale 100x100x20.
+
+- **nav_center**: (-43678, 15104, -22451) — castle is ~43k units from origin
+- **REACHABLE**: 20/20
+- **SAVE_OK**: True (to `/Game/DiverseMaps50/map_07_castleriver_remix`)
+- **Errors**: Initial save_map timed out at 30s but completed successfully; deprecation warning on `EditorLevelLibrary.get_editor_world` (non-blocking)

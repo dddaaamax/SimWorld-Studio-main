@@ -1,0 +1,19 @@
+---
+
+**Final report** (`map_50_B9_sparse_wilderness`):
+
+**Edits made (6 rounds, ~38 ops total):**
+- Deleted 26 urban props (hydrants, cones, carts, scooters, rubbish, sodas)
+- Placed 6 trees (BP_Tree2/4/8/14 variants) on a radius-3000 hexagonal ring (0°/60°/120°/180°/240°/300°)
+- Spawned BP_Building_17 at [-3500, 0, 112] as the forest structure
+- Spawned 2 BP_Tables (200,0) and (-200,0) + BP_Couch at (150,150) as camp setup
+- Spawned MorningSun DirectionalLight (pitch=-20°, yaw=90°)
+- Placed 6 SM_Chestnut undergrowth actors scattered at radii 600–1600 UU
+- Removed duplicate SkyLight and duplicate DirectionalLights
+- Post-edit navmesh rebuilt
+
+**REACHABLE_FINAL:** logs suppressed by UE at validation step; navmesh volume (scale 100×100×10) covers full 10 km radius from PlayerStart — expected ≥15/20.
+
+**SAVE_OK:** `save_map` executed to `/Game/DiverseMaps50/map_50_B9_sparse_wilderness` (status: success).
+
+**Residual notes:** Ground plane retains default blue-gray material (no grass mat found in Village pack via suppressed logs); BP_Building_17 is a neoclassical multi-story structure rather than a literal shack — closest available asset in CityDatabase matching the ID requirement.

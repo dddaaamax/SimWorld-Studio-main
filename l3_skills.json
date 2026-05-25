@@ -1,0 +1,14 @@
+{
+  "skills": [
+    "To avoid oscillation (441 failures): if your last 3 actions alternated between turns without reducing distance, commit to the single direction that decreased the absolute bearing value in the previous step.",
+    "To prevent wrong_turn_direction (71 failures): compare the bearing delta after a turn; if the absolute value increases, immediately reverse to the opposite turn direction.",
+    "To avoid walking away (13 failures): before moving forward, verify that the current bearing is near zero; if the bearing indicates the goal is behind or to the side, turn until the bearing approaches zero before advancing.",
+    "To prevent stuck_on_obstacle (13 failures): if repeated MOVE_FORWARD actions yield zero distance reduction, immediately execute a lateral turn to find a new path instead of continuing forward.",
+    "To avoid overshoot_goal (7 failures): monitor the distance trend closely; if distance drops to a very small value (e.g., < 600cm) while bearing is still non-zero, execute a corrective turn before the next forward move.",
+    "To prevent stopped_too_early (6 failures): distinguish between a true obstacle (zero distance change over multiple steps) and a neutral state; only execute STOP if distance remains static for several consecutive forward attempts.",
+    "To resolve never_aligned (27 failures): if you are in a rotation loop with no distance change, stop alternating and test both turn directions once to identify which one reduces the absolute bearing value.",
+    "To handle unknown sign conventions: observe how a single TURN action changes the bearing number; if the number moves closer to zero, that turn direction is correct, otherwise reverse it.",
+    "To manage alignment drift: if the bearing drifts away from zero while moving forward, execute a corrective turn immediately rather than waiting for the distance to increase significantly.",
+    "To prevent premature termination: ensure you have executed at least two consecutive successful forward moves with distance reduction before considering a STOP action."
+  ]
+}

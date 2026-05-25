@@ -1,0 +1,46 @@
+# Default configuration for SimWorld nav-experiment runs.
+# Loaded by notebooks / scripts; the runner CLI overrides per-flag.
+
+env:
+  ucv_host: 127.0.0.1
+  ucv_port: 9000
+  mcp_port: 55558
+  agent_name: GymNavAgent_0
+  agent_blueprint: /Game/TrafficSystem/Pedestrian/Base_User_Agent.Base_User_Agent_C
+  camera_id: null             # null = auto-discover after spawn (recommended)
+  image_size: [240, 320]      # H, W
+  capture_rgb: true
+  require_stop_for_success: false
+  use_collision_penalty: false
+  forward_duration_s: 2.0     # StepForward duration
+  turn_angle_deg: 30          # TurnAround magnitude per TURN action
+  spawn_z: 110                # Studio production value (agent-registry.json)
+  agent_speed: 200
+
+episode:
+  task: pointnav              # pointnav | objectnav
+  seed: 42
+  target_distance_cm: 2000
+  distance_jitter_cm: 500
+  success_distance_cm: 200
+  max_steps: 40
+  max_episode_time_s: 300
+  # objectnav extras (ignored when task=pointnav)
+  target_filter_substring: BP_Trash
+  object_category: TRASH
+
+llm:
+  name: claude                # claude | gpt | gemini | qwen
+  model: null                 # null = vendor default
+  max_tokens: 1024
+  temperature: 0.0
+
+runner:
+  vision_history_depth: 3     # null = keep all images (token-expensive)
+  log_level: INFO
+  run_name: null              # null = auto from model + episode_id
+
+batch:
+  parallel: 1                 # >1 requires that many UE instances on distinct ports
+  ucv_ports: [9000]
+  models: [claude]

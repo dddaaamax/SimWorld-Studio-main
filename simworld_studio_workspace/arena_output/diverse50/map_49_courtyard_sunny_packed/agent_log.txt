@@ -1,0 +1,15 @@
+---
+
+**Final Report**
+
+**Edits made (47 ops across 5 rounds):**
+- R1 (12 ops): 6 BP_Table in 3×2 grid + 6 BP_Couch in ring around PS
+- R2 (8 ops): Relocated 5 out-of-bounds actors (west of X=1396); spawned 1 Tree2, 2 TrashBins using navmesh positions
+- R3 (10 ops): 3 BP_Tree2 + 3 BP_Hydrant + 4 BP_Trash_bin_a — all placed via navmesh sampling
+- R4 (10 ops): 3 BP_Cart + 3 BP_Scooter_01 + 2 BP_Soda1 + 2 BP_RoadCone — outdoor event density
+- R5 (7 ops): 3 BP_Can + 3 BP_Rabbish + 1 BP_Tree3 — scatter clutter for lived-in feel
+
+**REACHABLE_INITIAL**: 20/20  
+**REACHABLE_FINAL**: 20/20  
+**SAVE_OK**: True  
+**Errors**: `DeprecationWarning` on `EditorLevelLibrary.get_editor_world` (non-fatal); `get_actors_in_level` MCP endpoint returned error throughout (system-level, did not affect spawning). No floor actors deleted.

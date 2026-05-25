@@ -1,0 +1,8 @@
+---
+
+**Final report**
+
+- **Edits (7 rounds, ~43 ops):** Deleted all 12 banned BP_Building_01–06 instances + 2 center trees. Spawned 4× BP_Building_33 and 4× BP_Building_47 in a market ring (~±900–1700 from origin). Added 10× BP_Tree4 along fortress-wall perimeter (E/W/N/S walls + 4 corners). Spawned 4× BP_Hydrant at ±1800,±1800 courtyard corners and 4× trash bins (a/b alternating) at ±2300–2600. Fixed 6 duplicate trees from a partial-timeout run. Added 2× BP_Can2 as market courtyard props.
+- **Navmesh:** Buildings formed a ring isolating the original PS; moved PS to (0,−3000,10) on open ground south of the market cluster. **REACHABLE_FINAL=20/20.**
+- **SAVE_OK=True** → `/Game/DiverseMaps50/map_21_hwaseong_remix2`
+- **Errors:** `DeprecationWarning` on `EditorLevelLibrary.get_editor_world` (non-fatal); one `execute_python_script` timeout (partial execution cleaned up in subsequent round).

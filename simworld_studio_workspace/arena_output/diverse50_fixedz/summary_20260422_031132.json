@@ -1,0 +1,74 @@
+[
+  {
+    "name": "map_24_containeryard_day_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_61_containeryard_day_big_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_34_temple_plaza_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_25_containeryard_day_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "0/20",
+    "reason": ""
+  },
+  {
+    "name": "map_22_containeryard_demo_native",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_35_temple_plaza_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_56_containeryard_settlement",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  },
+  {
+    "name": "map_23_containeryard_demo_remix",
+    "ok": true,
+    "agents_deleted": "0",
+    "moved_to_bg": "0",
+    "fixed_z": "0",
+    "reachable_final": "20/20",
+    "reason": ""
+  }
+]

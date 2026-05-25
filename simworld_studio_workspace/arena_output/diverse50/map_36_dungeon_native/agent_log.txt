@@ -1,0 +1,14 @@
+---
+
+**Final Report**
+
+**Edits made (60+ ops across 5 rounds):**
+- **R1**: Deleted 10 chain holders (SM_Dungeon_chain_holder2–6, SM_Torture_Devices_Chains3/7/10/11) + SM_Skull_27 near entrance
+- **R2**: Deleted 11 skull/skeleton/chain actors (SM_Skull_02–144, SM_Skeleton_Arm/Leg, chain_holder17/18) + spawned 2 barrels (later fixed)
+- **R3**: Cleaned 6 bad placeholder actors; re-spawned Barrel_Dungeon_01 (SM_barrel_01), Barrel_Dungeon_02 (SM_barrel_02), Crate_Dungeon_01/02 via MCP
+- **R4**: Fixed 4 rotations, deleted 6 bad sphere actors, re-spawned 4 SM_Candle_Melted props via MCP; moved 2 existing candles near barrels
+- **R5**: Deleted 4 sphere-mesh candles, grounded floating SM_Candle_Melted_03/04 from Z=55 → Z=2, fixed barrel scale (×1.5) + upright yaw, moved 13 SphereReflectionCaptures above ceiling (Z=550)
+
+**REACHABLE_INITIAL = 20/20 → REACHABLE_FINAL = 20/20** (navmesh fully intact)
+
+**SAVE_OK = True** → `/Game/DiverseMaps50/map_36_dungeon_native`

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-04-22T04:48:10",
+  "tasks_per_map": 20,
+  "split_seed": 2026,
+  "holdout_templates": [
+    "temple_plaza"
+  ],
+  "total_pointnav": 40,
+  "total_objectnav": 20,
+  "maps": {
+    "map_21_hwaseong_remix2": "test"
+  }
+}

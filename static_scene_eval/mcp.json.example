@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "simworld": {
+      "command": "node",
+      "args": [
+        "/path/to/SimWorld-Studio/web/server/mcp-server.js"
+      ],
+      "env": {
+        "UNREAL_HOST": "127.0.0.1",
+        "UNREAL_PORT": "55560",
+        "ASSET_LIBRARY_PATH": "/path/to/SimWorld-Studio/asset_library/assets.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+**Final Report**
+
+**Edits made** (41 total ops across 5 rounds + addendum):
+- **Deleted**: 16 SM_FenceHigh actors (all fences cleared), SM_WaterIcePlane01_7 (water blocking square removed)
+- **Relocated**: 6 SM_SpruceTree5–10 to village perimeter, SM_SpruceTree02_2 to far perimeter, SM_Birch02_2 Z lifted to ground (1364), SM_FireWood_Axe_12 Z lowered to stump surface (1275)
+- **Spawned**: 8× BP_Tree4, 4× BP_Tree6 (perimeter ring, min_dist 400–600), 7× BP_Trash_bin_b (varied rotations 30°–315°), 3× BP_Scooter_02 (varied yaw 45°/130°/210°), 1× BP_Hydrant at center
+
+**REACHABLE_INITIAL** = 20/20 | **REACHABLE_FINAL** = 20/20  
+**SAVE_OK** = `true` → `/Game/DiverseMaps50/map_51_village_night_big_native`  
+**Errors**: DeprecationWarning on `EditorLevelLibrary.get_editor_world` (cosmetic only); Python interpreter crashed mid-Round-3 on unknown BP_Scooter_02 class path — recovered by using `spawn_blueprint_actor` MCP tool directly.

@@ -1,0 +1,9 @@
+## Final Report
+
+**Edits**: Remixed container yard into makeshift settlement. Deleted 15 industrial clutter actors (containers/barrels/crates) + 15 duplicate buildings + 18 excess trash cans = **48 deletions**. Spawned 3 squatter buildings (BP_Building_91 x2, BP_Building_29 x1), 5 scrub trees (BP_Tree1), 3 trash cans, plus benches, hydrants, and extra trees across corrective rounds = **~17 spawns**. **Total ops: ~65**.
+
+- **REACHABLE_INITIAL**: 20/20
+- **REACHABLE_FINAL**: 20/20
+- **SAVE_OK**: True
+- **Path**: `/Game/DiverseMaps50/map_23_containeryard_demo_remix`
+- **Errors**: Deprecation warning on `EditorLevelLibrary.get_editor_world()` (non-blocking). verify_scene flagged duplicates from repeated round 2 executions (timeout retries) — corrected by dedup pass.

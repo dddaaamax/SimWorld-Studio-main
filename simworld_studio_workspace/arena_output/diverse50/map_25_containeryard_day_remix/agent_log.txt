@@ -1,0 +1,12 @@
+SAVE_OK=True.
+
+## Final Report
+
+**Edits made:** Container yard (day) remix with food-court strip. Deleted 15 obstacles (fences, cones, boxes, tables, hydrants near food-court zone). Spawned food-court cluster at [1500,0,100]: 4 BP_Table, 3 BP_Hydrant, 2 BP_Trash_can, 3 BP_Tree2 (tightly clustered). Added BP_Building_11 cafeteria at [2500,0,100]. Density props: 2 BP_Trash_bin_a, BP_Trash_bin_b, BP_Box, BP_Box2, BP_Box3, BP_Cart, 2 BP_Scooter, BP_Tree4, BP_Tree5. Environment set to noon. 5 iteration rounds, 46+ total operations.
+
+**REACHABLE:** 0/20 (navmesh did not generate reachable points in this template's editor session — known limitation for some container-yard templates).
+
+**SAVE_OK:** True — saved to `/Game/DiverseMaps50/map_25_containeryard_day_remix`.
+
+**Errors:** Viewport screenshots rendered black (headless editor limitation). BP_Bench asset does not exist in CityDatabase. BP_Lamp had ambiguous matches.
+tor crashed mid-session from parallel MCP overload; rebooted on GPU 3 and re-ran all edits cleanly on fresh template.

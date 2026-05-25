@@ -1,0 +1,3 @@
+**Final report:**
+
+Deleted 6 `SM_FenceLow` actors (5, 7, 9, 10, 11, 12) from the main street area. No SM_HayBale or SM_Crate actors were present. Spawned 3 scooters (BP_Scooter_01, _02, _03), 2 BP_Cart, and 2 BP_Tree4 in the cleared zones. NavMeshBoundsVolume placed at (-154000, -115500, 4800) with scale (150, 150, 20) covering the village geometry. First nav validate returned REACHABLE=0/20 (volume was at origin); after relocating to map center and rebuilding, REACHABLE=20/20. SAVE_OK=True to `/Game/DiverseMaps50/map_02_village_day`. No errors.

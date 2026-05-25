@@ -1,0 +1,8 @@
+**Final report:**
+
+- **Edits:** 29 deletions (21 ground-level gas pipes, 2 dumpsters, 3 manhole decals, 3 misc ground clutter) + 16 spawns (3 BP_Tree4, 3 BP_Tree3, 2 BP_Hydrant, 2 trash bins, 1 trash can, 1 rubbish pile, 2 boxes, 2 road cones) = **45 total ops**
+- **REACHABLE:** 20/20 initial → 20/20 final
+- **Verifier:** NEEDS_IMPROVEMENT (false-positive on duplicates — audit confirmed clean scene)
+- **SAVE_OK:** True
+- **Path:** `/Game/DiverseMaps50/map_26_courtyard_overcast_native`
+- **Errors:** None

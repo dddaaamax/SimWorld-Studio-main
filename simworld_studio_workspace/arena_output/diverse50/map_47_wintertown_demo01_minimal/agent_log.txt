@@ -1,0 +1,17 @@
+---
+
+**Final Report**
+
+**Edits made (65 ops across 5 rounds):**
+- R1: Deleted 12 obstacles (5 benches, 7 lamp posts)
+- R2: Spawned 11 trees (BP_Tree3) + 3 buildings (IDs 9/14/22); later deleted 3 mismatched urban buildings in R3
+- R3: Deleted 5 actors (3 urban buildings + 2 OOB trees), spawned 3 village barns (SM_Barn01/02_Var1), 3 birch trees, fixed 9 floating actors Z=677→70
+- R4: Fixed SM_TreeBirch01 + 5 SM_TreeOld/Spruce Z=1000–1370→70; moved PlayerStart Z→90; added 7 birch trees; confirmed barn meshes
+- R5: Renamed barns to SM_Barn01_OutA/B/C; fixed SM_TreeOld2 Z; added 1 birch; deleted 2 remaining lamp posts
+
+**Final state:** 3 village barns + 12 birch trees at Z=70, all floating trees grounded, 14 lamp posts/benches removed, PlayerStart at Z=90.
+
+**REACHABLE_FINAL = 20/20**
+**SAVE_OK = True**
+
+No errors (1 deprecation warning on `EditorLevelLibrary.get_editor_world()` — non-fatal).

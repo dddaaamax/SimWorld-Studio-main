@@ -1,0 +1,18 @@
+`TARGET_EXISTS=True` — the target asset exists at `/Game/DiverseMaps50/map_65_hwaseong_ceremonial`. The package was also saved via `save_packages` (SAVE_PKG=True).
+
+---
+
+**Final Report**
+
+**Edits made:**
+- Deleted 19 barriers/handrails: 9× `SM_StraightStronewall_*` (courtyard boundary walls) + 13× `SM_M_Handrail_*` (fence-like balustrades) — opens the ceremonial courtyard
+- Spawned 8 `BP_Tree4` trees in a ring at r≈2000–3400 around PlayerStart (courtyard perimeter) + 3 fill trees at r≈3400
+- Spawned 4 `BP_Table` ceremonial stations at cardinal offsets ±800 from PS, each rotated to face center
+- Spawned 2 `BP_Couch` at pavilion (flanking PS)
+- Note: 7 BP_Building_* outer structures were added then removed — they fully blocked navmesh (confirmed by 0/20 REACHABLE); furniture/trees alone do not block nav
+
+**REACHABLE:** 20/20 initial → 0/20 after buildings → 20/20 final (post building removal, post rebuild)
+
+**SAVE_OK:** `save_packages([world.get_package()])=True`; `TARGET_EXISTS=True` at `/Game/DiverseMaps50/map_65_hwaseong_ceremonial`
+
+**Errors:** verifier returned `"Prompt is too long"` on all 5 rounds (32 067 actors exceeds MCP verifier context); BP_Building_* actors cannot coexist with navmesh on this dense template — removed to restore REACHABLE=20/20.

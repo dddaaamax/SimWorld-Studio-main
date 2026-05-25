@@ -1,0 +1,78 @@
+You are generating a training-scene .umap for a navigation agent. UE Editor is booted with a specific template ALREADY LOADED via CLI; do NOT call unreal.EditorLoadingAndSavingUtils.load_map (it crashes UE 5.3).
+
+## Available tools (MCP)
+spawn_blueprint_actor, spawn_actor, delete_actor, get_actors_in_level, find_actors_by_name, set_actor_transform, take_screenshot, execute_python_script, list_assets, setup_environment. Full catalog via `list_assets` — 22 map templates + 125 buildings + 17 allow-AI pack roots.
+
+## Hard rules
+1. Do NOT call load_map — template is already loaded on boot.
+2. Do NOT spawn BP_Road1 or SM_Road* (roads look poor).
+3. Do NOT touch anything under /Game/80_no_ai_maps/.
+4. Save output ONLY to: /Game/DiverseMaps50/map_05_middleeast_native
+
+## Cross-pack retrieval (optional, for remix variants)
+To pull assets from an allow-AI pack that isn't in spawn_blueprint_actor's shortlist:
+```python
+import unreal
+paths = unreal.EditorAssetLibrary.list_assets("/Game/Village/", recursive=True, include_folder=False)
+# Then spawn via spawn_actor(name=..., static_mesh=full_path, location=...) for SMs,
+# or spawn_blueprint_actor(blueprint_id=full_path, ...) for BPs.
+```
+
+## Your task for THIS map
+Middle-eastern village scene. GOAL: clear some pathways + add props. Delete 4-6 SM_Crate* or SM_Barrel* actors if present (use find_actors_by_name). Spawn 3 BP_Trash_can, 2 BP_Hydrant, and 2 BP_Tree1 scattered within ±2500 UU of origin.
+
+## Mandatory finishing steps — RUN IN ORDER AT THE END
+
+**Step 1 — Add NavMeshBoundsVolume**
+Execute via execute_python_script:
+```
+import unreal
+eas = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+ues = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem)
+world = ues.get_editor_world()
+center = unreal.Vector(0, 0, 0)
+vol = eas.spawn_actor_from_class(unreal.NavMeshBoundsVolume, center)
+vol.set_actor_scale3d(unreal.Vector(100, 100, 15))
+print("NAV_VOLUME_OK")
+```
+
+**Step 2 — Trigger nav build**
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+unreal.SystemLibrary.execute_console_command(world, "RebuildNavigation")
+print("REBUILD_TRIGGERED")
+```
+
+**Step 3 — Wait ~30 seconds** for nav build (you may take a screenshot during this pause).
+
+**Step 4 — Validate navmesh**
+```
+import unreal
+world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
+center = unreal.Vector(0, 0, 0)
+hits = 0
+for i in range(20):
+    try:
+        pt = unreal.NavigationSystemV1.get_random_reachable_point_in_radius(world, center, 15000)
+        if pt and hasattr(pt,'x') and not (pt.x==0 and pt.y==0 and pt.z==0):
+            hits += 1
+    except Exception:
+        pass
+print(f"REACHABLE={hits}/20")
+```
+If REACHABLE=0/20, move the volume closer to dense ground-level actors and retry Steps 2-4 once (you can use set_actor_transform to relocate the volume).
+
+**Step 5 — Overview screenshot**
+Call the MCP tool `take_screenshot` with `filename="map_05_middleeast_native_overview.png"`.
+
+**Step 6 — Save the level**
+```
+import unreal
+world = unreal.EditorLevelLibrary.get_editor_world()
+ok = unreal.EditorLoadingAndSavingUtils.save_map(world, "/Game/DiverseMaps50/map_05_middleeast_native")
+print(f"SAVE_OK={ok}")
+```
+
+## Final report (≤120 words)
+State concisely: what edits you made, REACHABLE result, SAVE_OK result, any errors verbatim.

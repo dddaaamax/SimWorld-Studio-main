@@ -1,0 +1,163 @@
+# Observation Modality Ablation
+
+**Research question.** On ObjectNav, how does agent performance depend on the
+observation modality — RGB, depth, both, or neither?  Does a larger VLM make
+better use of richer modalities?
+
+## Design
+
+* **Task**: ObjectNav.  Each episode spawns one visually-distinctive small
+  object (hydrant / cone / crate / soda bottle / etc. from
+  [`gym_env/object_pool.py`](../../gym_env/object_pool.py)) at a navmesh
+  position.  Agent succeeds when it reaches within `SUCCESS_DISTANCE_CM = 200`
+  of the target.  Every modality sees the same scalar baseline
+  (`pointgoal_with_gps_compass`: distance + bearing) so the experiment
+  isolates the marginal value of the image.
+* **Modalities**: `rgb`, `depth`, `rgb_depth`, `text_only` (4 conditions).
+  The dual-image `rgb_depth` path builds a single `user` turn with two image
+  blocks, each captioned so the VLM knows which is which.
+* **Maps**: 17 `AblationMaps/ablation_XX.umap` in the UE project, copied
+  verbatim from `env_diversity_ablation`.  Split is identical:
+  - indices `[0, 5]` = **unseen** (held-out test)
+  - remaining 15 indices = **seen** (training / in-distribution)
+* **Episodes**: 3 per map → 15 × 3 = 45 seen + 2 × 3 = 6 unseen episodes per
+  `(model, modality)` pair.
+* **Models**: Qwen3.5-2B, Qwen3.5-9B, Qwen3.5-27B — same vLLM endpoints as
+  `env_diversity_ablation`.  No fine-tuning; this is a zero-shot eval.
+* **Metrics**: SR, SPL, SoftSPL, reported as mean ± std over all episodes in
+  the split.
+
+## Quick Start
+
+All commands run from `simworld_studio_workspace/`.
+
+### 0. Required plugin fix
+
+`DepthCamSensor.cpp` in the UnrealCV plugin defaulted to
+`bIgnoreTransparentObjects = false`, which routes depth capture through the
+annotation-ShowOnly filter.  On maps without annotation components this
+filter returns an empty primitive list, so the depth RenderTarget is left at
+`float16`-max (65504) — i.e. a blank image.  We flipped the default to
+`true` and added an explicit else-branch that resets the filter and
+`PrimitiveRenderMode`.  Rebuild the plugin before running:
+
+```bash
+cd /data/koe/UE_5.3.2
+./Engine/Build/BatchFiles/Linux/Build.sh SimWorldEditor Linux Development \
+    -Project=/data/koe/SimWorld-Internal/SimWorld.uproject \
+    -WaitMutex -FromMsBuild
+```
+
+The `.so` is hard-linked between `SimWorld-Internal` and
+`SimWorld-Internal-B`, so both instances pick up the fix.
+
+### 1. Smoke-test the depth sensor (optional but recommended)
+
+```bash
+./experiments/observation_modality_ablation/launch_ue.sh A 1
+sleep 45
+PYTHONPATH=. python3 -u -m experiments.observation_modality_ablation.probe_depth_and_spawn \
+    --mcp-port 55558 --ucv-port 9002 \
+    --outdir experiments/observation_modality_ablation/probes_A
+```
+
+The probe spawns a hydrant/cone/can/crate in front of an agent, captures
+lit + depth, and writes images + a `summary.json`.  Sanity checks: depth
+values cluster around 100–5000 cm (not all 65504), spawned actors are
+listed in `vget /objects`, RGB `lit_after.png` visibly shows the objects.
+
+### 2. Generate ObjectNav tasks (17 maps)
+
+```bash
+./experiments/observation_modality_ablation/orchestrate_tasks.sh
+```
+
+Launches UE instance A (GPU 1, port 9002) and B (GPU 2, port 9003) in
+parallel.  Each worker owns half of the maps (A = even indices, B = odd).
+Per map it launches UE with that map as startup level, runs
+`generate_tasks.py --skip-load`, and produces
+`tasks/ablation_XX.json`.  Each task JSON has 3 episodes with pre-picked
+target objects, start positions, and navmesh reference paths.  Map 0 uses
+an extra reachability check (the path's last waypoint must be within 400 cm
+of the goal) because the hard test map has disconnected navmesh islands.
+
+### 3. Run the full ablation
+
+```bash
+./experiments/observation_modality_ablation/orchestrate_runs.sh
+```
+
+Same map-partition as task gen.  For each map, the worker launches UE with
+that map pre-loaded, then invokes `run_map_all_configs` which sweeps all
+`(model, modality)` pairs on that map.  **Resume is safe**: re-running skips
+any episode that already has `summary.json` on disk.  Results land under
+`results/{model}/{modality}/{seen|unseen}/map{NN}/ep_*/`.
+
+If a worker hangs mid-wave (observed once when both vLLM servers restarted
+simultaneously at 03:48 and our HTTP calls blocked on stale sockets), kill
+the offending Python process — the outer orchestrator bash script picks up
+from the next map.  For spot-retries:
+
+```bash
+./experiments/observation_modality_ablation/retry_b.sh   # fixes B's queue
+./experiments/observation_modality_ablation/retry_a.sh   # waits then fixes A
+```
+
+### 4. Aggregate into a table
+
+```bash
+PYTHONPATH=. python3 -u -m experiments.observation_modality_ablation.aggregate_results
+```
+
+Writes:
+- `results/aggregate.json` — nested mean/std per `(model, modality, split)`
+- `results/table.csv` — flat CSV
+- Prints a console table
+
+The LaTeX table in the paper is generated by a short inline script (see
+`paper_table.py`) that reads `aggregate.json` and formats SR + SoftSPL with
+per-group bold rules.
+
+## Layout
+
+```
+observation_modality_ablation/
+  config.py                     # Paths, port assignments, map indices, model endpoints, modality specs
+  launch_ue.sh                  # One-shot UE launcher (instance A or B × map index)
+  probe_depth_and_spawn.py      # Live depth-sensor + object-spawn smoke test
+  generate_tasks.py             # Build navmesh, spawn targets, sample reachable starts, write tasks/<map>.json
+  orchestrate_tasks.sh          # Drive task gen across 17 maps on 2 UE instances
+  run_modality.py               # Inner loop: for a given (model, modality, split), iterate maps
+  run_map_all_configs.py        # Outer loop: hold one map pinned, sweep all (model, modality) pairs
+  orchestrate_runs.sh           # Top-level: split 17 maps across A+B, run_map_all_configs per map
+  retry_a.sh, retry_b.sh        # Spot-retry helpers for maps clobbered by transient LLM hangs
+  aggregate_results.py          # Roll per-episode summary.json into a (model, modality, split) table
+  tasks/ablation_{00..16}.json  # generated, not tracked
+  results/                      # generated, not tracked
+```
+
+## Gotchas / implementation notes
+
+* **Port scan noise.**  UnrealCV binds to `0.0.0.0` so external scanners
+  can hit port 9003 and spam thousands of failed-handshake threads
+  (observed from IP 101.36.114.209).  Under heavy scan the UE main thread
+  starves; if a wave stops progressing for ≥ 5 min, kill + restart UE for
+  that map.
+* **vLLM client has no request timeout.**  `httpx` defaults to infinite
+  wait; if a vLLM server restarts mid-call the socket half-closes and our
+  Python worker blocks on `futex_wait_queue_me` forever.  If you see
+  `futex_` in `ps -o stat,wchan`, kill the worker; the orchestrator
+  picks up from the next map.  (A proper fix is to add `timeout=60` to
+  the OpenAI-compat client's `chat.completions.create` call.)
+* **Task generator reachability check.**  Map 0 has a 95-object hard
+  scene where the navmesh splits into islands after target spawn.  We
+  reject any `(start, goal)` pair whose reference-path last waypoint is
+  > 400 cm from the true goal — otherwise the agent cannot succeed and
+  the episode is a degenerate zero.  `env_diversity_ablation` did not
+  need this because PointNav goals are on the navmesh themselves.
+* **Shared results dir under parallel retries.**  `retry_a.sh` and
+  `retry_b.sh` both target map 14 if one fails first.  Resume logic at
+  the start of `run_modality.run()` checks for an existing
+  `summary.json`, so the second worker only fills gaps.  Two workers
+  mid-wave on the same episode would both write summaries — "last
+  writer wins" — so we serialise via `pgrep` guards in `retry_a.sh`.

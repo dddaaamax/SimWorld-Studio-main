@@ -1,0 +1,66 @@
+{
+  "aligned|far|TURN_RIGHT|regress": {
+    "situation_key": "aligned|far",
+    "action": "TURN_RIGHT",
+    "outcome": "regress",
+    "count": 2,
+    "total_delta_cm": -5638.181831696964,
+    "lesson": "[aligned, far] TURN_RIGHT \u2192 regress -3059cm (bad). Turn increased distance \u2014 unusual, check heading."
+  },
+  "aligned|far|TURN_RIGHT|neutral": {
+    "situation_key": "aligned|far",
+    "action": "TURN_RIGHT",
+    "outcome": "neutral",
+    "count": 14,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, far] TURN_RIGHT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|far|MOVE_FORWARD|neutral": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "neutral",
+    "count": 2,
+    "total_delta_cm": -0.15340103012022155,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 no change. No significant progress \u2014 may need to adjust heading."
+  },
+  "aligned|far|TURN_LEFT|neutral": {
+    "situation_key": "aligned|far",
+    "action": "TURN_LEFT",
+    "outcome": "neutral",
+    "count": 5,
+    "total_delta_cm": 0.0,
+    "lesson": "[aligned, far] TURN_LEFT \u2192 no change. Unnecessary turn \u2014 was already aligned. Move forward instead."
+  },
+  "aligned|far|MOVE_FORWARD|regress": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "regress",
+    "count": 4,
+    "total_delta_cm": -1081.2132190366083,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 regress -202cm (bad). Forward motion increased distance \u2014 possible obstacle or wrong heading."
+  },
+  "aligned|far|stuck|failure_pattern": {
+    "situation_key": "aligned|far",
+    "action": "stuck",
+    "outcome": "failure_pattern",
+    "count": 1,
+    "total_delta_cm": -0.15340103012022155,
+    "lesson": "Stuck: forward motion blocked (obstacle or wall). Turn to find a clear path before continuing forward."
+  },
+  "aligned|far|backtrack|failure_pattern": {
+    "situation_key": "aligned|far",
+    "action": "backtrack",
+    "outcome": "failure_pattern",
+    "count": 4,
+    "total_delta_cm": -1081.2132190366083,
+    "lesson": "Wrong direction: moved forward but distance increased by 202cm. Bearing was aligned. Turn toward goal before moving forward."
+  },
+  "aligned|far|MOVE_FORWARD|progress": {
+    "situation_key": "aligned|far",
+    "action": "MOVE_FORWARD",
+    "outcome": "progress",
+    "count": 3,
+    "total_delta_cm": 1174.6312340499592,
+    "lesson": "[aligned, far] MOVE_FORWARD \u2192 progress +399cm (good). Moving forward when aligned is efficient."
+  }
+}

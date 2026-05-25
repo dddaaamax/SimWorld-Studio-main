@@ -1,0 +1,1565 @@
+{
+  "status": "success",
+  "result": {
+    "actors": [
+      {
+        "name": "WorldSettings_1",
+        "class": "WorldSettings",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Brush_1",
+        "class": "Brush",
+        "location": [
+          -90,
+          110,
+          20
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "PlayerStart",
+        "class": "PlayerStart",
+        "location": [
+          0,
+          0,
+          112.00068664550781
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_0",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_1",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "MassVisualizer_2",
+        "class": "MassVisualizer",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DefaultPhysicsVolume_0",
+        "class": "DefaultPhysicsVolume",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "GameplayDebuggerPlayerManager_0",
+        "class": "GameplayDebuggerPlayerManager",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SmartObjectSubsystemRenderingActor_0",
+        "class": "SmartObjectSubsystemRenderingActor",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "AbstractNavData-Default",
+        "class": "AbstractNavData",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "SkyAtmosphere_3",
+        "class": "SkyAtmosphere",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "DirectionalLight_3",
+        "class": "DirectionalLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          -45.00000000000001,
+          29.999999999999996,
+          2.248991783197472e-15
+        ],
+        "scale": [
+          2.5,
+          2.5,
+          2.5
+        ]
+      },
+      {
+        "name": "SkyLight_3",
+        "class": "SkyLight",
+        "location": [
+          0,
+          0,
+          500
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "ExponentialHeightFog_3",
+        "class": "ExponentialHeightFog",
+        "location": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "StaticMeshActor_3",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          0,
+          -10
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          200,
+          200,
+          1
+        ]
+      },
+      {
+        "name": "Road_North_1",
+        "class": "StaticMeshActor",
+        "location": [
+          -5000,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_North_2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_North_3",
+        "class": "StaticMeshActor",
+        "location": [
+          5000,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_South_1",
+        "class": "StaticMeshActor",
+        "location": [
+          -5000,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_South_2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_South_3",
+        "class": "StaticMeshActor",
+        "location": [
+          5000,
+          -4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_Cross_1",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Road_Cross_2",
+        "class": "StaticMeshActor",
+        "location": [
+          0,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          5,
+          3,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NN_1",
+        "class": "BP_Building_01_C",
+        "location": [
+          -5000,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NN_2",
+        "class": "BP_Building_03_C",
+        "location": [
+          0,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NN_3",
+        "class": "BP_Building_05_C",
+        "location": [
+          5000,
+          6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NS_1",
+        "class": "BP_Building_02_C",
+        "location": [
+          -5000,
+          1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NS_2",
+        "class": "BP_Building_07_C",
+        "location": [
+          0,
+          1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_NS_3",
+        "class": "BP_Building_04_C",
+        "location": [
+          5000,
+          1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SN_1",
+        "class": "BP_Building_06_C",
+        "location": [
+          -5000,
+          -1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SN_2",
+        "class": "BP_Building_08_C",
+        "location": [
+          0,
+          -1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SN_3",
+        "class": "BP_Building_09_C",
+        "location": [
+          5000,
+          -1500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SS_1",
+        "class": "BP_Building_04_C",
+        "location": [
+          -5000,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SS_2",
+        "class": "BP_Building_01_C",
+        "location": [
+          0,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Bldg_SS_3",
+        "class": "BP_Building_05_C",
+        "location": [
+          5000,
+          -6500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NN_1",
+        "class": "BP_Tree1_C",
+        "location": [
+          -6000,
+          4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NN_2",
+        "class": "BP_Tree3_C",
+        "location": [
+          -2000,
+          4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NN_3",
+        "class": "BP_Tree5_C",
+        "location": [
+          2000,
+          4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NN_4",
+        "class": "BP_Tree2_C",
+        "location": [
+          6000,
+          4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NS_1",
+        "class": "BP_Tree4_C",
+        "location": [
+          -6000,
+          3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NS_2",
+        "class": "BP_Tree6_C",
+        "location": [
+          -2000,
+          3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NS_3",
+        "class": "BP_Tree1_C",
+        "location": [
+          2000,
+          3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_NS_4",
+        "class": "BP_Tree3_C",
+        "location": [
+          6000,
+          3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SN_1",
+        "class": "BP_Tree2_C",
+        "location": [
+          -6000,
+          -3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SN_2",
+        "class": "BP_Tree5_C",
+        "location": [
+          -2000,
+          -3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SN_3",
+        "class": "BP_Tree4_C",
+        "location": [
+          2000,
+          -3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SN_4",
+        "class": "BP_Tree6_C",
+        "location": [
+          6000,
+          -3200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SS_1",
+        "class": "BP_Tree1_C",
+        "location": [
+          -6000,
+          -4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SS_2",
+        "class": "BP_Tree3_C",
+        "location": [
+          -2000,
+          -4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SS_3",
+        "class": "BP_Tree5_C",
+        "location": [
+          2000,
+          -4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_SS_4",
+        "class": "BP_Tree2_C",
+        "location": [
+          6000,
+          -4800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CW_1",
+        "class": "BP_Tree4_C",
+        "location": [
+          -800,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CW_2",
+        "class": "BP_Tree6_C",
+        "location": [
+          -800,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CW_3",
+        "class": "BP_Tree1_C",
+        "location": [
+          -800,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CE_1",
+        "class": "BP_Tree3_C",
+        "location": [
+          800,
+          2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CE_2",
+        "class": "BP_Tree5_C",
+        "location": [
+          800,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Tree_CE_3",
+        "class": "BP_Tree2_C",
+        "location": [
+          800,
+          -2000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Table_1",
+        "class": "BP_Table_C",
+        "location": [
+          -1500,
+          500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Table_2",
+        "class": "BP_Table2_C",
+        "location": [
+          0,
+          -200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Table_3",
+        "class": "BP_Table3_C",
+        "location": [
+          1500,
+          500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Couch_1",
+        "class": "BP_Couch_C",
+        "location": [
+          -1000,
+          -600,
+          0
+        ],
+        "rotation": [
+          0,
+          45.00000000000001,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Couch_2",
+        "class": "BP_Couch_C",
+        "location": [
+          1000,
+          -600,
+          0
+        ],
+        "rotation": [
+          0,
+          -45.00000000000001,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Trash_1",
+        "class": "BP_Trash_bin_a_C",
+        "location": [
+          -1800,
+          800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Trash_2",
+        "class": "BP_Trash_bin_b_C",
+        "location": [
+          1800,
+          800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Trash_3",
+        "class": "BP_Trash_bin_a_C",
+        "location": [
+          -1800,
+          -800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Park_Trash_4",
+        "class": "BP_Trash_bin_b_C",
+        "location": [
+          1800,
+          -800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_N1",
+        "class": "BP_Hydrant_C",
+        "location": [
+          500,
+          4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_N2",
+        "class": "BP_Hydrant_C",
+        "location": [
+          -500,
+          3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_S1",
+        "class": "BP_Hydrant_C",
+        "location": [
+          500,
+          -3500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Hydrant_S2",
+        "class": "BP_Hydrant_C",
+        "location": [
+          -500,
+          -4500,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_0",
+        "class": "BP_Scooter_01_C",
+        "location": [
+          -4000,
+          4600,
+          0
+        ],
+        "rotation": [
+          0,
+          14.999999999999998,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Scooter_5",
+        "class": "BP_Scooter_04_C",
+        "location": [
+          1500,
+          3400,
+          0
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cart_1",
+        "class": "BP_Cart_C",
+        "location": [
+          -3000,
+          3400,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cart_2",
+        "class": "BP_Cart2_C",
+        "location": [
+          4500,
+          3400,
+          0
+        ],
+        "rotation": [
+          0,
+          -89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cone_1",
+        "class": "BP_RoadCone_C",
+        "location": [
+          7000,
+          4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cone_2",
+        "class": "BP_RoadCone_C",
+        "location": [
+          7500,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cone_3",
+        "class": "BP_RoadCone_C",
+        "location": [
+          7000,
+          3800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cone_4",
+        "class": "BP_RoadCone_C",
+        "location": [
+          8000,
+          4200,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Cone_5",
+        "class": "BP_RoadCone_C",
+        "location": [
+          8000,
+          3800,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Blocker_1",
+        "class": "BP_RoadBlocker_C",
+        "location": [
+          7500,
+          4400,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Blocker_2",
+        "class": "BP_RoadBlocker_C",
+        "location": [
+          7500,
+          3600,
+          0
+        ],
+        "rotation": [
+          0,
+          89.99999999999999,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "name": "Blocker_3",
+        "class": "BP_RoadBlocker_C",
+        "location": [
+          8500,
+          4000,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  }
+}

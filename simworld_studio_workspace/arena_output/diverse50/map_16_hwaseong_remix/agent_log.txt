@@ -1,0 +1,18 @@
+ASSET_EXISTS=True — the first save completed successfully despite the timeout.
+
+---
+
+## Final Report
+
+**Map**: `map_16_hwaseong_remix` — Korean palace (Hwaseong) subtle remix.
+
+**Edits (~33 ops across 3 rounds)**:
+- 5 courtyard-edge trees (BP_Tree4/BP_Tree6 alternating) at palace perimeter
+- 2 ceremonial tables (BP_Table) in the inner courtyard
+- 10 additional perimeter trees with varied scale/rotation for natural look
+- 6 stone benches (BP_Bench) along courtyard paths, oriented toward center
+- 10 lanterns (BP_StreetLamp) lining pathways
+- 2 small pavilion buildings (BP_Building_42, BP_Building_78) at far edges, scaled 0.7x
+- 4 decorative urns (BP_TrashBin) at courtyard entries
+
+**Results**: REACHABLE_FINAL=20/20. SAVE_OK=True. No errors.

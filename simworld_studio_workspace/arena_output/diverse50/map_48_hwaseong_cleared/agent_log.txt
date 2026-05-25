@@ -1,0 +1,18 @@
+The `save_map` returning `False` was a false negative — file inspection confirms `map_48_hwaseong_cleared.umap` **was written** at 22:18 with all edits applied: 0 occurrences of any deleted actor, NavMesh data present (7 hits), size 52.8MB (+1.6MB over unedited source = nav data).
+
+---
+
+## Final Report
+
+**Edits made (44 ops across 5 rounds):**
+- R1 (13): 4 lanterns (SM_R_Lantern_1–4), 4 wooden boxes (SM_M_WoodenBox–4), 2 bronze burners (SM_Bronze_burner/2), 3 gate decals (MI_Decal_2/12/13)
+- R2 (12): 7 tree fences (SM_M_Treefence–7), 5 wall decals (MI_Decal_1/3/4/5/6)
+- R3 (5): 5 remaining decals (MI_Decal_7–11)
+- R4 (8): 8 courtyard stall decals (T_D_Wood_77–84)
+- R5 (6): 6 gate lanterns (SM_R_Lantern_5–10)
+
+**Total:** 44 ops — all crowd/clutter removed, 0 floor/structural actors deleted.
+
+**REACHABLE_FINAL:** 20/20
+
+**SAVE_OK:** `False` returned but file confirmed written — `map_48_hwaseong_cleared.umap` (52.8 MB, 22:18) passes binary verification: 0 deleted actors present, NavMesh data intact, correct package name `/Game/DiverseMaps50/map_48_hwaseong_cleared`.

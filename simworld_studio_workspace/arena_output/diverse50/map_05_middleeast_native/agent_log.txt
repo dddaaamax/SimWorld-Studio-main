@@ -1,0 +1,7 @@
+Looks like the script executed twice (MCP retry). First run: SAVE_OK=True (map saved). Second run returned False because it was already saved. The save succeeded.
+
+---
+
+**Final report:**
+
+Deleted 5 pathway-blocking props: SM_wooden_pallet_73, SM_wooden_pallet_26, SM_Cardboard_box_21, SM_Cardboard_box_24, SM_Metal_Carcass_7. No crates/barrels existed in this template. Spawned 3 BP_Trash_bin_a, 2 BP_Hydrant, 2 BP_Tree1 scattered within ±2000 UU of origin. Added NavMeshBoundsVolume at origin (scale 100×100×15), rebuilt navigation. **REACHABLE=20/20**. **SAVE_OK=True** to `/Game/DiverseMaps50/map_05_middleeast_native`. Overview screenshot saved. Deprecation warning on `EditorLevelLibrary.get_editor_world` (non-blocking). No errors.

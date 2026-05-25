@@ -1,0 +1,114 @@
+{
+  "setting": "objectnav",
+  "split": "test",
+  "n_maps_done": 13,
+  "n_episodes": 305,
+  "SR": 0.07868852459016394,
+  "SPL": 0.07743970364926435,
+  "SoftSPL": 0.23990635690348444,
+  "nDTW": 0.03498558178597488,
+  "updated_at": "2026-04-23T20:16:47.407870+00:00",
+  "per_map": {
+    "map_08_cave_remix": {
+      "n": 35,
+      "SR": 0.05714285714285714,
+      "SPL": 0.05542467354004202,
+      "SoftSPL": 0.18710774846995992,
+      "nDTW": 0.025653195021339312,
+      "avg_steps": 38.0
+    },
+    "map_21_hwaseong_remix2": {
+      "n": 40,
+      "SR": 0.1,
+      "SPL": 0.09925671156799172,
+      "SoftSPL": 0.13839667752282495,
+      "nDTW": 0.0007656438481613291,
+      "avg_steps": 36.625
+    },
+    "map_27_courtyard_overcast_remix": {
+      "n": 40,
+      "SR": 0.1,
+      "SPL": 0.097947159434254,
+      "SoftSPL": 0.45119908822461696,
+      "nDTW": 0.055396547202231874,
+      "avg_steps": 35.75
+    },
+    "map_33_gothic_night_remix": {
+      "n": 17,
+      "SR": 0.17647058823529413,
+      "SPL": 0.1720008877617276,
+      "SoftSPL": 0.27326443935467504,
+      "nDTW": 0.003952263084591847,
+      "avg_steps": 35.94117647058823
+    },
+    "map_15_middleeast_remix": {
+      "n": 38,
+      "SR": 0.0,
+      "SPL": 0.0,
+      "SoftSPL": 0.19873628039036517,
+      "nDTW": 0.015689901165436643,
+      "avg_steps": 26.394736842105264
+    },
+    "map_35_temple_plaza_remix": {
+      "n": 0,
+      "SR": 0,
+      "SPL": 0,
+      "SoftSPL": 0,
+      "nDTW": 0
+    },
+    "map_42_B4_industrial_yard": {
+      "n": 40,
+      "SR": 0.1,
+      "SPL": 0.09913064260026656,
+      "SoftSPL": 0.2814808330487886,
+      "nDTW": 0.0009579712215991258,
+      "avg_steps": 36.575
+    },
+    "map_34_temple_plaza_native": {
+      "n": 17,
+      "SR": 0.0,
+      "SPL": 0.0,
+      "SoftSPL": 0.3709035352005666,
+      "nDTW": 0.002464348018597528,
+      "avg_steps": 40.0
+    },
+    "map_46_B8_dense_urban": {
+      "n": 20,
+      "SR": 0.05,
+      "SPL": 0.05,
+      "SoftSPL": 0.17738607493262373,
+      "nDTW": 0.004579015863708411,
+      "avg_steps": 36.35
+    },
+    "map_56_containeryard_settlement": {
+      "n": 0,
+      "SR": 0,
+      "SPL": 0,
+      "SoftSPL": 0,
+      "nDTW": 0
+    },
+    "map_61_containeryard_day_big_remix": {
+      "n": 38,
+      "SR": 0.05263157894736842,
+      "SPL": 0.05215913686537158,
+      "SoftSPL": 0.0808470206393187,
+      "nDTW": 0.0008998414667215047,
+      "avg_steps": 35.39473684210526
+    },
+    "map_66_middleeast_bazaar": {
+      "n": 0,
+      "SR": 0,
+      "SPL": 0,
+      "SoftSPL": 0,
+      "nDTW": 0
+    },
+    "map_43_B5_residential_courtyard": {
+      "n": 20,
+      "SR": 0.2,
+      "SPL": 0.19599016010950873,
+      "SoftSPL": 0.3328430601022686,
+      "nDTW": 0.3328430601022686,
+      "avg_steps": 36.45
+    }
+  }
+}

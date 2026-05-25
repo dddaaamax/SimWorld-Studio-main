@@ -1,0 +1,11 @@
+## Final Report
+
+**Map 24 — Container Yard (Daytime, Native Edit)**
+
+- **Deletes**: 15 containers removed (6 ground-level SM_Container12m stacks at two corridors: y≈-2350 and y≈-4250) to open two traversable lanes
+- **Spawns**: 14 actors — 2 BP_Cart, 3 BP_Scooter (2× _03, 1× _01), 3 hydrants, 3 trash bins, 1 table, 4 trees, all at Z=0
+- **Corrections**: 16 Z-fixes (100→0), 1 DirectionalLight pitch fix (-17.5→-50 for daytime)
+- **Total ops**: 46
+- **REACHABLE**: 20/20 initial → 20/20 final
+- **SAVE_OK**: True
+- **Errors**: BP_Bench_a and BP_Barrel_a class not found (skipped, replaced with valid props)

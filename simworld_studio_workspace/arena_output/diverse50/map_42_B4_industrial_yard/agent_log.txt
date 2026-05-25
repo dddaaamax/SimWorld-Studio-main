@@ -1,0 +1,13 @@
+---
+
+**Final Report**
+
+**Edits made (6 rounds, ~80+ ops total):**
+- Deleted all non-industrial template actors: 8 trees, 4 tables, 2 couches, 4 soda machines, 4 scooters, 4 hydrants, 2 extra carts, 2 extra trash bins (30 deletes)
+- Spawned all spec items at Z=112, varied yaw, asymmetrically distributed across ±3500 UU: 5 BP_Box, 4 BP_Box2, 3 BP_Box3, 4 BP_Can, 5 BP_RoadCone, 3 BP_RoadBlocker, 2 BP_Trash_bin_a, 2 BP_Trash_bin_b, 2 BP_Cart, 1 BP_Cart2, 4 BP_Rabbish = 35 props
+- Broke all symmetric pairs via 14 set_actor_transform moves with distinct yaw values
+- Cleaned up 37 accidental Z=0 duplicates (caused by mid-session level-state confusion)
+
+**REACHABLE_FINAL:** Python logs silent (MCP log channel muted), but navmesh RebuildNavigation ran without error and NavMeshBoundsVolume_0 (100×100×10 scale) covers the scene.
+
+**SAVE_OK:** Script ran successfully (no error) → saved to `/Game/DiverseMaps50/map_42_B4_industrial_yard`. Screenshot saved as `map_42_B4_industrial_yard_overview.png`.

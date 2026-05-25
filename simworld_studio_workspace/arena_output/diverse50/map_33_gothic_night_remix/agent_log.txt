@@ -1,0 +1,18 @@
+`TARGET_EXISTS=True` — the map file was written to `/Game/DiverseMaps50/map_33_gothic_night_remix` (created during the timed-out call; confirmed by asset registry). `save_dirty_packages=True` flushed all edits.
+
+---
+
+**Final report:**
+
+**Edits made (41 ops across 5 rounds):**
+- R1: Deleted 12 clutter actors — 7 MetalGates, 2 StoneFountains, 2 AngelStatues near PS (cleared cultist hideout space)
+- R2: Spawned all required props — 4 BP_Table (2×2 meeting cluster), 3 BP_Couch (flanking, rotated inward), 2 BP_Trash_bin_b, 2 BP_Tree6; cluster centered ~800 units NE of PS
+- R3: +8 density props — 3 BP_Box crates, 2 BP_Cart (ritual supply), 1 BP_Rabbish, 1 BP_Table2 (altar surface), 1 BP_Can
+- R4: 3 couch orientations tuned (face cluster center); spawned BP_Box3 altar box + BP_Trash_can
+- R5: Deleted 2 more MetalGates; spawned BP_Building_45 (NW ruin backdrop), BP_Building_78 (SE ruin), BP_Cart2 (exit prop)
+
+**REACHABLE_INITIAL=20/20 → REACHABLE_FINAL=20/20** (edits did not block navmesh)
+
+**SAVE_OK=True** (TARGET_EXISTS confirmed at `/Game/DiverseMaps50/map_33_gothic_night_remix`; `save_dirty_packages=True`)
+
+**Verifier:** All 5 rounds returned "Prompt is too long" — technical overflow due to 17,934 actors in the gothic castle template; not a content failure.

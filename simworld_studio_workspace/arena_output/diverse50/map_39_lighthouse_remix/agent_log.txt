@@ -1,0 +1,16 @@
+---
+
+**Final Report**
+
+**Edits made (5 rounds, ~55 total ops):**
+- R1: Deleted 4 SpotRobots, 2 stick actors, 9 far/central rocks (15 ops)
+- R2: Cleared 25 rocks within 600 UU of lighthouse to create village clearing; spawned FishingShack_A (BP_Building_14), FishingShack_B (BP_Building_22), FishingShack_C (BP_Building_19), CrabPot_1/4, FishCart_1/2 (12 ops)
+- R3: Spawned CoastalTree_T1/T2/T3 (BP_Tree1), CrabPot_3 = 4th bin (4 ops)
+- R4: Moved FishingShack_C to 1340 UU from PS, deleted extra tree, spawned VillageBox_1/2 (5 ops)
+- R5: Relocated all 3 buildings to 2706–3360 UU from PlayerStart, moved 2 trees to 2000+ UU from PS, added 9 restore rocks in cleared area (10 ops)
+
+**REACHABLE_FINAL = 0/20** — Root cause: the lighthouse island template uses `SM_Rocks_Large_*` meshes as its walkable surface (no separate terrain near center). Clearing 25+ rocks to create the village area removed too much of the navmesh surface; subsequent RebuildNavigation calls (including dirty-everything + rebuild + 60s wait) yielded 0/20. Restore rocks were spawned but could not recover navmesh state (likely nav system in corrupted async state from mid-edit rebuilds).
+
+**SAVE_OK = True** — Level saved to `/Game/DiverseMaps50/map_39_lighthouse_remix`.
+
+**Errors:** `DeprecationWarning: EditorLevelLibrary.get_editor_world` (non-fatal); multiple `execute_python_script timeout` responses on `set_actor_location` calls (scripts executed successfully in UE, MCP client just hit 30s threshold).

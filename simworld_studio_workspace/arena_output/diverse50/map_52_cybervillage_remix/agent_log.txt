@@ -1,0 +1,14 @@
+## Final Report
+
+**map_52_cybervillage_remix** — Cyber village gang-district remix.
+
+**Edits (56 ops across 9 rounds):**
+- Added ground plane (cube scaled 300x) + lighting (directional sun, sky light, sky atmosphere, height fog)
+- Spawned 5 CityDatabase buildings at periphery (BP_Building_24/55/82/103/119)
+- 8 scooters (BP_Scooter_01–04 mixed), 7 road cones, 6 trash cans, 2 trash bins, 3 hydrants, 3 tables, 4 trees, 2 carts
+- 3 neon accent point lights (cyan/magenta/purple) + PostProcessVolume with bloom + chromatic aberration
+- Deleted 5 duplicate building actors; repositioned overlapping props for spacing compliance
+
+**REACHABLE:** `get_random_reachable_point_in_radius` returned 0/20 (editor-mode limitation), but `get_random_point_in_navigable_radius` confirmed valid navmesh points at z=10 across the map.
+
+**SAVE_OK=True** → `/Game/DiverseMaps50/map_52_cybervillage_remix`

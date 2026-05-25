@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "variant": "full",
+    "description": "Expanded asset catalog for diverse-map generation. Superset of assets.json: all 125 CityDatabase buildings, full props (boxes/cans/sodas), 22 allow-AI map templates, and allow-AI pack roots for on-demand retrieval. Roads are intentionally excluded from spawnable categories because the road assets look poor in free-form scenes. To opt in: set env SIMWORLD_ASSETS_FILE=assets_full.json on mcp-server.js. Default remains assets.json — no impact on existing pipeline."
+  },
+  "buildings": {
+    "description": "SimWorld buildings (BP_Building_01 through _127, with IDs 57 and 120 missing — 125 available). Use spawn_blueprint_actor with _C suffix.",
+    "path_prefix": "/Game/CityDatabase/blueprints/BP_Building_",
+    "ids": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,121,122,123,124,125,126,127],
+    "example": "/Game/CityDatabase/blueprints/BP_Building_42.BP_Building_42_C",
+    "notes": "Small residential: 01-20. Mixed mid-rise: 21-60. Large / specialty: 61-127. All 125 IDs are present on disk in this project. Use any ID — agent can pick for variety."
+  },
+  "trees": {
+    "description": "6 tree varieties. Use spawn_blueprint_actor.",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Tree1.BP_Tree1_C",
+      "/Game/CityDatabase/blueprints/BP_Tree2.BP_Tree2_C",
+      "/Game/CityDatabase/blueprints/BP_Tree3.BP_Tree3_C",
+      "/Game/CityDatabase/blueprints/BP_Tree4.BP_Tree4_C",
+      "/Game/CityDatabase/blueprints/BP_Tree5.BP_Tree5_C",
+      "/Game/CityDatabase/blueprints/BP_Tree6.BP_Tree6_C"
+    ]
+  },
+  "vehicles": {
+    "description": "Scooters and carts",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Scooter_01.BP_Scooter_01_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_02.BP_Scooter_02_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_03.BP_Scooter_03_C",
+      "/Game/CityDatabase/blueprints/BP_Scooter_04.BP_Scooter_04_C",
+      "/Game/CityDatabase/blueprints/BP_Cart.BP_Cart_C",
+      "/Game/CityDatabase/blueprints/BP_Cart2.BP_Cart2_C"
+    ]
+  },
+  "street_furniture": {
+    "description": "Urban props — tables, benches, hydrants, trash, boxes, cans, sodas, couch. Full CityDatabase prop set.",
+    "items": [
+      "/Game/CityDatabase/blueprints/BP_Table.BP_Table_C",
+      "/Game/CityDatabase/blueprints/BP_Table2.BP_Table2_C",
+      "/Game/CityDatabase/blueprints/BP_Table3.BP_Table3_C",
+      "/Game/CityDatabase/blueprints/BP_Hydrant.BP_Hydrant_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_bin_a.BP_Trash_bin_a_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_bin_b.BP_Trash_bin_b_C",
+      "/Game/CityDatabase/blueprints/BP_Trash_can.BP_Trash_can_C",
+      "/Game/CityDatabase/blueprints/BP_RoadBlocker.BP_RoadBlocker_C",
+      "/Game/CityDatabase/blueprints/BP_RoadCone.BP_RoadCone_C",
+      "/Game/CityDatabase/blueprints/BP_Couch.BP_Couch_C",
+      "/Game/CityDatabase/blueprints/BP_Box.BP_Box_C",
+      "/Game/CityDatabase/blueprints/BP_Box2.BP_Box2_C",
+      "/Game/CityDatabase/blueprints/BP_Box3.BP_Box3_C",
+      "/Game/CityDatabase/blueprints/BP_Can.BP_Can_C",
+      "/Game/CityDatabase/blueprints/BP_Can2.BP_Can2_C",
+      "/Game/CityDatabase/blueprints/BP_Rabbish.BP_Rabbish_C",
+      "/Game/CityDatabase/blueprints/BP_Soda1.BP_Soda1_C",
+      "/Game/CityDatabase/blueprints/BP_Soda2.BP_Soda2_C",
+      "/Game/CityDatabase/blueprints/BP_Soda3.BP_Soda3_C",
+      "/Game/CityDatabase/blueprints/BP_Soda4.BP_Soda4_C"
+    ]
+  },
+  "static_meshes": {
+    "description": "Static meshes (use spawn_actor). Excludes SM_Road / SM_Road_Side — road meshes are intentionally omitted because they look poor in free-form placement. Sidewalks / roadlines / street_lights / TrafficLight are exposed for urban detailing.",
+    "items": [
+      "/Game/CityDatabase/meshes/SM_TrafficLight1.SM_TrafficLight1",
+      "/Game/CityDatabase/meshes/SM_hydrant_main.SM_hydrant_main",
+      "/Game/CityDatabase/meshes/SM_road_cone.SM_road_cone",
+      "/Game/CityDatabase/meshes/SM_road_blocker_b.SM_road_blocker_b",
+      "/Game/CityDatabase/meshes/SM_chair_b.SM_chair_b",
+      "/Game/CityDatabase/meshes/SM_rubbish_a.SM_rubbish_a",
+      "/Game/CityDatabase/meshes/SM_table_a.SM_table_a",
+      "/Game/CityDatabase/meshes/SM_trash_bin_a.SM_trash_bin_a",
+      "/Game/CityDatabase/meshes/SM_trash_bin_b.SM_trash_bin_b",
+      "/Game/CityDatabase/meshes/SM_Chestnut_05_G.SM_Chestnut_05_G",
+      "/Game/CityDatabase/meshes/SM_Chestnut_11_G.SM_Chestnut_11_G",
+      "/Game/CityDatabase/meshes/Couch1.Couch1",
+      "/Game/CityDatabase/meshes/sidewalks.sidewalks",
+      "/Game/CityDatabase/meshes/roadlines.roadlines",
+      "/Game/CityDatabase/meshes/street_lights.street_lights",
+      "/Engine/BasicShapes/Cube.Cube",
+      "/Engine/BasicShapes/Plane.Plane",
+      "/Engine/BasicShapes/Sphere.Sphere",
+      "/Engine/BasicShapes/Cylinder.Cylinder"
+    ]
+  },
+  "agents": {
+    "description": "Controllable humanoid and pedestrian agents. Use spawn_agent tool (NOT spawn_blueprint_actor). Requires PIE mode (auto-started).",
+    "items": [
+      {"id": "Base_User_Agent", "type": "humanoid", "path": "/Game/TrafficSystem/Pedestrian/Base_User_Agent.Base_User_Agent_C", "description": "Robot/humanoid agent — can walk, sit, pick up objects, interact"},
+      {"id": "Base_Pedestrian", "type": "pedestrian", "path": "/Game/TrafficSystem/Pedestrian/Base_Pedestrian.Base_Pedestrian_C", "description": "Human pedestrian NPC — walks, turns, follows paths"}
+    ],
+    "notes": "After spawning agents, they appear in the Agent Panel where users can control them via natural language."
+  },
+  "map_templates": {
+    "description": "22 marketplace map templates licensed 'allow AI'. Load with unreal.EditorLoadingAndSavingUtils.load_map, modify, and save derivative to /Game/_Runs/map_XXX via execute_python_script. Every asset under each template's pack root folder is also allow-AI (see allow_ai_packs).",
+    "items": [
+      {"path": "/Game/ChineseWaterTown/Ver1/Map/DemoMap", "biome": "village,water_town,chinese", "pack": "ChineseWaterTown"},
+      {"path": "/Game/Lighthouse_Island/Levels/Lighthouse_Demo_00", "biome": "coastal,island", "pack": "Lighthouse_Island"},
+      {"path": "/Game/ModularGothicFantasyEnvironment/Maps/DemoMapDay", "biome": "gothic,fantasy,day", "pack": "ModularGothicFantasyEnvironment"},
+      {"path": "/Game/ModularGothicFantasyEnvironment/Maps/DemoMapNight", "biome": "gothic,fantasy,night", "pack": "ModularGothicFantasyEnvironment"},
+      {"path": "/Game/CastleRiver/Maps/Demonstration", "biome": "medieval,castle,river", "pack": "CastleRiver"},
+      {"path": "/Game/Cave/Maps/Demonstration", "biome": "cave,underground,fantasy", "pack": "Cave"},
+      {"path": "/Game/ModularTemplePlaza/Maps/ConceptMap", "biome": "temple,plaza,ancient", "pack": "ModularTemplePlaza"},
+      {"path": "/Game/TrainStation/Maps/Demonstration", "biome": "train_station,victorian,industrial", "pack": "TrainStation"},
+      {"path": "/Game/ContainerYard/Maps/Demonstration", "biome": "container_yard,port,industrial", "pack": "ContainerYard"},
+      {"path": "/Game/ContainerYard/Maps/Demonstration_Day", "biome": "container_yard,port,industrial,day", "pack": "ContainerYard"},
+      {"path": "/Game/ModularCourtyard/Maps/SampleScene_overcast", "biome": "courtyard,urban,overcast", "pack": "ModularCourtyard"},
+      {"path": "/Game/ModularCourtyard/Maps/SampleScene_sanny", "biome": "courtyard,urban,sunny", "pack": "ModularCourtyard"},
+      {"path": "/Game/MiddleEast/Maps/MiddleEast", "biome": "middle_east,village,desert", "pack": "MiddleEast"},
+      {"path": "/Game/Chinese_Landscape/Levels/Chinese_Landscape_Demo", "biome": "landscape,mountains,chinese,wilderness", "pack": "Chinese_Landscape"},
+      {"path": "/Game/Village/Maps/Village_SummerNightExample", "biome": "village,slavic,night", "pack": "Village"},
+      {"path": "/Game/Village/Maps/Village", "biome": "village,slavic,day", "pack": "Village"},
+      {"path": "/Game/WinterTown/Maps/RussianWinterTownDemo01", "biome": "snow,winter,village,russian", "pack": "WinterTown"},
+      {"path": "/Game/WinterTown/Maps/RussianWinterTownDemo02", "biome": "snow,winter,village,russian", "pack": "WinterTown"},
+      {"path": "/Game/ModularSciFi/Levels/LandscapePreview", "biome": "sci_fi,rocky,swampy,planet", "pack": "ModularSciFi"},
+      {"path": "/Game/ModularSciFi/Levels/PreviewSceneIndoor", "biome": "sci_fi,indoor", "pack": "ModularSciFi"},
+      {"path": "/Game/Dungeon/Levels/Dungeon_Demo_00", "biome": "dungeon,underground,fantasy", "pack": "Dungeon"},
+      {"path": "/Game/HwaseongHaenggung/Maps/Demo", "biome": "palace,korean,ancient", "pack": "HwaseongHaenggung"}
+    ]
+  },
+  "allow_ai_packs": {
+    "description": "Root folders of marketplace asset packs licensed 'allow AI'. Any asset under these roots (Blueprints, static meshes, materials, particles, animations, etc.) is in scope for the coding agent to load and spawn. When an asset you need is NOT in the spawn_blueprint_actor shorthand list, use execute_python_script with unreal.EditorAssetLibrary.list_assets(pack_root, recursive=True, include_folder=False) to discover what's available, then spawn by full /Game/... path.",
+    "items": [
+      "/Game/ChineseWaterTown/",
+      "/Game/Lighthouse_Island/",
+      "/Game/ModularGothicFantasyEnvironment/",
+      "/Game/CastleRiver/",
+      "/Game/Cave/",
+      "/Game/ModularTemplePlaza/",
+      "/Game/TrainStation/",
+      "/Game/ContainerYard/",
+      "/Game/ModularCourtyard/",
+      "/Game/MiddleEast/",
+      "/Game/Chinese_Landscape/",
+      "/Game/Village/",
+      "/Game/WinterTown/",
+      "/Game/ModularSciFi/",
+      "/Game/Dungeon/",
+      "/Game/HwaseongHaenggung/",
+      "/Game/CityDatabase/"
+    ],
+    "notes": "NEVER use assets under /Game/80_no_ai_maps/ — the folder name indicates they are NOT allow-AI. Do not spawn or reference road assets (/Game/CityDatabase/blueprints/BP_Road1 or /Game/CityDatabase/meshes/SM_Road*) — they are present but excluded from the spawnable catalogs because they look poor in free-form placement."
+  },
+  "roads": {
+    "description": "Road assets — present in the project but INTENTIONALLY NOT exposed for spawnable use in the full catalog. They look poor in free-form scenes. Kept here for reference only; do not use in new map generation.",
+    "items": [],
+    "reference_only": [
+      "/Game/CityDatabase/blueprints/BP_Road1.BP_Road1_C",
+      "/Game/CityDatabase/meshes/SM_Road.SM_Road",
+      "/Game/CityDatabase/meshes/SM_Road_Side.SM_Road_Side",
+      "/Game/CityDatabase/meshes/SM_Road_Side_2.SM_Road_Side_2"
+    ]
+  }
+}

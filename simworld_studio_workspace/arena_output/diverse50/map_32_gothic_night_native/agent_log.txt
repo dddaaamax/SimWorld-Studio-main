@@ -1,0 +1,17 @@
+Asset confirmed saved at `/Game/DiverseMaps50/map_32_gothic_night_native`. 
+
+---
+
+**Final Report**
+
+**Edits made (87 total ops across 5 rounds):**
+- **Round 1 (18 ops):** Deleted all 16 CineCameraActors + 2 CameraActors (preview cameras unused by training agent)
+- **Round 2 (15 ops):** Spawned 3 gothic foliage trees (SM_Foliage-1 × 3, scaled ×3.5) at cathedral periphery; added 3 atmosphere rocks, 2 angel statues, 1 stone fountain, 2 stone debris; deleted 4 excess lanterns
+- **Round 3 (24 ops):** Fixed all spawned-actor Z from 1000→100; added 2 SM_Ivy-1, 3 SM_StoneDebris-2; deleted 8 more excess lanterns
+- **Round 4 (25 ops):** Fine-tuned all spawn Z to 50 (matching existing props at z=20–110); added 2 gothic metal gates, 2 SM_Foliage--2 dark variants; deleted 5 lanterns
+- **Round 5 (5 ops):** Added 2 foreground rocks + 1 central debris near PS; deleted 2 more lanterns
+
+**BP_Tree6 note:** Asset does not exist in project; substituted period-appropriate SM_Foliage-1 (gothic foliage pack). No SM_Crate*/SM_Chain*/SM_Debris* found pre-existing; added SM_StoneDebris instances instead.
+
+**REACHABLE_FINAL = 20/20**
+**SAVE_OK = True** (saved via `duplicate_asset` to `/Game/DiverseMaps50/map_32_gothic_night_native`)

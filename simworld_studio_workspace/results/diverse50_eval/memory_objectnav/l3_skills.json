@@ -1,0 +1,14 @@
+{
+  "skills": [
+    "When slight_right & far: prefer MOVE_FORWARD (avg +145cm progress, well-evidenced).",
+    "When slight_right & far: avoid backtrack (avg -1977cm regression).",
+    "When aligned & far: prefer MOVE_FORWARD (avg +166cm progress, well-evidenced).",
+    "When aligned & far: avoid backtrack (avg -1381cm regression).",
+    "When slight_left & far: prefer MOVE_FORWARD (avg +143cm progress, well-evidenced).",
+    "When slight_left & far: avoid backtrack (avg -1541cm regression).",
+    "When far_left & far: prefer MOVE_FORWARD (avg +84cm progress, well-evidenced).",
+    "When far_left & far: avoid backtrack (avg -2045cm regression).",
+    "When slight_left & medium: prefer MOVE_FORWARD (avg +116cm progress, well-evidenced).",
+    "When slight_left & medium: avoid backtrack (avg -366cm regression)."
+  ]
+}

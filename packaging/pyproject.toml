@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simworld-studio"
+version = "0.2.0"
+description = "SimWorld Studio — AI-powered 3D scene generation platform"
+requires-python = ">=3.9"
+dependencies = [
+    "pyyaml>=6.0",
+]
+license = {text = "Apache-2.0"}
+
+[project.scripts]
+simworld-studio = "simworld_arena.launcher:main"
+
+[tool.setuptools.packages.find]
+include = ["simworld_arena*"]
+
+[tool.setuptools.package-data]
+simworld_arena = [
+    "server/*.js",
+    "server/*.json",
+    "server/dist/**/*",
+    "server/dist/**/**/*",
+    "server/dist/**/**/**/*",
+    "skills/builtin/*.md",
+    "config/*.yaml",
+]

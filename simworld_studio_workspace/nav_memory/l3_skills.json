@@ -1,0 +1,14 @@
+{
+  "skills": [
+    "After each TURN_LEFT or TURN_RIGHT, compare the new bearing value to the previous one; the turn direction that moves bearing closer to zero is the one that aligns you toward the goal \u2014 record this mapping once and reuse it for the rest of the episode.",
+    "Before repeating MOVE_FORWARD, check whether distance-to-goal actually decreased after the last forward step; if it did not decrease for two consecutive forward actions, treat your current heading as unreliable and re-derive alignment from the bearing value before moving again.",
+    "If your last three or more actions alternate between TURN_LEFT and TURN_RIGHT without a net decrease in |bearing|, you are oscillating \u2014 commit to whichever single turn direction produced the largest single-step decrease in |bearing| and execute it multiple times until |bearing| is small.",
+    "When bearing reads as 'aligned' yet MOVE_FORWARD increases distance, suspect an obstacle; shift your hypothesis from 'heading is correct' to 'path is blocked' and test a single turn followed by a forward step to see if distance resumes decreasing.",
+    "Maintain a short memory of the last 3 (action, distance_change) pairs; if all three show zero or negative progress, flag the current strategy as failing and switch to an exploratory turn before any further forward motion.",
+    "To calibrate the bearing sign convention at episode start, execute one deliberate test turn, observe whether the bearing value increased or decreased, and use that single delta to assign meaning to the sign for all subsequent decisions in the episode.",
+    "Before issuing STOP, verify that distance-to-goal is both small in absolute terms and has been monotonically decreasing over the last several steps; a single low reading after erratic changes may be sensor noise rather than true arrival.",
+    "When you are far from the goal, prioritize actions that produce large positive distance changes per step; compare the average distance gain of MOVE_FORWARD versus turning actions in your recent history and allocate most steps to whichever category currently yields the highest per-step progress.",
+    "Use the RGB image as a collision predictor: if the visual scene shows a wall, fence, or vehicle filling the central field of view, treat the forward path as blocked regardless of what the bearing suggests, and plan a turn before stepping forward.",
+    "After recovering from a stuck or backtrack failure, tag the (bearing, distance) state where the failure occurred; if you revisit a similar state later, immediately choose a different action than the one that previously failed rather than re-testing it."
+  ]
+}

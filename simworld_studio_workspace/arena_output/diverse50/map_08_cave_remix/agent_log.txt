@@ -1,0 +1,5 @@
+
+
+## Final Report
+
+**map_08_cave_remix** — Fantasy cave "hidden camp" remix. Spawned 7 props at Z=124 (PlayerStart floor level) within ~800 UU radius of origin: 2× BP_Table, 3× BP_Trash_bin_a (barrels), 2× BP_Tree1. NavMeshBoundsVolume added at origin scaled 60×60×10. **REACHABLE=20/20. SAVE_OK=True.** No errors (one deprecation warning on `EditorLevelLibrary.get_editor_world` — non-blocking). Level saved to `/Game/DiverseMaps50/map_08_cave_remix`.

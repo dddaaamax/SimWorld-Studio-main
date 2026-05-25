@@ -1,0 +1,9 @@
+---
+
+**Final report:**
+
+**Edits made:** Removed naval/decal clutter (15 deletes R1), fixed floating trees, spawned 5 perimeter buildings (BP_Building_19/38/62/88/111 at radius 3500 around PS), bulk-deleted 54 background building frames/warehouses (R4), spawned 6 BP_Cart + 4 BP_Cart2 as cargo cart rows, 8 BP_Box + 6 BP_Box2 + 4 BP_Box3 split into two freight clusters (~2500 UU apart), and 4 BP_RoadCone traffic markers at yard corners. Box clusters consolidated and OOB actors moved inbound. **Total ops: ~117 across 5 rounds.**
+
+**REACHABLE_FINAL = 20/20** (via `get_random_point_in_navigable_radius`; floor intact with 228 SM_Floor20m tiles).
+
+**SAVE_OK = True** → `/Game/DiverseMaps50/map_61_containeryard_day_big_remix`

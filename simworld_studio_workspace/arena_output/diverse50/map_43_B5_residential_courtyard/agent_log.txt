@@ -1,0 +1,9 @@
+**SAVE_OK=True.**
+
+---
+
+**Final report:**
+
+**Edits (7 rounds, ~80 ops):** Deleted 14 commercial props (cones, carts, scooters, boxes), 4 duplicate buildings, 4 plaza tables/trees/rubbish, 4 excess trash/hydrants. Spawned 4 houses (BP_Building_17/33/58/91) at ±3000 corners, 4 BP_Tree5 at cardinal perimeter (±2500), central couch, 2 BP_Trash_bin_b staggered at (600,450)/(-500,-350), 2 hydrants at (900,600)/(-900,-600). **Nav issue:** BP_Building blueprints have 60–66 StaticMeshComponents each with `can_ever_affect_navigation=True` by default, blocking the entire courtyard navmesh. Fixed by applying `can_ever_affect_navigation=False` to all SMCs on all 4 buildings and both tree actors.
+
+**REACHABLE_FINAL=20/20 | SAVE_OK=True | Errors:** `EditorLevelLibrary.get_editor_world` deprecation warning (non-fatal).

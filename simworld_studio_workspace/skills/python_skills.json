@@ -1,0 +1,303 @@
+{
+  "skills": [
+    {
+      "id": "skill_1777963659_0",
+      "name": "get_scene_summary",
+      "description": "Get PlayerStart location and all Demo_ actors in compact JSON format",
+      "code": "import unreal, json\nactors = unreal.EditorLevelLibrary.get_all_level_actors()\nps = None\ndemo = []\nfor a in actors:\n    lbl = a.get_actor_label()\n    cls = a.get_class().get_name()\n    loc = a.get_actor_location()\n    if 'PlayerStart' in cls or 'PlayerStart' in lbl:\n        ps = {'name': lbl, 'location': [round(loc.x), round(loc.y), round(loc.z)]}\n    if lbl.startswith('Demo_'):\n        demo.append({'name': lbl, 'location': [round(loc.x), round(loc.y), round(loc.z)]})\nprint(json.dumps({'player_start': ps, 'demo_actors': demo, 'total_actors': len(actors)}))",
+      "tags": [
+        "scene",
+        "explore",
+        "playerstart",
+        "demo_actors",
+        "summary"
+      ],
+      "created_round": 0,
+      "usage_count": 14
+    },
+    {
+      "id": "skill_1777963659_1",
+      "name": "search_ue_assets",
+      "description": "Search UE asset registry for StaticMesh assets by keyword, returns full mesh paths for spawn_actor",
+      "code": "import unreal, json\n# Change KEYWORD to what you want to find: \"container\", \"crane\", \"fence\", \"truck\" etc.\nKEYWORD = \"container\"\nreg = unreal.AssetRegistryHelpers.get_asset_registry()\nf = unreal.ARFilter(class_names=['StaticMesh'], recursive_paths=True, package_paths=['/Game'])\nassets = reg.get_assets(f)\nkw = KEYWORD.lower()\nmatched = [str(a.package_name) + '.' + str(a.asset_name)\n           for a in assets\n           if kw in str(a.asset_name).lower() or kw in str(a.package_name).lower()]\nprint(json.dumps({'keyword': KEYWORD, 'count': len(matched), 'assets': matched[:40]}))",
+      "tags": [
+        "search",
+        "assets",
+        "registry",
+        "mesh",
+        "discovery"
+      ],
+      "created_round": 0,
+      "usage_count": 4
+    },
+    {
+      "id": "skill_1777963659_2",
+      "name": "spawn_container_row",
+      "description": "Spawn a row of SM_Container12m containers along X axis with configurable count and spacing",
+      "code": "import unreal, json, time\n# CONFIG - adjust as needed\nSTART_X = -3500; START_Y = -3800; Z = 0\nCOUNT = 3; SPACING = 1300  # SM_Container12m is ~1200 wide\nYAW = 0    # 0=lengthwise, 90=crosswise (creates corridors)\nPREFIX = \"Demo_ContRow\"\nMESH = \"/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m\"\n# SPAWN with unique names to avoid UE crash\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i in range(COUNT):\n    sfx = hex(int(time.time()*1000+i) % 0xFFFF)[2:].upper()\n    name = f\"{PREFIX}_{sfx}\"\n    loc = unreal.Vector(START_X + i * SPACING, START_Y, Z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, YAW, 0), False)\n        spawned.append(name)\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "spawn",
+        "row",
+        "container12m",
+        "yard"
+      ],
+      "created_round": 0,
+      "usage_count": 14
+    },
+    {
+      "id": "skill_1777963659_3",
+      "name": "collision_check_demo_actors",
+      "description": "AABB collision check for all Demo_ prefix actors, returns collision pairs",
+      "code": "import unreal, json\ntry:\n    actors = unreal.EditorLevelLibrary.get_all_level_actors()\n    demo = [a for a in actors if a.get_actor_label().startswith(\"Demo_\")]\n    info = []\n    for a in demo:\n        loc = a.get_actor_location()\n        _, ext = a.get_actor_bounds(True)\n        info.append({\"label\": a.get_actor_label(),\n                     \"x\": loc.x, \"y\": loc.y,\n                     \"ex\": max(abs(ext.x), 80), \"ey\": max(abs(ext.y), 80)})\n    pairs = []\n    for i in range(len(info)):\n        for j in range(i+1, len(info)):\n            a, b = info[i], info[j]\n            if (abs(a[\"x\"]-b[\"x\"]) < a[\"ex\"]+b[\"ex\"] and\n                    abs(a[\"y\"]-b[\"y\"]) < a[\"ey\"]+b[\"ey\"]):\n                pairs.append({\"a\": a[\"label\"], \"b\": b[\"label\"]})\n    print(json.dumps({\"collision_count\": len(pairs), \"pairs\": pairs,\n                      \"demo_count\": len(demo)}))\nexcept Exception as e:\n    print(json.dumps({\"collision_count\": -1, \"error\": str(e)}))",
+      "tags": [
+        "collision",
+        "check",
+        "aabb",
+        "demo",
+        "validation"
+      ],
+      "created_round": 0,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777964705_4",
+      "name": "spawn_angled_container",
+      "description": "Spawn single container with custom rotation for spatial variety",
+      "code": "import unreal, json, time\n# CONFIG\nNAME = \"Demo_Cont\"\nMESH = \"/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m\"\nLOC = [-4200, -7000, 0]  # [x, y, z]\nYAW = 45  # rotation angle\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nsfx = hex(int(time.time()*1000) % 0xFFFF)[2:].upper()\nname = f\"{NAME}_{sfx}\"\nloc = unreal.Vector(LOC[0], LOC[1], LOC[2])\nactor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\nif actor and mesh_obj:\n    actor.set_actor_label(name)\n    comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n    if comp: comp.set_static_mesh(mesh_obj)\n    actor.set_actor_rotation(unreal.Rotator(0, YAW, 0), False)\n    print(json.dumps({'spawned': name, 'location': LOC, 'yaw': YAW}))",
+      "tags": [
+        "container",
+        "spawn",
+        "rotation",
+        "angled"
+      ],
+      "created_round": 1,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777964705_5",
+      "name": "spawn_stacked_container",
+      "description": "Spawn container at elevated Z for vertical stacking",
+      "code": "import unreal, json, time\n# CONFIG - typical stack heights: 0, 280, 560\nNAME = \"Demo_ContStack\"\nMESH = \"/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m\"\nBASE_LOC = [-5500, -7000]  # [x, y]\nHEIGHTS = [0, 280]  # ground and 2nd layer\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, z in enumerate(HEIGHTS):\n    sfx = hex(int(time.time()*1000+i*10) % 0xFFFF)[2:].upper()\n    name = f\"{NAME}_{sfx}\"\n    loc = unreal.Vector(BASE_LOC[0], BASE_LOC[1], z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        spawned.append({'name': name, 'z': z})\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "spawn",
+        "stack",
+        "vertical"
+      ],
+      "created_round": 1,
+      "usage_count": 13
+    },
+    {
+      "id": "skill_1777966378_6",
+      "name": "spawn_l_shaped_cluster",
+      "description": "Spawn L-shaped container formation with perpendicular containers",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -3500; BASE_Y = -7000; Z = 0\nMESH = \"/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m\"\nCONT_LENGTH = 1200  # SM_Container12m length\n# L-shape: horizontal arm (yaw=0) + vertical arm (yaw=90)\nconfigs = [\n    {\"name\": \"Demo_LArm_Horiz\", \"offset\": [0, 0], \"yaw\": 0},\n    {\"name\": \"Demo_LArm_Vert\", \"offset\": [0, -CONT_LENGTH-300], \"yaw\": 90}  # gap 300\n]\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor cfg in configs:\n    sfx = hex(int(time.time()*1000) % 0xFFFF)[2:].upper()\n    name = f\"{cfg['name']}_{sfx}\"\n    loc = unreal.Vector(BASE_X + cfg['offset'][0], BASE_Y + cfg['offset'][1], Z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, cfg['yaw'], 0), False)\n        spawned.append(name)\n    time.sleep(0.05)\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "spawn",
+        "l-shape",
+        "formation",
+        "cluster"
+      ],
+      "created_round": 2,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777966378_7",
+      "name": "collision_check_smart",
+      "description": "Collision detection excluding intentional stacks (shared XY coords)",
+      "code": "import unreal, json\ntry:\n    actors = unreal.EditorLevelLibrary.get_all_level_actors()\n    demo = [a for a in actors if a.get_actor_label().startswith('Demo_')]\n    info = []\n    for a in demo:\n        loc = a.get_actor_location()\n        _, ext = a.get_actor_bounds(True)\n        info.append({\n            'label': a.get_actor_label(),\n            'x': loc.x, 'y': loc.y, 'z': loc.z,\n            'ex': max(abs(ext.x), 80), 'ey': max(abs(ext.y), 80)\n        })\n    pairs = []\n    for i in range(len(info)):\n        for j in range(i+1, len(info)):\n            a, b = info[i], info[j]\n            dx = abs(a['x'] - b['x'])\n            dy = abs(a['y'] - b['y'])\n            dz = abs(a['z'] - b['z'])\n            # Collision if XY overlap AND Z difference < 200 (not stacked)\n            if dx < a['ex'] + b['ex'] and dy < a['ey'] + b['ey'] and dz < 200:\n                pairs.append({'a': a['label'], 'b': b['label']})\n    print(json.dumps({'collision_count': len(pairs), 'pairs': pairs, 'demo_count': len(demo)}))\nexcept Exception as e:\n    print(json.dumps({'collision_count': -1, 'error': str(e)}))",
+      "tags": [
+        "collision",
+        "check",
+        "validation",
+        "smart",
+        "exclude_stacks"
+      ],
+      "created_round": 2,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777966479_8",
+      "name": "spawn_vertical_tower",
+      "description": "Create multi-layer container stack at single X,Y coordinate with configurable heights",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -4200; BASE_Y = -6800\nHEIGHTS = [0, 280, 560]  # ground, 2nd, 3rd layers\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nNAME_PREFIX = 'Demo_Tower'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, z in enumerate(HEIGHTS):\n    sfx = hex(int(time.time()*1000+i*10) % 0xFFFF)[2:].upper()\n    name = f'{NAME_PREFIX}_L{i}_{sfx}'\n    loc = unreal.Vector(BASE_X, BASE_Y, z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        spawned.append({'name': name, 'z': z})\nprint(json.dumps({'spawned': spawned, 'tower_height': len(HEIGHTS)}))",
+      "tags": [
+        "container",
+        "stack",
+        "vertical",
+        "tower",
+        "multilayer"
+      ],
+      "created_round": 3,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777967479_9",
+      "name": "spawn_triple_stack",
+      "description": "Spawn 3-layer vertical container tower at specified base location",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -4200; BASE_Y = -7000  # Ground location\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nHEIGHTS = [0, 280, 560]  # ground, 2nd, 3rd layer\nPREFIX = 'Demo_Tower3'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, z in enumerate(HEIGHTS):\n    suffix = hex(int(time.time()*1000 + i*10) % 0xFFFF)[2:].upper()\n    name = f'{PREFIX}_L{i}_{suffix}'\n    loc = unreal.Vector(BASE_X, BASE_Y, z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        spawned.append({'name': name, 'z': z})\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "spawn",
+        "stack",
+        "vertical",
+        "tower",
+        "3layer"
+      ],
+      "created_round": 4,
+      "usage_count": 10
+    },
+    {
+      "id": "skill_1777970146_10",
+      "name": "cleanup_demo_actors",
+      "description": "Delete all Demo_ actors matching a name pattern to reset scene",
+      "code": "import unreal, json\nPATTERN = \"Demo_Cont_\"  # Partial match\nactors = unreal.EditorLevelLibrary.get_all_level_actors()\ndeleted = []\nfor a in actors:\n    lbl = a.get_actor_label()\n    if lbl.startswith(\"Demo_\") and PATTERN in lbl:\n        a.destroy_actor()\n        deleted.append(lbl)\nprint(json.dumps({'deleted': deleted, 'count': len(deleted)}))",
+      "tags": [
+        "cleanup",
+        "delete",
+        "scene_reset",
+        "demo_actors"
+      ],
+      "created_round": 6,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777970146_11",
+      "name": "get_camera_fov_bounds",
+      "description": "Calculate visible X/Y bounds from PlayerStart camera to guide spawn placement",
+      "code": "import unreal, json, math\nactors = unreal.EditorLevelLibrary.get_all_level_actors()\nps_loc = None\nfor a in actors:\n    if 'PlayerStart' in a.get_class().get_name():\n        ps_loc = a.get_actor_location()\n        break\nif ps_loc:\n    # Assume 90° FOV, camera facing roughly -Y direction\n    # Visible range: X ± 1000, Y from ps.y-500 to ps.y-2000 (forward view)\n    bounds = {\n        'x_min': ps_loc.x - 1000,\n        'x_max': ps_loc.x + 1000,\n        'y_min': ps_loc.y - 2000,\n        'y_max': ps_loc.y - 500,\n        'player_loc': [ps_loc.x, ps_loc.y, ps_loc.z]\n    }\n    print(json.dumps(bounds))\nelse:\n    print(json.dumps({'error': 'PlayerStart not found'}))",
+      "tags": [
+        "camera",
+        "fov",
+        "visibility",
+        "placement",
+        "playerstart"
+      ],
+      "created_round": 6,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777971110_12",
+      "name": "spawn_maze_l_junction",
+      "description": "Spawn L-shaped junction with 2 parallel walls and perpendicular blocker",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -3900; BASE_Y = -6500; Z = 0\nCORRIDOR_WIDTH = 1400  # distance between parallel walls\nWALL_LENGTH = 1200  # container length\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_MazeL'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\n# Left wall (lengthwise)\nname1 = f'{PREFIX}_LeftWall_{hex(int(time.time()*1000)%0xFFFF)[2:].upper()}'\nactor1 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(BASE_X - CORRIDOR_WIDTH/2, BASE_Y, Z))\nif actor1 and mesh_obj:\n    actor1.set_actor_label(name1)\n    actor1.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(mesh_obj)\n    actor1.set_actor_rotation(unreal.Rotator(0, 0, 0), False)\n    spawned.append(name1)\n# Right wall (lengthwise)\nname2 = f'{PREFIX}_RightWall_{hex(int(time.time()*1000+100)%0xFFFF)[2:].upper()}'\nactor2 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(BASE_X + CORRIDOR_WIDTH/2, BASE_Y, Z))\nif actor2 and mesh_obj:\n    actor2.set_actor_label(name2)\n    actor2.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(mesh_obj)\n    actor2.set_actor_rotation(unreal.Rotator(0, 0, 0), False)\n    spawned.append(name2)\n# Perpendicular blocker (creates turn)\nname3 = f'{PREFIX}_Blocker_{hex(int(time.time()*1000+200)%0xFFFF)[2:].upper()}'\nactor3 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(BASE_X + CORRIDOR_WIDTH/2, BASE_Y + 1000, Z))\nif actor3 and mesh_obj:\n    actor3.set_actor_label(name3)\n    actor3.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(mesh_obj)\n    actor3.set_actor_rotation(unreal.Rotator(0, 90, 0), False)\n    spawned.append(name3)\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "maze",
+        "container",
+        "l_junction",
+        "spawn",
+        "corridor"
+      ],
+      "created_round": 1,
+      "usage_count": 4
+    },
+    {
+      "id": "skill_1777971508_13",
+      "name": "spawn_perpendicular_blocker",
+      "description": "Spawn container at 90° rotation to create corridor end or turn",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -4050; BASE_Y = -5700; Z = 0\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nNAME_PREFIX = 'Demo_Blocker'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nsuffix = hex(int(time.time()*1000) % 0xFFFF)[2:].upper()\nname = f'{NAME_PREFIX}_{suffix}'\nloc = unreal.Vector(BASE_X, BASE_Y, Z)\nactor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\nif actor and mesh_obj:\n    actor.set_actor_label(name)\n    comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n    if comp: comp.set_static_mesh(mesh_obj)\n    actor.set_actor_rotation(unreal.Rotator(0, 90, 0), False)\n    print(json.dumps({'spawned': name, 'location': [BASE_X, BASE_Y, Z], 'rotation': 90}))",
+      "tags": [
+        "container",
+        "spawn",
+        "blocker",
+        "perpendicular",
+        "turn"
+      ],
+      "created_round": 2,
+      "usage_count": 1
+    },
+    {
+      "id": "skill_1777972510_14",
+      "name": "spawn_tjunction_maze_segment",
+      "description": "Spawn T-junction maze segment with parallel corridors and diagonal obstacle",
+      "code": "import unreal, json, time\n# CONFIG - T-junction with north extension + diagonal obstacle\nBASE_X = -4050; BASE_Y = -5700  # junction center\nCORRIDOR_WIDTH = 1300  # wall separation\nNORTH_EXTEND = 800  # northward extension distance\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_TJunc'\n# POSITIONS: 2 north walls + 1 diagonal obstacle\nconfigs = [\n    {'name': 'NorthWallWest', 'offset_x': -650, 'offset_y': NORTH_EXTEND, 'yaw': 0},\n    {'name': 'NorthWallEast', 'offset_x': 650, 'offset_y': NORTH_EXTEND, 'yaw': 0},\n    {'name': 'DiagObstacle', 'offset_x': 0, 'offset_y': -500, 'yaw': 45}\n]\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor cfg in configs:\n    suffix = hex(int(time.time()*1000) % 0xFFFF)[2:].upper()\n    name = f\"{PREFIX}_{cfg['name']}_{suffix}\"\n    loc = unreal.Vector(BASE_X + cfg['offset_x'], BASE_Y + cfg['offset_y'], 0)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, cfg['yaw'], 0), False)\n        spawned.append({'name': name, 'x': loc.x, 'y': loc.y, 'yaw': cfg['yaw']})\n    time.sleep(0.05)\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "maze",
+        "tjunction",
+        "diagonal",
+        "obstacle",
+        "branching"
+      ],
+      "created_round": 3,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777977784_15",
+      "name": "spawn_maze_t_junction",
+      "description": "Spawn containers forming a T-junction with perpendicular and lengthwise pieces",
+      "code": "import unreal, json, time\n# CONFIG - T-junction: 2 crosswise walls + 1 lengthwise corridor\nBASE_X = -3200; BASE_Y = -7500; Z = 0\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_TJunction'\n# POSITIONS: 2 perpendicular (Y-axis walls) + 1 lengthwise (X-axis path)\nPOSITIONS = [\n    {'x': BASE_X, 'y': BASE_Y, 'yaw': 90},  # wall 1\n    {'x': BASE_X - 1300, 'y': BASE_Y, 'yaw': 90},  # wall 2 (1300 apart)\n    {'x': BASE_X - 650, 'y': BASE_Y + 800, 'yaw': 0}  # corridor entry\n]\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, pos in enumerate(POSITIONS):\n    suffix = hex(int(time.time()*1000 + i*10) % 0xFFFF)[2:].upper()\n    name = f'{PREFIX}_{suffix}'\n    loc = unreal.Vector(pos['x'], pos['y'], Z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, pos['yaw'], 0), False)\n        spawned.append({'name': name, 'yaw': pos['yaw']})\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "maze",
+        "t-junction",
+        "spawn",
+        "rotation"
+      ],
+      "created_round": 5,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777977938_16",
+      "name": "spawn_maze_dead_end",
+      "description": "Spawn U-shaped dead-end corridor with 3 containers",
+      "code": "import unreal, json, time\n# CONFIG - creates U-shaped dead-end\nBASE_X = -2500; BASE_Y = -7000; Z = 0\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_DeadEnd'\n# U-shape: back wall (perpendicular) + 2 side walls (lengthwise)\nconfigs = [\n    {'offset': [0, 0], 'yaw': 90, 'role': 'back'},\n    {'offset': [-1300, 800], 'yaw': 0, 'role': 'left'},\n    {'offset': [-1300, -800], 'yaw': 0, 'role': 'right'}\n]\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, cfg in enumerate(configs):\n    sfx = hex(int(time.time()*1000 + i*10) % 0xFFFF)[2:].upper()\n    name = f'{PREFIX}_{cfg[\"role\"]}_{sfx}'\n    loc = unreal.Vector(BASE_X + cfg['offset'][0], BASE_Y + cfg['offset'][1], Z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, cfg['yaw'], 0), False)\n        spawned.append({'name': name, 'role': cfg['role']})\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "maze",
+        "dead_end",
+        "u_shape",
+        "spawn"
+      ],
+      "created_round": 6,
+      "usage_count": 4
+    },
+    {
+      "id": "skill_1777979607_17",
+      "name": "spawn_corridor_with_obstacle",
+      "description": "Spawn corridor wall container + perpendicular turn blocker + small prop obstacle",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X = -5800; BASE_Y_WALL = -7500; BASE_Y_TURN = -8700; OBSTACLE_X = -4700; OBSTACLE_Y = -7000; Z = 0\nCONTAINER_MESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nOBSTACLE_MESH = '/Game/hongkong/Geometries/KB3D_HOK_PropBarrel_A_Main.KB3D_HOK_PropBarrel_A_Main'\nPREFIX = 'Demo_Corridor'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\ncontainer_obj = unreal.load_asset(CONTAINER_MESH)\nobstacle_obj = unreal.load_asset(OBSTACLE_MESH)\nspawned = []\n# Wall (lengthwise)\nname1 = f'{PREFIX}_Wall_{hex(int(time.time()*1000)%0xFFFF)[2:].upper()}'\nactor1 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(BASE_X, BASE_Y_WALL, Z))\nif actor1 and container_obj:\n    actor1.set_actor_label(name1)\n    actor1.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(container_obj)\n    actor1.set_actor_rotation(unreal.Rotator(0, 0, 0), False)\n    spawned.append(name1)\n# Turn blocker (perpendicular)\nname2 = f'{PREFIX}_Turn_{hex(int(time.time()*1000+50)%0xFFFF)[2:].upper()}'\nactor2 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(BASE_X, BASE_Y_TURN, Z))\nif actor2 and container_obj:\n    actor2.set_actor_label(name2)\n    actor2.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(container_obj)\n    actor2.set_actor_rotation(unreal.Rotator(0, 90, 0), False)\n    spawned.append(name2)\n# Obstacle (diagonal)\nname3 = f'{PREFIX}_Obstacle_{hex(int(time.time()*1000+100)%0xFFFF)[2:].upper()}'\nactor3 = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(OBSTACLE_X, OBSTACLE_Y, Z))\nif actor3 and obstacle_obj:\n    actor3.set_actor_label(name3)\n    actor3.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(obstacle_obj)\n    actor3.set_actor_rotation(unreal.Rotator(0, 45, 0), False)\n    spawned.append(name3)\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "maze",
+        "container",
+        "spawn",
+        "corridor",
+        "obstacle"
+      ],
+      "created_round": 1,
+      "usage_count": 3
+    },
+    {
+      "id": "skill_1777980080_18",
+      "name": "spawn_parallel_corridor_walls",
+      "description": "Spawn two parallel lengthwise containers with configurable spacing to form corridor walls",
+      "code": "import unreal, json, time\n# CONFIG\nBASE_X_LEFT = -3200; BASE_X_RIGHT = -2400; BASE_Y = -6800; Z = 0\nCORRIDOR_WIDTH = 800  # distance between parallel walls\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_ParallelWalls'\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, (x, label) in enumerate([(BASE_X_LEFT, 'Left'), (BASE_X_RIGHT, 'Right')]):\n    name = f'{PREFIX}_{label}_{hex(int(time.time()*1000 + i*100)%0xFFFF)[2:].upper()}'\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, unreal.Vector(x, BASE_Y, Z))\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        actor.get_component_by_class(unreal.StaticMeshComponent).set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, 0, 0), False)\n        spawned.append(name)\nprint(json.dumps({'spawned': spawned, 'corridor_width': CORRIDOR_WIDTH}))",
+      "tags": [
+        "container",
+        "maze",
+        "corridor",
+        "parallel",
+        "spawn"
+      ],
+      "created_round": 2,
+      "usage_count": 0
+    },
+    {
+      "id": "skill_1777980140_19",
+      "name": "spawn_diagonal_corridor_trio",
+      "description": "Spawn three containers at 30°, 45°, and 60° angles to create tight zig-zag corridor",
+      "code": "import unreal, json, time\n# CONFIG - diagonal corridor pattern\nBASE_X = -3800; BASE_Y = -5200; Z = 0\nMESH = '/Game/ContainerYard/Meshes/SM_Container12m.SM_Container12m'\nPREFIX = 'Demo_DiagCorridor'\n# Three angles with offsets\nconfigs = [\n    {'offset': [0, 0], 'yaw': 30, 'role': 'gentle'},\n    {'offset': [800, -200], 'yaw': 60, 'role': 'sharp'},\n    {'offset': [400, -1000], 'yaw': 45, 'role': 'barrier'}\n]\n# SPAWN\nsubsys = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)\nmesh_obj = unreal.load_asset(MESH)\nspawned = []\nfor i, cfg in enumerate(configs):\n    sfx = hex(int(time.time()*1000 + i*100) % 0xFFFF)[2:].upper()\n    name = f'{PREFIX}_{cfg[\"role\"]}_{sfx}'\n    loc = unreal.Vector(BASE_X + cfg['offset'][0], BASE_Y + cfg['offset'][1], Z)\n    actor = subsys.spawn_actor_from_class(unreal.StaticMeshActor, loc)\n    if actor and mesh_obj:\n        actor.set_actor_label(name)\n        comp = actor.get_component_by_class(unreal.StaticMeshComponent)\n        if comp: comp.set_static_mesh(mesh_obj)\n        actor.set_actor_rotation(unreal.Rotator(0, cfg['yaw'], 0), False)\n        spawned.append({'name': name, 'angle': cfg['yaw']})\nprint(json.dumps({'spawned': spawned, 'count': len(spawned)}))",
+      "tags": [
+        "container",
+        "diagonal",
+        "maze",
+        "corridor",
+        "multi_angle"
+      ],
+      "created_round": 3,
+      "usage_count": 0
+    }
+  ]
+}
