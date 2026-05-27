@@ -43,8 +43,8 @@ $Workspace  = Join-Path $ScriptDir "simworld_studio_workspace"
 # ============================================================
 #  USER CONFIGURATION - edit these for your environment
 # ============================================================
-$UeRoot    = "C:\Program Files\Epic Games\UE_5.3"
-$UeProject = "E:\UE\SimWorld-copy\SimWorld.uproject"
+$UeRoot    = "D:\Unreal Engine\UE_5.3"
+$UeProject = "D:\Unreal Engine\logisticsue\Studio\Studio.uproject"
 # ============================================================
 
 $UeEditor  = Join-Path $UeRoot "Engine\Binaries\Win64\UnrealEditor.exe"

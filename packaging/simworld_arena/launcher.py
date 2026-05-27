@@ -2,7 +2,7 @@
 SimWorld Studio Launcher
 
 Single-command launcher that:
-1. Checks prerequisites (Node.js, Claude auth, GPU)
+1. Checks prerequisites (Node.js, LLM auth, GPU)
 2. Launches UE binary (headless)
 3. Waits for MCP port to become available
 4. Starts the Studio web server
@@ -36,11 +36,54 @@ def find_node():
     return node
 
 
-def check_claude_auth():
-    """Check if Claude is authenticated (OAuth or API key)."""
-    # Check API key first
+def resolve_llm_provider():
+    """Resolve the configured model provider from environment variables."""
+    provider = (
+        os.environ.get("SIMWORLD_LLM_PROVIDER")
+        or os.environ.get("LLM_PROVIDER")
+        or os.environ.get("AI_PROVIDER")
+        or ""
+    ).strip().lower()
+    aliases = {
+        "anthropic": "claude",
+        "claude-code": "claude",
+        "dashscope": "qwen",
+        "aliyun": "qwen",
+        "qianwen": "qwen",
+    }
+    provider = aliases.get(provider, provider)
+    if provider:
+        return provider
+    if os.environ.get("DEEPSEEK_API_KEY"):
+        return "deepseek"
+    if os.environ.get("DASHSCOPE_API_KEY") or os.environ.get("QWEN_API_KEY"):
+        return "qwen"
+    if os.environ.get("SIMWORLD_LLM_API_KEY") or os.environ.get("LLM_API_KEY") or os.environ.get("OPENAI_API_KEY"):
+        return "openai"
+    return "claude"
+
+
+def check_llm_auth():
+    """Check if the configured LLM provider is authenticated."""
+    provider = resolve_llm_provider()
+    if provider == "deepseek":
+        return "DeepSeek API key" if os.environ.get("DEEPSEEK_API_KEY") or os.environ.get("SIMWORLD_LLM_API_KEY") else None
+    if provider == "qwen":
+        return "Qwen/DashScope API key" if (
+            os.environ.get("DASHSCOPE_API_KEY") or
+            os.environ.get("QWEN_API_KEY") or
+            os.environ.get("SIMWORLD_LLM_API_KEY")
+        ) else None
+    if provider == "openai":
+        return "OpenAI-compatible API key" if (
+            os.environ.get("SIMWORLD_LLM_API_KEY") or
+            os.environ.get("LLM_API_KEY") or
+            os.environ.get("OPENAI_API_KEY")
+        ) else None
+
+    # Claude compatibility path: API key first.
     if os.environ.get("ANTHROPIC_API_KEY"):
-        return "api_key"
+        return "Claude API key"
 
     # Check Claude Code OAuth
     claude = shutil.which("claude")
@@ -51,7 +94,7 @@ def check_claude_auth():
                 capture_output=True, text=True, timeout=10,
             )
             if result.returncode == 0 and '"loggedIn": true' in result.stdout:
-                return "oauth"
+                return "Claude OAuth"
         except Exception:
             pass
 
@@ -302,16 +345,17 @@ def start_server(args):
     print("  SimWorld Studio v" + __version__)
     print("=" * 55)
 
-    # ── Step 1: Check Claude auth ──
+    # Step 1: Check LLM auth
     print()
-    auth = check_claude_auth()
-    if auth == "api_key":
-        print("  [OK] Claude auth: API key")
-    elif auth == "oauth":
-        print("  [OK] Claude auth: OAuth (claude login)")
+    auth = check_llm_auth()
+    provider = resolve_llm_provider()
+    if auth:
+        print(f"  [OK] LLM auth: {auth} ({provider})")
     else:
-        print("  [!!] Claude not authenticated!")
-        print("       Set ANTHROPIC_API_KEY or run 'claude login'")
+        print("  [!!] LLM provider not authenticated!")
+        print("       DeepSeek: set SIMWORLD_LLM_PROVIDER=deepseek and DEEPSEEK_API_KEY")
+        print("       Qwen: set SIMWORLD_LLM_PROVIDER=qwen and DASHSCOPE_API_KEY")
+        print("       Claude fallback: set ANTHROPIC_API_KEY or run 'claude login'")
         if not args.skip_auth_check:
             sys.exit(1)
 
@@ -594,9 +638,9 @@ def main():
     sp_start.add_argument("--map", default="/Game/Main", help="UE map path to open (default: /Game/Main)")
     sp_start.add_argument("--binary", default=None, help="Path to UE installation or SimWorld-Studio-Minimal directory (overrides UE_ROOT env var)")
     sp_start.add_argument("--data-dir", default=None, help="Workspace directory")
-    sp_start.add_argument("--skip-auth-check", action="store_true", help="Skip Claude auth check")
+    sp_start.add_argument("--skip-auth-check", action="store_true", help="Skip LLM auth check")
     sp_start.add_argument("--skip-gpu-check", action="store_true", help="Skip GPU check")
-    sp_start.add_argument("--mock", action="store_true", help="Enable mock mode (use mock_responses.txt instead of calling Claude)")
+    sp_start.add_argument("--mock", action="store_true", help="Enable mock mode (use mock_responses.txt instead of calling the LLM)")
     sp_start.add_argument("--mock-file", default=None, help="Path to mock responses file (default: workspace/mock_responses.txt)")
 
     subparsers.add_parser("version", help="Show version")

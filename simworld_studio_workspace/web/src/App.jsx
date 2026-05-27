@@ -1023,7 +1023,7 @@ const STATIC_MCP_TOOL_DEFS = [
   { id: "execute_python_script", name: "execute_python_script", mcpName: "execute_python_script", enabled: true, description: "Execute arbitrary Unreal Engine Python script. Use for advanced operations not covered by other tools.", paramsSchema: { type: "object", properties: { script: { type: "string", description: "Python code to execute in UE" } }, required: ["script"] } },
   { id: "list_assets", name: "list_assets", mcpName: "list_assets", enabled: true, description: "List available SimWorld assets. Returns buildings, trees, vehicles, street furniture, roads, and static meshes with their paths.", paramsSchema: { type: "object", properties: { category: { type: "string", description: "Optional: 'buildings', 'trees', 'vehicles', 'street_furniture', 'roads', 'static_meshes'. Omit for all." } } } },
   { id: "setup_environment", name: "setup_environment", mcpName: "setup_environment", enabled: true, description: "CALL THIS FIRST before spawning any objects! Sets up the scene environment: directional light (sun), sky atmosphere, sky light, fog, ground plane, and increases view distance. Without this, the scene will be black/empty.", paramsSchema: { type: "object", properties: { ground_size: { type: "number", description: "Ground plane scale (default 200 = 20km x 20km). Use 100 for small scenes, 300 for large cities." }, time_of_day: { type: "string", description: "'morning', 'noon', 'afternoon' (default), 'sunset', or 'night'" } } } },
-  { id: "verify_scene", name: "verify_scene", mcpName: "verify_scene", enabled: true, description: "Call a verifier AI (Claude) to analyze the current scene. Takes a screenshot, gets all actors, then asks Claude to evaluate if placement is correct and matches the original request. Returns structured feedback with status (PASS/NEEDS_IMPROVEMENT/FAIL), issues found, and actionable suggestions. Use this after placing objects to check quality before finishing.", paramsSchema: { type: "object", properties: { original_request: { type: "string", description: "The original scene generation request to verify against (e.g. 'a suburban street with 3 houses and 2 trees')" }, focus_areas: { type: "string", description: "Optional: specific aspects to focus on (e.g. 'check building spacing', 'verify tree placement')" } }, required: [] } },
+  { id: "verify_scene", name: "verify_scene", mcpName: "verify_scene", enabled: true, description: "Call a verifier AI to analyze the current scene. Takes a screenshot, gets all actors, then evaluates if placement is correct and matches the original request. Returns structured feedback with status (PASS/NEEDS_IMPROVEMENT/FAIL), issues found, and actionable suggestions. Use this after placing objects to check quality before finishing.", paramsSchema: { type: "object", properties: { original_request: { type: "string", description: "The original scene generation request to verify against (e.g. 'a suburban street with 3 houses and 2 trees')" }, focus_areas: { type: "string", description: "Optional: specific aspects to focus on (e.g. 'check building spacing', 'verify tree placement')" } }, required: [] } },
 ].sort((a, b) => a.id.localeCompare(b.id));
 
 function buildWelcomeMessage() {
@@ -2197,7 +2197,7 @@ function SkillsPanel({
             }}
           >
             {autoEnabled
-              ? "Auto mode: Claude pre-selects relevant skills before each run."
+              ? "Auto mode: the AI pre-selects relevant skills before each run."
               : "Manual mode: check the exact skills you want active."}
           </div>
           {builtinSkills.length > 0 && (
@@ -2546,7 +2546,7 @@ const ChatMessage = React.memo(function ChatMessage({ message }) {
       {message.waiting && (
         <div style={{ color:"#64748b", fontSize:12, display:"flex", alignItems:"center", gap:8, padding:"2px 0" }}>
           <span style={{ display:"inline-block", width:8, height:8, borderRadius:"50%", border:"2px solid var(--blue)", borderTopColor:"transparent", animation:"spin 1s linear infinite" }} />
-          Waiting for Claude...
+          Waiting for AI model...
         </div>
       )}
       {message.blocks
@@ -2755,7 +2755,7 @@ function ChatPanel({ onScreenshotUpdate, onRef, onSessionChange, onChatDone }) {
         id: assistantId,
         role: "assistant",
         content: "",
-        waiting: true,  // Show "Waiting for Claude..." until first event
+        waiting: true,  // Show "Waiting for AI model..." until first event
         toolCalls: [],
         timestamp: Date.now(),
       };
@@ -2930,7 +2930,7 @@ function ChatPanel({ onScreenshotUpdate, onRef, onSessionChange, onChatDone }) {
                 case "done": {
                   const sid = event.data.sessionId;
                   const isErr = event.data.isError;
-                  // Always keep sessionId — it's the stable studio session, not Claude's transient one
+                  // Always keep sessionId — it's the stable studio session, not a provider-specific transient one
                   if (sid) {
                     setSessionId(sid);
                     onSessionChange?.(sid);
@@ -2986,7 +2986,7 @@ function ChatPanel({ onScreenshotUpdate, onRef, onSessionChange, onChatDone }) {
   );
 
   const handleStop = () => {
-    // Tell the server to actually kill the Claude subprocess. Without this,
+    // Tell the server to actually stop the active model run. Without this,
     // aborting the SSE alone just leaves the agent running in background
     // (server-side e.on("close") no longer kills on disconnect).
     fetch(`${API_BASE}/chat-stop`, { method: "POST" }).catch(() => {});
@@ -3127,7 +3127,7 @@ function ChatPanel({ onScreenshotUpdate, onRef, onSessionChange, onChatDone }) {
               alignItems: "center",
             }}
           >
-            <span>Claude Code CLI</span>
+            <span>LLM provider</span>
             <span>·</span>
             <span style={{ color: mcpStatus.startsWith("✓") ? "#16a34a" : "#dc2626" }}>
               MCP: {mcpStatus}
@@ -4348,19 +4348,19 @@ function AgentDetailPanel({ agent, sessionId, pieActive, colorIdx, onClose }) {
         <span style={{ color: liveState?.collisionCount > 0 ? "#dc2626" : "var(--ink-3)" }}>
           <span style={{ display:"inline-flex", alignItems:"center", gap:3 }}>{ICONS.collision(11)} {liveState?.collisionCount||0} collisions</span>
         </span>
-        <span>🔄 {liveState?.totalTurns||0} turns</span>
+        <span>{liveState?.totalTurns||0} turns</span>
         {liveState?.totalCostUsd > 0 && (
-          <span>💰 ${(liveState.totalCostUsd||0).toFixed(3)}</span>
+          <span>${(liveState.totalCostUsd||0).toFixed(3)}</span>
         )}
       </div>
 
       {/* ── Tab bar ── */}
       <div style={{ display: "flex", gap: 0, borderBottom: "1px solid var(--line)", flexShrink: 0, background: "var(--panel)" }}>
         {[
-          { id: "camera",     label: "📷 Camera"     },
+          { id: "camera",     label: "Camera"     },
           { id: "trajectory", label: "Trajectory" },
-          { id: "activity",   label: "📋 Activity"   },
-          { id: "chat",       label: "💬 Chat"       },
+          { id: "activity",   label: "Activity"   },
+          { id: "chat",       label: "Chat"       },
         ].map(t => (
           <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
             flex: 1, padding: "7px 2px", border: "none",
@@ -4399,7 +4399,7 @@ function AgentDetailPanel({ agent, sessionId, pieActive, colorIdx, onClose }) {
               }}/>
             ) : camError ? (
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", gap: 8 }}>
-                <div style={{ fontSize: 28, opacity: 0.4 }}>📷</div>
+                <div style={{ color: "var(--ink-3)", opacity: 0.6 }}>{ICONS.camera(28)}</div>
                 <div style={{ color: "var(--red)", fontSize: 12 }}>{camError}</div>
                 <button onClick={focusAndShoot} style={{ padding: "5px 14px", borderRadius: 6, border: "1px solid var(--blue)", background: "rgba(37,99,235,.15)", color: "#93c5fd", cursor: "pointer", fontSize: 12 }}>Retry</button>
               </div>
@@ -4412,7 +4412,7 @@ function AgentDetailPanel({ agent, sessionId, pieActive, colorIdx, onClose }) {
                   </>
                 ) : (
                   <>
-                    <div style={{ fontSize: 28, opacity: 0.3 }}>📷</div>
+                    <div style={{ color: "var(--ink-3)", opacity: 0.5 }}>{ICONS.camera(28)}</div>
                     <div style={{ color: "var(--ink-2)", fontSize: 12 }}>Click "Capture" to take a screenshot</div>
                   </>
                 )}
@@ -4530,8 +4530,8 @@ function AgentAggregatePanelTabs({ agents, sessionId }) {
 
   const tabs = [
     { id:"overview", label:"Overview" },
-    { id:"testbed",  label:"🧪 Testbed"  },
-    { id:"chat",     label:"💬 Comm"     },
+    { id:"testbed",  label:"Testbed"  },
+    { id:"chat",     label:"Comm"     },
   ];
   return (
     <div style={{ display:"flex", flexDirection:"column", height:"100%", background:"var(--bg)" }}>
@@ -5403,7 +5403,7 @@ function ViewportPanel({ latestScreenshot }) {
         <div style={{ display:"flex", gap:3 }}>
           {[
             { id:"pixelstream", label:"Live" },
-            { id:"screenshot",  label:"📷 Shot" },
+            { id:"screenshot",  label:"Shot" },
           ].map(m => (
             <button key={m.id} onClick={() => setMode(m.id)} style={{
               padding:"3px 10px", fontSize:12, borderRadius:6, cursor:"pointer",
@@ -5860,7 +5860,7 @@ function AssetBrowser({ onInsert }) {
                   border:"1px solid var(--line)", borderRadius:7, background:"var(--panel)",
                   cursor:"pointer", fontSize:"var(--fs-body)", color:"var(--ink-2)",
                   fontFamily:"inherit", fontWeight:500 }}>
-                📁 {d.name}
+                {ICONS.folder(13)} {d.name}
               </button>
             ))}
           </div>
@@ -7963,7 +7963,7 @@ function ToolDetailModal({ tool, relatedSkills, busy, onClose, onToggleEnabled, 
               letterSpacing: 0.5,
             }}
           >
-            How Claude Calls This Tool
+            How The AI Calls This Tool
           </div>
           <div style={{ marginTop: 8, fontSize: 12, color: "var(--ink-3)", lineHeight: 1.5 }}>
             Use <span style={{ color: "var(--blue)", fontFamily: "monospace" }}>{tool.mcpName}</span> with an arguments object.
@@ -9239,7 +9239,7 @@ function App() {
             <div style={{ display:"flex", alignItems:"center", gap:14, paddingRight:14, borderRight:"1px solid var(--line-2)" }}>
               <StatusDot label="UE Engine"   active={health.ueConnected}  activeColor="#16a34a" inactiveColor="#dc2626" />
               <StatusDot label="MCP Server"  active={health.mcpConnected} activeColor="#16a34a" inactiveColor="#dc2626" />
-              <StatusDot label="Claude Code" active={true}                activeColor="#16a34a" inactiveColor="#64748b" />
+              <StatusDot label="LLM" active={true}                activeColor="#16a34a" inactiveColor="#64748b" />
             </div>
           )}
           {!health && <span style={{ fontSize:13, color:"var(--ink-3)" }}>Connecting…</span>}

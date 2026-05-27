@@ -269,7 +269,11 @@ npx vite build --mode development
 
 ```bash
 PORT=9001                    # API server port
-ANTHROPIC_API_KEY=sk-...     # Claude API key (SimCoder)
+SIMWORLD_LLM_PROVIDER=deepseek      # deepseek | qwen | openai | claude
+DEEPSEEK_API_KEY=sk-...             # DeepSeek API key
+DASHSCOPE_API_KEY=sk-...            # Qwen/DashScope API key
+SIMWORLD_LLM_MODEL=deepseek-chat    # e.g. deepseek-chat, deepseek-reasoner, qwen-plus
+ANTHROPIC_API_KEY=sk-...            # Optional Claude fallback
 UNREAL_HOST=127.0.0.1        # UE5 host
 UNREAL_PORT=55557            # UE5 MCP port
 CIRRUS_PORT=8888             # Pixel Streaming port
