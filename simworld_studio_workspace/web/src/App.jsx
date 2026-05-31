@@ -5313,8 +5313,9 @@ function ViewportPanel({ latestScreenshot }) {
             try { return new URL(d.url).port || 8685; } catch { return 8685; }
           })();
           // All PS settings passed as URL params — player.js reads them via useUrlParams:true
+          // Let Cirrus choose the active streamer so Colab restarts do not pin us
+          // to a stale generated streamer id.
           const ps = new URLSearchParams({
-            StreamerId:             'Editor',   // subscribe directly, skip streamer-select UI
             StreamerAutoJoinInterval: '3',      // retry every 3s when no streamer yet
             MaxReconnectAttempts:     '0',      // unlimited retries
             AutoConnect:      'true',
