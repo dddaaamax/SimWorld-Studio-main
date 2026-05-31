@@ -52,3 +52,5 @@ simworld_studio_workspace/.mcp.json
 
 !simworld_studio_workspace/web/public/SimCoder.png
 !simworld_studio_workspace/web/public/simworld-studio-logo.png
+!packaging/simworld_arena/server/dist/
+!packaging/simworld_arena/server/dist/**
