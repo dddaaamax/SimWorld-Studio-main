@@ -62,17 +62,8 @@ html,body{margin:0;padding:0;width:100%;height:100%;background:#0b1220;overflow:
     if (!p.has(key)) { p.set(key, val); changed = true; }
   }
 
-  var cirrusUrl = p.get('cirrusUrl');
   var cirrusPort = p.get('cirrus');
-  if (cirrusUrl) {
-    try {
-      var u = new URL(cirrusUrl);
-      var wsPath = (u.pathname && u.pathname !== '/') ? u.pathname.replace(/\/$/, '') : '';
-      var wsUrl = (u.protocol === 'https:' ? 'wss://' : 'ws://') + u.host + wsPath;
-      window._swCirrusWs = wsUrl;
-      setDefault('ss', wsUrl);
-    } catch (e) {}
-  } else if (cirrusPort) {
+  if (cirrusPort) {
     var wsUrl = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.hostname + ':' + cirrusPort;
     window._swCirrusWs = wsUrl;
     setDefault('ss', wsUrl);
