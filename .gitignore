@@ -11,6 +11,8 @@ packaging/build/
 RELEASE_PLAN.md
 simworld_studio_workspace/tmp/
 simworld_studio_workspace/logs/
+simworld_studio_workspace/web/dist_esbuild_new/
+simworld_studio_workspace/web/dist_vite_api_new/
 simworld_studio_workspace/arena_data/
 simworld_studio_workspace/experiments/*
 !simworld_studio_workspace/experiments/README.md

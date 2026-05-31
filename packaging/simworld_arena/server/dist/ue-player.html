@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;margin:0">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SimWorld Viewport</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;height:100%;background:#0b1220;overflow:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#fff}
+
+/* player.js root elements — fill full viewport */
+#playerUI,#videoElementParent{
+  position:absolute!important;inset:0!important;
+  width:100%!important;height:100%!important;
+  background:#000!important;margin:0!important;padding:0!important;
+}
+#streamingVideo{
+  width:100%!important;height:100%!important;
+  object-fit:contain!important;display:block!important;
+}
+
+/* Hide ALL Cirrus UI chrome */
+#uiFeatures,#controls,#settings-panel,#stats-panel,
+#settingsBtn,#statsBtn,#xrBtn,#fullscreen-btn,
+#connection,#qualityText,#qualityStatus,#ControlStats,
+#additionalinfo,.tooltiptext,
+#latencyTestContainer,#dataChannelLatencyTestContainer,
+#statisticsContainer{display:none!important}
+
+/* Keep click-to-start overlays in DOM (dispatchEvent needs them) but invisible */
+#connectOverlay,#playOverlay{opacity:0!important;pointer-events:none!important}
+
+/* Status overlay */
+#sw-status-overlay{
+  position:fixed;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(11,18,32,0.92);z-index:999;gap:16px;
+  transition:opacity 0.3s;
+  pointer-events:none;
+}
+#sw-status-overlay.hidden{opacity:0;}
+#sw-spinner{
+  width:44px;height:44px;border-radius:50%;
+  border:3px solid rgba(37,99,235,0.25);border-top-color:#2563eb;
+  animation:sw-spin 0.9s linear infinite;
+}
+@keyframes sw-spin{to{transform:rotate(360deg)}}
+#sw-status-text{font-size:15px;font-weight:600;color:#e2e8f0;}
+#sw-status-sub{font-size:12px;color:#64748b;text-align:center;max-width:280px;line-height:1.5;}
+</style>
+
+<script>
+// ── Step 1: Translate ?cirrus=<port> → ?ss=ws://host:port ────────────────────
+// Also inject default Pixel Streaming URL params for best latency & input.
+// player.js uses useUrlParams:true so it reads all of these.
+(function() {
+  var p = new URLSearchParams(location.search);
+  var changed = false;
+
+  function setDefault(key, val) {
+    if (!p.has(key)) { p.set(key, val); changed = true; }
+  }
+
+  var cirrusUrl = p.get('cirrusUrl');
+  var cirrusPort = p.get('cirrus');
+  if (cirrusUrl) {
+    try {
+      var u = new URL(cirrusUrl);
+      var wsPath = (u.pathname && u.pathname !== '/') ? u.pathname.replace(/\/$/, '') : '';
+      var wsUrl = (u.protocol === 'https:' ? 'wss://' : 'ws://') + u.host + wsPath;
+      window._swCirrusWs = wsUrl;
+      setDefault('ss', wsUrl);
+    } catch (e) {}
+  } else if (cirrusPort) {
+    var wsUrl = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.hostname + ':' + cirrusPort;
+    window._swCirrusWs = wsUrl;
+    setDefault('ss', wsUrl);
+  }
+
+  // Subscribe directly to the Editor streamer (skip streamer-select UI)
+  setDefault('StreamerId',     'Editor');
+  // Auto-connect & auto-play
+  setDefault('AutoConnect',    'true');
+  setDefault('AutoPlayVideo',  'true');
+  setDefault('StartVideoMuted','true');
+  setDefault('WaitForStreamer','true');
+
+  // Input: enable all, hovering mouse for frictionless control
+  setDefault('HoveringMouse', 'true');
+  setDefault('KeyboardInput', 'true');
+  setDefault('MouseInput',    'true');
+  setDefault('GamepadInput',  'true');
+  setDefault('TouchInput',    'true');
+  setDefault('FakeMouseWithTouches', 'false');
+  setDefault('SuppressBrowserKeys',  'false');
+
+  // Quality: player controls quality, match resolution, no AFK timeout
+  setDefault('ControlsQuality',   'true');
+  setDefault('MatchViewportRes',  'true');
+  setDefault('TimeoutIfIdle',     'false');
+  setDefault('WebRTCFPS',         '60');
+
+  if (changed) history.replaceState({}, '', location.pathname + '?' + p.toString());
+})();
+
+// ── Step 2: Monkey-patch WebSocket as backup ─────────────────────────────────
+// player.js reads ?ss= directly, but this catches any fallback connections.
+(function() {
+  if (!window._swCirrusWs) return;
+  var _OrigWS = window.WebSocket;
+  var _pageOriginWs = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host;
+  window.WebSocket = function(url, protocols) {
+    if (typeof url === 'string' && url.startsWith(_pageOriginWs)) {
+      url = window._swCirrusWs;
+    }
+    return protocols ? new _OrigWS(url, protocols) : new _OrigWS(url);
+  };
+  window.WebSocket.CONNECTING = _OrigWS.CONNECTING;
+  window.WebSocket.OPEN       = _OrigWS.OPEN;
+  window.WebSocket.CLOSING    = _OrigWS.CLOSING;
+  window.WebSocket.CLOSED     = _OrigWS.CLOSED;
+  window.WebSocket.prototype  = _OrigWS.prototype;
+})();
+
+// ── Silence benign player.js console noise ───────────────────────────────────
+(function() {
+  var origLog = console.log;
+  console.log = function() {
+    var msg = Array.prototype.join.call(arguments, ' ');
+    if (msg.indexOf('Data channel cannot send yet') !== -1) return;
+    if (msg.indexOf('Skipping sending message') !== -1) return;
+    origLog.apply(console, arguments);
+  };
+})();
+</script>
+
+<!-- player.js: UMD bundle with useUrlParams:true — reads all ?param= from URL -->
+<script defer src="/ue-assets/player.js"></script>
+</head>
+
+<body style="width:100%;height:100%">
+
+<!-- Status overlay: shown until video streams, then faded out -->
+<div id="sw-status-overlay">
+  <div id="sw-spinner"></div>
+  <div id="sw-status-text">Connecting to UE Stream…</div>
+  <div id="sw-status-sub" id="sw-status-sub">Establishing WebRTC connection via Cirrus.</div>
+</div>
+
+<script>
+var _overlay   = null;
+var _hidden    = false;
+
+function swHideOverlay() {
+  if (_hidden) return;
+  _hidden = true;
+  if (_overlay) _overlay.classList.add('hidden');
+  try { window.parent.postMessage({ type: 'sw-stream-connected' }, '*'); } catch {}
+}
+
+// Attach listeners to the video element — hide overlay on first frame
+function swAttachVideo(v) {
+  if (v._swAttached) return;
+  v._swAttached = true;
+
+  var lastTime = -1;
+  var keepaliveTimer = null;
+
+  function onFrame() {
+    if (v.currentTime !== lastTime && v.currentTime > 0) {
+      lastTime = v.currentTime;
+      swHideOverlay();
+      // Keepalive to parent every 10s
+      if (!keepaliveTimer) {
+        keepaliveTimer = setInterval(function() {
+          try { window.parent.postMessage({ type: 'sw-keepalive' }, '*'); } catch {}
+        }, 10000);
+      }
+    }
+  }
+
+  // timeupdate fires whenever video time advances (works for WebRTC streams)
+  v.addEventListener('timeupdate', onFrame);
+  // playing fires when autoplay/resume starts
+  v.addEventListener('playing', function() { if (!_hidden) swHideOverlay(); });
+  // Immediate check in case already playing
+  if (!v.paused && v.readyState >= 2 && v.currentTime > 0) swHideOverlay();
+}
+
+// Watch DOM for streamingVideo appearing (player.js creates it asynchronously)
+function swWatchForVideo() {
+  // Try immediately first
+  var v = document.getElementById('streamingVideo');
+  if (v) { swAttachVideo(v); return; }
+
+  // MutationObserver: fires whenever DOM changes
+  var obs = new MutationObserver(function() {
+    var v = document.getElementById('streamingVideo');
+    if (!v) return;
+    obs.disconnect();
+    swAttachVideo(v);
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+}
+
+// Listen for parent frame messages
+window.addEventListener('message', function(e) {
+  if (!e.data) return;
+  if (e.data.type === 'sw-focus-stream') { document.body.focus(); }
+  if (e.data.type === 'sw-reconnect') { location.reload(); }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  _overlay = document.getElementById('sw-status-overlay');
+});
+
+window.addEventListener('load', function() {
+  // Auto-click any Cirrus activation overlay (hidden via CSS but still functional)
+  setTimeout(function() {
+    var t = document.getElementById('playOverlay') ||
+            document.getElementById('connectOverlay') ||
+            document.getElementById('playerUI') || document.body;
+    t.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+  }, 1500);
+
+  // ResizeObserver: keep stream resolution matched to container
+  setTimeout(function() {
+    var c = document.getElementById('videoElementParent');
+    if (c && window.ResizeObserver)
+      new ResizeObserver(function() { window.dispatchEvent(new Event('resize')); }).observe(c);
+  }, 2000);
+
+  // Start watching for the video element as soon as load fires
+  swWatchForVideo();
+});
+</script>
+</body>
+</html>
