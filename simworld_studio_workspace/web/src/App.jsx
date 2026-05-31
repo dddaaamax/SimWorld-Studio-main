@@ -5300,14 +5300,20 @@ function ViewportPanel({ latestScreenshot }) {
       .then(r => r.json())
       .then(d => {
         if (d.url) {
+          const externalCirrusUrl = (() => {
+            try {
+              return new URLSearchParams(window.location.search).get("cirrusUrl") || "";
+            } catch {
+              return "";
+            }
+          })();
           // Load our custom ue-player.html (not the default Cirrus player.html)
-          // Pass the Cirrus port as a query param so ue-player.html can connect
+          // Pass a public Cirrus tunnel URL in Colab, or the local Cirrus port otherwise.
           const cirrusPort = d.detectedPort || (() => {
             try { return new URL(d.url).port || 8685; } catch { return 8685; }
           })();
           // All PS settings passed as URL params — player.js reads them via useUrlParams:true
           const ps = new URLSearchParams({
-            cirrus:           String(cirrusPort),
             StreamerId:             'Editor',   // subscribe directly, skip streamer-select UI
             StreamerAutoJoinInterval: '3',      // retry every 3s when no streamer yet
             MaxReconnectAttempts:     '0',      // unlimited retries
@@ -5325,6 +5331,8 @@ function ViewportPanel({ latestScreenshot }) {
             TimeoutIfIdle:    'false',
             WebRTCFPS:        '60',
           });
+          if (externalCirrusUrl) ps.set('cirrusUrl', externalCirrusUrl);
+          else ps.set('cirrus', String(cirrusPort));
           setPlayerUrl(`/ue-player.html?${ps.toString()}`);
         }
       })
